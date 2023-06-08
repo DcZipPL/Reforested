@@ -1,20 +1,21 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "reforested",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Reforested",
+  "description": "A mod inspired by Forestry Mod.",
   "authors": [
-    "Me!"
+    "Prefex",
+    "Falkory"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://prefex.dev/",
+    "sources": "https://github.com/DcZipPL/Reforested"
   },
 
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "license": "GPL-3",
+  "icon": "assets/reforested/icon.png",
 
   "environment": "*",
   "entrypoints": {
@@ -23,7 +24,7 @@
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "reforested.mixins.json"
   ],
 
   "depends": {
@@ -31,8 +32,5 @@
     "fabric-api": "*",
     "minecraft": "~1.19.4",
     "java": ">=17"
-  },
-  "suggests": {
-    "another-mod": "*"
   }
 }
