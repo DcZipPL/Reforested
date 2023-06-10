@@ -23,11 +23,22 @@ public class Bee {
 
 	public ArrayList<BeeModifier> modifiers;
 
-	public Bee(String name, Color bodyColor, Color tailColor, Climate climate) {
+	public Bee(String name, Color bodyColor, Color tailColor, Climate climate, Humidity humidity, int temperatureTolerance, int humidityTolerance, float lifespan, float speed, float pollinationSpeed, FlowerType flowers, int fertility, BeeWorkTime workTime, Vec3d territory, ArrayList<BeeModifier> modifiers) {
 		this.name = name;
 		this.bodyColor = bodyColor;
 		this.tailColor = tailColor;
 		this.climate = climate;
+		this.humidity = humidity;
+		this.temperatureTolerance = temperatureTolerance;
+		this.humidityTolerance = humidityTolerance;
+		this.lifespan = lifespan;
+		this.speed = speed;
+		this.pollinationSpeed = pollinationSpeed;
+		this.flowers = flowers;
+		this.fertility = fertility;
+		this.workTime = workTime;
+		this.territory = territory;
+		this.modifiers = modifiers;
 	}
 
 	public ArrayList<BeeProduct> getProducts() {
