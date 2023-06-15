@@ -48,9 +48,9 @@ public class ModItems {
 
 	// Register basic mod items
 	public static Item register(String name) {
-		Item self = new Item(new Item.Settings());
+		Item self = Registry.register(Registries.ITEM, Reforested.id(name), new Item(new Item.Settings()));
 		Reforested.GROUP_ITEMS.add(new ItemStack(self));
-		return Registry.register(Registries.ITEM, Reforested.id(name), self);
+		return self;
 	}
 
 	public static void init() {

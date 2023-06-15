@@ -1,5 +1,7 @@
 package dev.prefex.reforested.datagen;
 
+import dev.prefex.reforested.Reforested;
+import dev.prefex.reforested.items.HoneycombItem;
 import dev.prefex.reforested.items.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
@@ -26,6 +28,10 @@ public class ReforestedModelGeneratorProvider extends FabricModelProvider {
 	public void generateItemModels(ItemModelGenerator itemModelGenerator) {
 		for (var comb : ModItems.HONEYCOMBS) {
 			itemModelGenerator.register(comb, new Model(Optional.of(new Identifier("reforested", "item/honeycomb")), Optional.empty()));
+		}
+		for (var item : Reforested.GROUP_ITEMS) {
+			if (item.getItem() instanceof HoneycombItem) continue;
+			itemModelGenerator.register(item.getItem(), Models.GENERATED);
 		}
 	}
 }
