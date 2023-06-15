@@ -6,7 +6,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 
+import java.util.ArrayList;
+
 public class ModItems {
+	public static ArrayList<HoneycombItem> HONEYCOMBS = new ArrayList<>();
+
 	// Forestry Mod Honeycombs
 	public static final HoneycombItem COCOA_HONEYCOMB = HoneycombItem.register("cocoa");
 	public static final HoneycombItem DRIPPING_HONEYCOMB = HoneycombItem.register("dripping");

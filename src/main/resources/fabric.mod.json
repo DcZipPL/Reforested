@@ -19,6 +19,9 @@
 
   "environment": "*",
   "entrypoints": {
+    "fabric-datagen": [
+      "dev.prefex.reforested.datagen.ReforestedDataGenerator"
+    ],
     "main": [
       "dev.prefex.reforested.Reforested"
     ],

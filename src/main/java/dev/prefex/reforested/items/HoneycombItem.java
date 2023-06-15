@@ -12,8 +12,9 @@ public class HoneycombItem extends Item {
 	}
 
 	public static HoneycombItem register(String name) {
-		HoneycombItem self = new HoneycombItem();
+		HoneycombItem self = (HoneycombItem) Registry.register(Registries.ITEM, Reforested.id(name + "_honeycomb"), new HoneycombItem());
+		ModItems.HONEYCOMBS.add(self);
 		Reforested.GROUP_ITEMS.add(new ItemStack(self));
-		return (HoneycombItem) Registry.register(Registries.ITEM, Reforested.id(name + "_honeycomb"), self);
+		return self;
 	}
 }
