@@ -40,8 +40,8 @@ public class ModItems {
 	public static final Item CRYSTALLINE_POLLEN = register("crystalline_pollen");
 	public static final Item POLLEN_CLUSTER = register("pollen_cluster");
 	public static final Item ROYAL_JELLY = register("royal_jelly");
-	public static final Item BEEWAX = register("beewax");
-	public static final Item REFACTORY_WAX = register("refactory_wax");
+	public static final Item BEESWAX = register("beeswax");
+	public static final Item REFRACTORY_WAX = register("refractory_wax");
 	public static final Item SILK_WISP = register("silk_wisp");
 	public static final Item PHOSPHOR = register("phosphor");
 	public static final Item ICE_SHARD = register("ice_shard");
