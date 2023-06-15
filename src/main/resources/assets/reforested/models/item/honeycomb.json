@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "reforested:item/honeycomb",
+    "layer1": "reforested:item/honeycomb.0"
+  }
+}

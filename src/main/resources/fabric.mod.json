@@ -21,6 +21,9 @@
   "entrypoints": {
     "main": [
       "dev.prefex.reforested.Reforested"
+    ],
+    "client": [
+      "dev.prefex.reforested.ReforestedClient"
     ]
   },
   "mixins": [

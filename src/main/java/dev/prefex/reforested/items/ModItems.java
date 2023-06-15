@@ -42,8 +42,6 @@ public class ModItems {
 	public static final Item PHOSPHOR = register("phosphor");
 	public static final Item ICE_SHARD = register("ice_shard");
 
-	public static final Item
-
 	// Register basic mod items
 	public static Item register(String name) {
 		Item self = new Item(new Item.Settings());
