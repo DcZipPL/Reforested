@@ -8,7 +8,8 @@ import net.minecraft.item.Item;
 public class ReforestedClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
-		//													Background Foreground Highlight
+
+		// Honeycombs
 		registerColor(ModItems.COCOA_HONEYCOMB,			0xffb62b, 0x674016);
 		registerColor(ModItems.SIMMERING_HONEYCOMB,		0xffb62b, 0x981919);
 		registerColor(ModItems.STRINGY_HONEYCOMB,		0xbda93e, 0xc8be67);
@@ -25,6 +26,13 @@ public class ReforestedClient implements ClientModInitializer {
 		registerColor(ModItems.WHEATEN_HONEYCOMB,		0xffffff, 0xfeff8f);
 		registerColor(ModItems.MOSSY_HONEYCOMB,			0x7e9939, 0x2a3313);
 		registerColor(ModItems.MELLOW_HONEYCOMB,		0xfff960, 0x886000);
+
+		// Proplis
+		registerColor(ModItems.PROPOLIS,				0xc5b24e);
+		registerColor(ModItems.STICKY_PROPOLIS,			0xc68e57);
+		registerColor(ModItems.PULSATING_PROPOLIS,		0x2ccdb1);
+		registerColor(ModItems.SILKY_PROPOLIS,			0xddff00);
+
 
 	}
 

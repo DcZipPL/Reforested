@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "reforested:item/pulsating_propolis"
+    "layer0": "reforested:item/good_circuit"
   }
 }

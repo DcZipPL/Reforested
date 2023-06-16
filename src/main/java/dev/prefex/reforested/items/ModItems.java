@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 public class ModItems {
 	public static ArrayList<HoneycombItem> HONEYCOMBS = new ArrayList<>();
+	public static ArrayList<PropolisItem> PROPOLISES = new ArrayList<>();
 
 	// Forestry Mod Honeycombs
 	public static final HoneycombItem COCOA_HONEYCOMB = HoneycombItem.register("cocoa");
@@ -26,14 +27,13 @@ public class ModItems {
 	public static final HoneycombItem WHEATEN_HONEYCOMB = HoneycombItem.register("wheaten");
 
 	// Magic Bees Mod Honeycombs
-	public static final HoneycombItem CARBON_HONEYCOMB = HoneycombItem.register("carbon");
 	public static final HoneycombItem MUNDANE_HONEYCOMB = HoneycombItem.register("mundane");
 	public static final HoneycombItem WATERY_HONEYCOMB = HoneycombItem.register("watery");
 
-	public static final Item PROPOLIS = register("propolis");
-	public static final Item PULSATING_PROPOLIS = register("pulsating_propolis");
-	public static final Item STICKY_PROPOLIS = register("sticky_propolis");
-	public static final Item SILKY_PROPOLIS = register("silky_propolis");
+	public static final PropolisItem PROPOLIS = PropolisItem.register("propolis");
+	public static final PropolisItem PULSATING_PROPOLIS = PropolisItem.register("pulsating_propolis");
+	public static final PropolisItem STICKY_PROPOLIS = PropolisItem.register("sticky_propolis");
+	public static final PropolisItem SILKY_PROPOLIS = PropolisItem.register("silky_propolis");
 
 	public static final Item HONEY_DROP = register("honey_drop");
 	public static final Item HONEYDEW = register("honeydew");
@@ -46,9 +46,44 @@ public class ModItems {
 	public static final Item PHOSPHOR = register("phosphor");
 	public static final Item ICE_SHARD = register("ice_shard");
 
+	public static final Item FERTILIZER = register("fertilizer");
+	public static final Item ASH = register("ash");
+	public static final Item PEAT = register("peat");
+	public static final Item BITUMINOUS_PEAT = register("bituminous_peat");
+	public static final Item COMPOST = register("compost");
+	public static final Item MOULDY_WHEAT = register("mouldy_wheat");
+	public static final Item DECAYED_WHEAT = register("decayed_wheat");
+	public static final Item MULCH = register("mulch");
+
+	public static final Item BASIC_CIRCUIT = register("basic_circuit");
+	public static final Item GOOD_CIRCUIT = register("good_circuit");
+	public static final Item ADVANCED_CIRCUIT = register("advanced_circuit");
+
+	public static final Item BRONZE_GEAR = register("bronze_gear");
+	public static final Item COPPER_GEAR = register("copper_gear");
+	public static final Item TIN_GEAR = register("tin_gear");
+
+	public static final Item FLEXIBLE_CASING = register("flexible_casing");
+	public static final Item HARDENED_CASING = register("hardened_casing");
+	public static final Item IMPREGNATED_CASING = register("impregnated_casing");
+	public static final Item STURDY_CASING = register("sturdy_casing");
+
+	public static final Item PULSATING_DUST = register("pulsating_dust");
+	public static final Item PULSATING_MESH = register("pulsating_mesh");
+	public static final Item IMPREGNATED_STICK = register("impregnated_stick");
+	public static final Item SCENTED_PANELING = register("scented_paneling");
+	public static final Item CAMOUFLAGE_PANELING = register("camouflage_paneling");
+	public static final Item WOVEN_SILK = register("woven_silk");
+	public static final Item WOOD_PULP = register("wood_pulp");
+
+
 	// Register basic mod items
 	public static Item register(String name) {
-		Item self = Registry.register(Registries.ITEM, Reforested.id(name), new Item(new Item.Settings()));
+		return register(name, new Item(new Item.Settings()));
+	}
+
+	public static Item register(String name, Item item) {
+		Item self = Registry.register(Registries.ITEM, Reforested.id(name), item);
 		Reforested.GROUP_ITEMS.add(new ItemStack(self));
 		return self;
 	}
