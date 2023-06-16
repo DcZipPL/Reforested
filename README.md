@@ -1,9 +1,15 @@
-# Fabric Example Mod
+A mod inspired by Forestry mod for newer version of Minecraft 
 
-## Setup
+Mod is work in progress and is not ready for use.
+If you want to help with development, feel free to make a pull request.
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
+## Features
+- [x] Bees
+- [x] Farming machines
 
-## License
-
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+- [x] Backpacks
+- [x] Energy system
+- [x] Genetics
+- [ ] Mail system
+- [ ] Trees
+- [ ] Butterflies
