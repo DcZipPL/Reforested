@@ -1,5 +1,6 @@
 package dev.prefex.reforested;
 
+import dev.prefex.reforested.blocks.ModBlocks;
 import dev.prefex.reforested.items.ModItems;
 import dev.prefex.reforested.util.registry.RegisteredMetalOre;
 import net.fabricmc.api.ModInitializer;
@@ -40,6 +41,7 @@ public class Reforested implements ModInitializer {
 		new RegisteredMetalOre("tin", 2.5F, 3.0F);
 
 		ModItems.init();
+		ModBlocks.init();
 
 		ItemGroupEvents.modifyEntriesEvent(REFORESTED_GROUP).register(content -> {
 			content.addAll(GROUP_ITEMS);

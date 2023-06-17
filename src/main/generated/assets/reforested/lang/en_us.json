@@ -1,4 +1,11 @@
 {
+  "block.reforested.desert_bee_nest": "Block.reforested.desert Bee Nest",
+  "block.reforested.forest_bee_nest": "Block.reforested.forest Bee Nest",
+  "block.reforested.jungle_bee_nest": "Block.reforested.jungle Bee Nest",
+  "block.reforested.meadow_bee_nest": "Block.reforested.meadow Bee Nest",
+  "block.reforested.mountain_bee_nest": "Block.reforested.mountain Bee Nest",
+  "block.reforested.snow_bee_nest": "Block.reforested.snow Bee Nest",
+  "block.reforested.swamp_bee_nest": "Block.reforested.swamp Bee Nest",
   "item.reforested.advanced_circuit": "Advanced Circuit",
   "item.reforested.ash": "Ash",
   "item.reforested.basic_circuit": "Basic Circuit",
