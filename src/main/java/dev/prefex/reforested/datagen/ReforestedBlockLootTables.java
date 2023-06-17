@@ -25,6 +25,8 @@ public class ReforestedBlockLootTables extends FabricBlockLootTableProvider {
 	@Override
 	public void generate() {
 		addDrop(Blocks.BEE_NEST, scoopBeeNestDrops(Blocks.BEE_NEST));
+
+		ReforestedDataGenerator.executeBeeNestFunction(block -> addDrop(block, scoopBeeNestDrops(block)));
 	}
 
 	public static LootTable.Builder scoopBeeNestDrops(Block drop) {

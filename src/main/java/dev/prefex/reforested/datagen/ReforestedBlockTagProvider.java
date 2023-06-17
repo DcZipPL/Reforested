@@ -15,6 +15,10 @@ public class ReforestedBlockTagProvider extends FabricTagProvider.BlockTagProvid
 
 	@Override
 	protected void configure(RegistryWrapper.WrapperLookup arg) {
-		getOrCreateTagBuilder(ModTags.SCOOP_MINEABLE).add(Blocks.BEE_NEST);
+		var tagBuilder = getOrCreateTagBuilder(ModTags.SCOOP_MINEABLE);
+
+		tagBuilder.add(Blocks.BEE_NEST);
+
+		ReforestedDataGenerator.executeBeeNestFunction(tagBuilder::add);
 	}
 }

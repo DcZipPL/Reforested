@@ -25,18 +25,9 @@ public class ReforestedModelGeneratorProvider extends FabricModelProvider {
 
 	@Override
 	public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-		Class<ModBlocks> blocksClass = ModBlocks.class;
-		Field[] fields = blocksClass.getDeclaredFields();
-
-		for (Field field : fields) {
-			if (field.getName().contains("BEE_NEST")) {
-				try {
-					blockStateModelGenerator.registerBeehive((Block) field.get(null), TextureMap::sideFrontTopBottom);
-				} catch (IllegalAccessException e) {
-					throw new RuntimeException(e);
-				}
-			}
-		}
+		ReforestedDataGenerator.executeBeeNestFunction(block -> {
+			blockStateModelGenerator.registerBeehive(block, TextureMap::sideFrontTopBottom);
+		});
 	}
 
 	@Override
