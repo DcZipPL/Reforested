@@ -4,6 +4,7 @@
   "package": "dev.prefex.reforested.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "BlocksMixin"
   ],
   "client": [
   ],

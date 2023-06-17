@@ -19,6 +19,6 @@ public class ScoopItem extends MiningToolItem {
 
 	@Override
 	public int getEnchantability() {
-		return 4;
+		return 15;
 	}
 }
