@@ -12,4 +12,10 @@ public class PropolisItem extends Item {
 		ModItems.PROPOLISES.add(self);
 		return self;
 	}
+
+	public static PropolisItem register() {
+		PropolisItem self = (PropolisItem) ModItems.register("propolis", new PropolisItem());
+		ModItems.PROPOLISES.add(self);
+		return self;
+	}
 }

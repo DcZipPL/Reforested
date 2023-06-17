@@ -12,6 +12,12 @@ public class ModItems {
 	public static ArrayList<HoneycombItem> HONEYCOMBS = new ArrayList<>();
 	public static ArrayList<PropolisItem> PROPOLISES = new ArrayList<>();
 
+	// Temporary Bee Item
+	public static final Item BEE = register("bee");
+
+	// Tools
+	public static final Item SCOOP = register("scoop", new ScoopItem());
+
 	// Forestry Mod Honeycombs
 	public static final HoneycombItem COCOA_HONEYCOMB = HoneycombItem.register("cocoa");
 	public static final HoneycombItem DRIPPING_HONEYCOMB = HoneycombItem.register("dripping");
@@ -30,11 +36,13 @@ public class ModItems {
 	public static final HoneycombItem MUNDANE_HONEYCOMB = HoneycombItem.register("mundane");
 	public static final HoneycombItem WATERY_HONEYCOMB = HoneycombItem.register("watery");
 
-	public static final PropolisItem PROPOLIS = PropolisItem.register("propolis");
-	public static final PropolisItem PULSATING_PROPOLIS = PropolisItem.register("pulsating_propolis");
-	public static final PropolisItem STICKY_PROPOLIS = PropolisItem.register("sticky_propolis");
-	public static final PropolisItem SILKY_PROPOLIS = PropolisItem.register("silky_propolis");
+	// Propolises
+	public static final PropolisItem PROPOLIS = PropolisItem.register();
+	public static final PropolisItem PULSATING_PROPOLIS = PropolisItem.register("pulsating");
+	public static final PropolisItem STICKY_PROPOLIS = PropolisItem.register("sticky");
+	public static final PropolisItem SILKY_PROPOLIS = PropolisItem.register("silky");
 
+	// Resources
 	public static final Item HONEY_DROP = register("honey_drop");
 	public static final Item HONEYDEW = register("honeydew");
 	public static final Item CRYSTALLINE_POLLEN = register("crystalline_pollen");

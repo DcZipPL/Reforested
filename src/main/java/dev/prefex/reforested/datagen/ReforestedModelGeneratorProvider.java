@@ -31,7 +31,7 @@ public class ReforestedModelGeneratorProvider extends FabricModelProvider {
 			itemModelGenerator.register(comb, new Model(Optional.of(new Identifier("reforested", "item/honeycomb")), Optional.empty()));
 		}
 		for (var prop : ModItems.PROPOLISES) {
-			itemModelGenerator.register(prop, new Model(Optional.of(new Identifier("reforested", "item/propolis")), Optional.empty()));
+			itemModelGenerator.register(prop, new Model(Optional.of(new Identifier("reforested", "item/propolis_base")), Optional.empty()));
 		}
 		for (var item : Reforested.GROUP_ITEMS) {
 			if (item.getItem() instanceof HoneycombItem) continue;

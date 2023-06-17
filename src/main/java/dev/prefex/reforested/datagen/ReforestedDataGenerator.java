@@ -10,5 +10,7 @@ public class ReforestedDataGenerator implements DataGeneratorEntrypoint {
 		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 		pack.addProvider(ReforestedModelGeneratorProvider::new);
 		pack.addProvider(ReforestedEnglishLangProvider::new);
+		pack.addProvider(ReforestedBlockTagProvider::new);
+		pack.addProvider(ReforestedBlockLootTables::new);
 	}
 }
