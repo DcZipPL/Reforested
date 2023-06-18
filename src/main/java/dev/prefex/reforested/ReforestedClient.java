@@ -1,8 +1,11 @@
 package dev.prefex.reforested;
 
+import dev.prefex.reforested.entity.ModEntities;
+import dev.prefex.reforested.entity.ReforestedBeeRenderer;
 import dev.prefex.reforested.items.ModItems;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.item.Item;
 
 public class ReforestedClient implements ClientModInitializer {
@@ -33,7 +36,8 @@ public class ReforestedClient implements ClientModInitializer {
 		registerColor(ModItems.PULSATING_PROPOLIS,		0x2ccdb1);
 		registerColor(ModItems.SILKY_PROPOLIS,			0xddff00);
 
-
+		EntityRendererRegistry.register(ModEntities.FOREST_BEE, ctx -> new ReforestedBeeRenderer(ctx, "forest_bee"));
+		EntityRendererRegistry.register(ModEntities.MEADOW_BEE, ctx -> new ReforestedBeeRenderer(ctx, "meadow_bee"));
 	}
 
 	public static void registerColor(Item item, int... color) {

@@ -1,12 +1,12 @@
 package dev.prefex.reforested;
 
 import dev.prefex.reforested.blocks.ModBlocks;
+import dev.prefex.reforested.entity.ModEntities;
 import dev.prefex.reforested.items.ModItems;
 import dev.prefex.reforested.util.registry.RegisteredMetalOre;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -40,6 +40,7 @@ public class Reforested implements ModInitializer {
 	public void onInitialize() {
 		new RegisteredMetalOre("tin", 2.5F, 3.0F);
 
+		ModEntities.init();
 		ModItems.init();
 		ModBlocks.init();
 

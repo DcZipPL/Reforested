@@ -8,6 +8,7 @@ If you want to help with development, feel free to make a pull request.
 
 
 ## Features
+Features that mod will have in version 1.0.0
 - [x] Bees
 - [x] Farming machines
 

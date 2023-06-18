@@ -19,8 +19,10 @@ public class ModBlocks {
 	public static final Block MOUNTAIN_BEE_NEST = registerBeeNest("mountain");
 	public static final Block SNOW_BEE_NEST = registerBeeNest("snow");
 
+	// TODO: Add rest of Forestry blocks but with red tooltip "Not implemented yet!"
+
 	public static Block registerBeeNest(String name) {
-		return register(name + "_bee_nest", new BeehiveBlock(AbstractBlock.Settings.copy(net.minecraft.block.Blocks.BEEHIVE)));
+		return register(name + "_bee_nest", new BeehiveBlock(AbstractBlock.Settings.copy(net.minecraft.block.Blocks.BEE_NEST)));
 	}
 
 	public static Block register(String name, Block block) {
