@@ -20,6 +20,7 @@ public class ReforestedEnglishLangProvider extends FabricLanguageProvider {
 					StringExtensions.capitalizeFirstLetter(
 							item.getTranslationKey()
 									.replace("item.reforested.", "")
+									.replace("block.reforested.", "")
 									.replace("_", " ")
 					)
 			);
