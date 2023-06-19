@@ -10,6 +10,7 @@ import net.minecraft.entity.passive.BeeEntity;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 
+@SuppressWarnings("unused")
 public class ModEntities {
 
 	public static final EntityType<BeeEntity> FOREST_BEE = registerBeeEntity("forest_bee");
@@ -20,7 +21,7 @@ public class ModEntities {
 				Reforested.id(name),
 				FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, BeeEntity::new).dimensions(EntityDimensions.fixed(0.7F, 0.6F)).trackRangeChunks(8).build()
 		);
-		FabricDefaultAttributeRegistry.register(self, BeeEntity.createMobAttributes());
+		FabricDefaultAttributeRegistry.register(self, BeeEntity.createBeeAttributes());
 
 		return self;
 	}
