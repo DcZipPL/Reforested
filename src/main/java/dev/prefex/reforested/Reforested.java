@@ -29,7 +29,7 @@ public class Reforested implements ModInitializer {
 	}
 
 	public static final ItemGroup REFORESTED_GROUP = FabricItemGroup.builder(id("reforested"))
-			.icon(() -> new ItemStack(Items.BEEHIVE))
+			.icon(() -> new ItemStack(ModItems.BEE))
 			.build();
 
 	public static final ItemGroup EXTRA_BEES_GROUP = FabricItemGroup.builder(id("reforested_bees"))

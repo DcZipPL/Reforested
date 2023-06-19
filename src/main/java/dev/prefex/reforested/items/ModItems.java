@@ -8,6 +8,7 @@ import net.minecraft.registry.Registry;
 
 import java.util.ArrayList;
 
+@SuppressWarnings("unused")
 public class ModItems {
 	public static ArrayList<HoneycombItem> HONEYCOMBS = new ArrayList<>();
 	public static ArrayList<PropolisItem> PROPOLISES = new ArrayList<>();
