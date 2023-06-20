@@ -51,6 +51,8 @@ dependencies {
 	include "dev.onyxstudios.cardinal-components-api:cardinal-components-block:${cc_version}"
 	include "dev.onyxstudios.cardinal-components-api:cardinal-components-item:${cc_version}"
 
+	modImplementation "vazkii.patchouli:Patchouli:${patchouli_version}"
+
 	// Visit https://www.curseforge.com/minecraft/mc-mods/jade/files
 	// to get the latest version's jade_id
 	modImplementation "curse.maven:jade-324717:4561717"

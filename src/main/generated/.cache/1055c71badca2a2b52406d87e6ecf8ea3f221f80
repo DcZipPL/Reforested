@@ -1,4 +1,4 @@
-// 1.19.4	2023-06-18T19:01:01.2291561	Reforested/Model Definitions
+// 1.19.4	2023-06-20T22:18:57.3572368	Reforested/Model Definitions
 5ca4bc103caae82babef05aa2de41888428eea20 assets\reforested\models\item\decayed_wheat.json
 4a8977b705ddc50174f527affb611cca261fbf02 assets\reforested\blockstates\snow_bee_nest.json
 eb09a21e588c0748e8db83bdcf6f4cc45590ec16 assets\reforested\models\item\snow_bee_nest.json
@@ -25,6 +25,7 @@ d35042e14753d14591f6eefedd39d14f8e670b52 assets\reforested\models\item\fertilize
 7e2ec5da837a6058e961af8a325ee5057cfc64b0 assets\reforested\models\item\mulch.json
 1bb991dd2b282b13137af9383d8cc80652c40989 assets\reforested\models\item\forest_bee_nest.json
 e6f592ddbdd8eeff33b04232fb537f41ad4a54e8 assets\reforested\models\item\wheaten_honeycomb.json
+c200568ae7a24f70e5600b9cbb2d8980c15c1afc assets\reforested\models\item\butterfly.json
 70f9b1bc3bd84f3bbe66fa2349c2619a3997dbc9 assets\reforested\models\block\forest_bee_nest.json
 10d6235a5d68f0b5f542bc87eba70ba7333e4c24 assets\reforested\models\item\pulsating_mesh.json
 1ca49d093edbdd74be9b6bf46f86ebe1cfec7f5b assets\reforested\models\item\ice_shard.json
@@ -37,8 +38,8 @@ e0a02d8131dd8fcfac7f412c81b6e1433da315fb assets\reforested\models\item\woven_sil
 3cbf4bd6986cf31c878b7eabcf9428eb0071dffb assets\reforested\models\item\phosphor.json
 510cdba8728bb5c5844225566e2eb604855eee20 assets\reforested\models\item\silk_wisp.json
 7efa41acb0c086ddd5dd56edb999d8b29e0f90aa assets\reforested\models\block\jungle_bee_nest_honey.json
-fe37a02498a95936aec522cb26a8f58d75deac25 assets\reforested\models\item\bee.json
 a65cde5b12b8ef4ac05b7fe80699980cab63db47 assets\reforested\models\block\mountain_bee_nest_honey.json
+fe37a02498a95936aec522cb26a8f58d75deac25 assets\reforested\models\item\bee.json
 bdca0b77917397903cc91f1d8ec9f4e557265a68 assets\reforested\models\item\honeydew.json
 e6f592ddbdd8eeff33b04232fb537f41ad4a54e8 assets\reforested\models\item\silky_honeycomb.json
 2fb15e07dd4a7ef3674ebc114ed22dcec9302ef6 assets\reforested\models\item\tin_gear.json
@@ -78,8 +79,8 @@ e443d752ee027c9e7e9667d2be390bc86200a8f7 assets\reforested\models\item\jungle_be
 58416cf002937f19c10bf30c32bbf32e7b55c4f8 assets\reforested\models\item\silky_propolis.json
 9f21bdd35ffdaaf23149f7df9f7b5597b45eb406 assets\reforested\models\item\royal_jelly.json
 45302d367f289db07316ce1a2fa5fb7694dddc8b assets\reforested\models\block\jungle_bee_nest.json
-3ed1daf00be65ac30df31c2d65dd5abb1cc80761 assets\reforested\blockstates\forest_bee_nest.json
 57a85e42b473edc13041a6c73864d295bfe84999 assets\reforested\blockstates\meadow_bee_nest.json
+3ed1daf00be65ac30df31c2d65dd5abb1cc80761 assets\reforested\blockstates\forest_bee_nest.json
 f572a99d8153d5188c8784f6d80365686e0e5a01 assets\reforested\models\item\wood_pulp.json
 e6f592ddbdd8eeff33b04232fb537f41ad4a54e8 assets\reforested\models\item\powdery_honeycomb.json
 3379cfd34a9b1dc642dea77ee45aafefe9c841fb assets\reforested\blockstates\swamp_bee_nest.json

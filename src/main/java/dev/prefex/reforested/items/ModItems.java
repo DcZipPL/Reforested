@@ -15,6 +15,7 @@ public class ModItems {
 
 	// Temporary Bee Item
 	public static final Item BEE = register("bee");
+	public static final Item BUTTERFLY = register("butterfly");
 
 	// Tools
 	public static final Item SCOOP = register("scoop", new ScoopItem());
