@@ -1,0 +1,24 @@
+{
+	"name": "Vanilla Bees",
+	"icon": "reforested:bee",
+	"category": "reforested:apiculture",
+	"priority": true,
+	"pages": [
+		{
+			"type": "patchouli:text",
+			"text": "After the Buzzing Bees update, bees are now a thing in Minecraft. That's would be a problem, because if there was two bee systems, they would conflict with each other.$(br2)But don't worry, Reforested Bees is compatible with the vanilla bees, and will not conflict with them."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "There was a few changes to beehives and bee nests but it should not change how vanilla bees work.$(br)Now you need to use a scoop to get a bee out of a hive. You can still gather bee nest with a silk touch $(m)tool$() scoop."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Also beehive have now UI, that you can't interact with, but you can see what is happening inside. If you want to interact with it use a $(l:reforested:apiculture_getting_bees)Bee House or Apiary$(/l) instead $(l)but$() bee houses or apiaries are not compatible with vanilla bees.$(br2)More is explained in $(l:reforested:apiculture_getting_bees)Gathering Bees$(/l) entry."
+		},
+		{
+			"type": "patchouli:image",
+			"file": "reforested:textures/gui/book/vanilla_bee_cons.png"
+		}
+	]
+}

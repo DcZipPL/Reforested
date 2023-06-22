@@ -1,0 +1,12 @@
+{
+	"name": "Gathering Bees",
+	"icon": "reforested:forest_bee_nest",
+	"category": "reforested:apiculture",
+	"sortnum": 0,
+	"pages": [
+		{
+			"type": "patchouli:text",
+			"text": "Bee nests, scoop, bee houses"
+		}
+	]
+}
