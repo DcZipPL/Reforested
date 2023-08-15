@@ -1,4 +1,4 @@
-// 1.19.4	2023-06-21T00:12:52.9919856	Reforested/Model Definitions
+// 1.19.4	2023-08-15T20:41:09.9442843	Reforested/Model Definitions
 5ca4bc103caae82babef05aa2de41888428eea20 assets\reforested\models\item\decayed_wheat.json
 4a8977b705ddc50174f527affb611cca261fbf02 assets\reforested\blockstates\snow_bee_nest.json
 eb09a21e588c0748e8db83bdcf6f4cc45590ec16 assets\reforested\models\item\snow_bee_nest.json
@@ -9,6 +9,7 @@ b43deeaf11329c8232fcc10358d98b9ab1630920 assets\reforested\models\item\pulsating
 e5a4127db4999ff80e91f53e240d14a5c0bdab07 assets\reforested\models\item\camouflage_paneling.json
 f78d8dd8f0d1175f59da8cb644eaaa9931bd91fc assets\reforested\models\item\crystalline_pollen.json
 3f8c26ce727ddfb2eb605b5ebbf01c68d66642d9 assets\reforested\models\item\bituminous_peat.json
+1756d08f65dbdf0e2d662dd33437eab835172c5f assets\reforested\models\item\bee_queen.json
 45e7ca924d74cacca17e16fec09a488744745da7 assets\reforested\models\block\snow_bee_nest.json
 e6f592ddbdd8eeff33b04232fb537f41ad4a54e8 assets\reforested\models\item\mundane_honeycomb.json
 9905d47ac05cad49619aa118a5779482dc9ded1e assets\reforested\models\item\honey_drop.json
@@ -18,6 +19,7 @@ e6f592ddbdd8eeff33b04232fb537f41ad4a54e8 assets\reforested\models\item\mundane_h
 e6f592ddbdd8eeff33b04232fb537f41ad4a54e8 assets\reforested\models\item\mysterious_honeycomb.json
 51fe33916ee1f9428c7bf59682a0c8560141a9fc assets\reforested\blockstates\jungle_bee_nest.json
 7fe80a60c95e3a2474c467c4272fe18030c44f24 assets\reforested\models\block\desert_bee_nest_honey.json
+e9e53d356def4663bda362e2730161b8b4854b8a assets\reforested\models\item\bee_drone.json
 e6f592ddbdd8eeff33b04232fb537f41ad4a54e8 assets\reforested\models\item\mellow_honeycomb.json
 d35042e14753d14591f6eefedd39d14f8e670b52 assets\reforested\models\item\fertilizer.json
 683d896d7a34f8c6f8edbed896e3df05e35f2b27 assets\reforested\models\item\good_circuit.json
@@ -38,9 +40,9 @@ e0a02d8131dd8fcfac7f412c81b6e1433da315fb assets\reforested\models\item\woven_sil
 3cbf4bd6986cf31c878b7eabcf9428eb0071dffb assets\reforested\models\item\phosphor.json
 510cdba8728bb5c5844225566e2eb604855eee20 assets\reforested\models\item\silk_wisp.json
 7efa41acb0c086ddd5dd56edb999d8b29e0f90aa assets\reforested\models\block\jungle_bee_nest_honey.json
-fe37a02498a95936aec522cb26a8f58d75deac25 assets\reforested\models\item\bee.json
 a65cde5b12b8ef4ac05b7fe80699980cab63db47 assets\reforested\models\block\mountain_bee_nest_honey.json
 bdca0b77917397903cc91f1d8ec9f4e557265a68 assets\reforested\models\item\honeydew.json
+a3db8c094f5aec4bb5fdd7262f5c1e57bd4e4744 assets\reforested\models\item\bee_princess.json
 e6f592ddbdd8eeff33b04232fb537f41ad4a54e8 assets\reforested\models\item\silky_honeycomb.json
 2fb15e07dd4a7ef3674ebc114ed22dcec9302ef6 assets\reforested\models\item\tin_gear.json
 9a66ad0ee9be2330bc9f87a74284ca1bf4718946 assets\reforested\models\block\mountain_bee_nest.json

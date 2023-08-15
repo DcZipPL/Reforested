@@ -14,7 +14,9 @@ public class ModItems {
 	public static ArrayList<PropolisItem> PROPOLISES = new ArrayList<>();
 
 	// Temporary Bee Item
-	public static final Item BEE = register("bee");
+	public static final Item BEE_DRONE = register("bee_drone");
+	public static final Item BEE_QUEEN = register("bee_queen");
+	public static final Item BEE_PRINCESS = register("bee_princess");
 	public static final Item BUTTERFLY = register("butterfly");
 
 	// Tools

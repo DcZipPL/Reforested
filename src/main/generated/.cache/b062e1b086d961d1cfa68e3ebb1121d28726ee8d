@@ -1,9 +1,9 @@
-// 1.19.4	2023-06-21T00:12:52.9914866	Reforested/Block Loot Tables
-ec39ccf854221f7b21b91e12e7cc5f9d34671e78 data\reforested\loot_tables\blocks\desert_bee_nest.json
-2abbcec99713f3f0ff6139f092c71f950527670b data\reforested\loot_tables\blocks\jungle_bee_nest.json
-55a98bc4dcd44585665da960f7ee5e88a0e9964e data\reforested\loot_tables\blocks\forest_bee_nest.json
-d184457a857ddbbeb56ceebafcd59f1c21c70ce3 data\reforested\loot_tables\blocks\meadow_bee_nest.json
-eb3dcbd7290d85716851e61db03876a276d14c09 data\reforested\loot_tables\blocks\swamp_bee_nest.json
-7b88c7e997b8cc17d78ad8f6815fb09703ae4568 data\minecraft\loot_tables\blocks\bee_nest.json
-06820c1bcc9c5aea418374ced33c0e7270ec39aa data\reforested\loot_tables\blocks\snow_bee_nest.json
-60a68b10156bc158b2732baaf26d7c574561b6f7 data\reforested\loot_tables\blocks\mountain_bee_nest.json
+// 1.19.4	2023-08-15T20:41:09.9442843	Reforested/Block Loot Tables
+b2526000c16b0203fab0a1e97f3d5f8f5d1249ad data\reforested\loot_tables\blocks\desert_bee_nest.json
+cf139f6a47bffeb1921595d5102a7df41536b4b7 data\reforested\loot_tables\blocks\jungle_bee_nest.json
+03ed9f2530c6ca4c646898f7bb64f5d66b016485 data\reforested\loot_tables\blocks\forest_bee_nest.json
+7529c6fda28b40a45a10edc4480b23f8dc31edc1 data\reforested\loot_tables\blocks\meadow_bee_nest.json
+cfd10aed4b4a1cbb9308e2ef33bc1ba15c0c99dc data\reforested\loot_tables\blocks\swamp_bee_nest.json
+3f5c45e2306cca81e2b4b6dac6b8d7108c44329a data\minecraft\loot_tables\blocks\bee_nest.json
+4b546edbc0a8985403903832b8b517542a2b85fc data\reforested\loot_tables\blocks\snow_bee_nest.json
+0505e808a43e59be48faccadc19c4f58e30f8318 data\reforested\loot_tables\blocks\mountain_bee_nest.json

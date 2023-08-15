@@ -47,7 +47,7 @@ public class ReforestedBlockLootTables extends FabricBlockLootTableProvider {
 				LootPool.builder()
 						.conditionally(WITHOUT_SILK_TOUCH)
 						.rolls(ConstantLootNumberProvider.create(1.0F))
-						.with(ItemEntry.builder(ModItems.BEE))
+						.with(ItemEntry.builder(ModItems.BEE_PRINCESS))
 		);
 	}
 }

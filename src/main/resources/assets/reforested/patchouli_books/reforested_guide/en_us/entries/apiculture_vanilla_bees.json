@@ -1,6 +1,6 @@
 {
 	"name": "Vanilla Bees",
-	"icon": "reforested:bee",
+	"icon": "reforested:bee_drone",
 	"category": "reforested:apiculture",
 	"priority": true,
 	"pages": [
@@ -10,15 +10,11 @@
 		},
 		{
 			"type": "patchouli:text",
-			"text": "There was a few changes to beehives and bee nests but it should not change how vanilla bees work.$(br)Now you need to use a scoop to get a bee out of a hive. You can still gather bee nest with a silk touch $(m)tool$() scoop."
+			"text": "There was a few changes to beehives and bee nests but it should not change how vanilla bees work.$(br)Now you need to use a $(item)Scoop$() to get a bee out of a hive. You can still gather bee nest with a silk touch $(m)tool$() scoop."
 		},
 		{
 			"type": "patchouli:text",
-			"text": "Also beehive have now UI, that you can't interact with, but you can see what is happening inside. If you want to interact with it use a $(l:reforested:apiculture_getting_bees)Bee House or Apiary$(/l) instead $(l)but$() bee houses or apiaries are not compatible with vanilla bees.$(br2)More is explained in $(l:reforested:apiculture_getting_bees)Gathering Bees$(/l) entry."
-		},
-		{
-			"type": "patchouli:image",
-			"file": "reforested:textures/gui/book/vanilla_bee_cons.png"
+			"text": "Also $(item)Beehives$() have now UI, that you can't interact with, but you can peek what is happening inside. The $(item)Beehives$() are accepting one type of Entity Bee.$(br)This is because of type of honeycomb they produce. You can see the type of bee on the right of the beehive UI.$(p)To change bee type you need clean it with $(thing)Shift$() when holding an $(item)Axe$()."
 		}
 	]
 }
