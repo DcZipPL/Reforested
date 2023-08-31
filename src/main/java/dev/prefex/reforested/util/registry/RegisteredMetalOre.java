@@ -1,9 +1,7 @@
 package dev.prefex.reforested.util.registry;
 
 import dev.prefex.reforested.Reforested;
-import dev.prefex.reforested.items.ModItems;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -12,9 +10,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier;
-
-import static dev.prefex.reforested.Reforested.REFORESTED_GROUP;
 
 public class RegisteredMetalOre {
 	public Item dust;
@@ -43,11 +38,5 @@ public class RegisteredMetalOre {
 		Reforested.GROUP_ITEMS.add(new ItemStack(ingot));
 		Reforested.GROUP_ITEMS.add(new ItemStack(nugget));
 		Reforested.GROUP_ITEMS.add(new ItemStack(rawOre));
-
-		ItemGroupEvents.modifyEntriesEvent(REFORESTED_GROUP).register(content -> {
-			content.add(ore);
-			content.add(deepslateOre);
-			content.add(storageBlock);
-		});
 	}
 }

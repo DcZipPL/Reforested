@@ -6,10 +6,13 @@ import dev.prefex.reforested.items.ModItems;
 import dev.prefex.reforested.util.registry.RegisteredMetalOre;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,13 +31,8 @@ public class Reforested implements ModInitializer {
 		return new Identifier(MOD_ID, name);
 	}
 
-	public static final ItemGroup REFORESTED_GROUP = FabricItemGroup.builder(id("reforested"))
-			.icon(() -> new ItemStack(ModItems.BEE_DRONE))
-			.build();
-
-	public static final ItemGroup EXTRA_BEES_GROUP = FabricItemGroup.builder(id("reforested_bees"))
-			.icon(() -> new ItemStack(Items.BEE_NEST))
-			.build();
+	public static final RegistryKey<ItemGroup> REFORESTED_GROUP = RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(MOD_ID, "reforested"));
+	public static final RegistryKey<ItemGroup> EXTRA_BEES_GROUP = RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(MOD_ID, "reforested_bees"));
 
 	@Override
 	public void onInitialize() {
@@ -44,8 +42,13 @@ public class Reforested implements ModInitializer {
 		ModItems.init();
 		ModBlocks.init();
 
-		ItemGroupEvents.modifyEntriesEvent(REFORESTED_GROUP).register(content -> {
-			content.addAll(GROUP_ITEMS);
-		});
+		Registry.register(Registries.ITEM_GROUP, REFORESTED_GROUP, FabricItemGroup.builder()
+				.entries((displayContext, entries) -> entries.addAll(GROUP_ITEMS))
+				.icon(() -> new ItemStack(ModItems.BEE_DRONE))
+				.build());
+		Registry.register(Registries.ITEM_GROUP, EXTRA_BEES_GROUP, FabricItemGroup.builder()
+				.entries((displayContext, entries) -> entries.add(new ItemStack(ModItems.BEE_DRONE)))
+				.icon(() -> new ItemStack(Items.BEE_NEST))
+				.build());
 	}
 }
