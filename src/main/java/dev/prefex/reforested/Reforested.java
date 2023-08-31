@@ -13,6 +13,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,10 +44,12 @@ public class Reforested implements ModInitializer {
 		ModBlocks.init();
 
 		Registry.register(Registries.ITEM_GROUP, REFORESTED_GROUP, FabricItemGroup.builder()
+				.displayName(Text.translatable("item_group.reforested"))
 				.entries((displayContext, entries) -> entries.addAll(GROUP_ITEMS))
 				.icon(() -> new ItemStack(ModItems.BEE_DRONE))
 				.build());
 		Registry.register(Registries.ITEM_GROUP, EXTRA_BEES_GROUP, FabricItemGroup.builder()
+				.displayName(Text.translatable("item_group.extra_bees"))
 				.entries((displayContext, entries) -> entries.add(new ItemStack(ModItems.BEE_DRONE)))
 				.icon(() -> new ItemStack(Items.BEE_NEST))
 				.build());
