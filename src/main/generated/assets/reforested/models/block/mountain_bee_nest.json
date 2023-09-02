@@ -1,10 +1,10 @@
 {
   "parent": "minecraft:block/orientable_with_bottom",
   "textures": {
-    "bottom": "reforested:block/mountain_bee_nest_bottom",
-    "front": "reforested:block/mountain_bee_nest_front",
-    "particle": "reforested:block/mountain_bee_nest_side",
-    "side": "reforested:block/mountain_bee_nest_side",
-    "top": "reforested:block/mountain_bee_nest_top"
+    "bottom": "reforested:block/bee_nest/mountain_bee_nest_bottom",
+    "front": "reforested:block/bee_nest/mountain_bee_nest_front",
+    "particle": "reforested:block/bee_nest/mountain_bee_nest_side",
+    "side": "reforested:block/bee_nest/mountain_bee_nest_side",
+    "top": "reforested:block/bee_nest/mountain_bee_nest_top"
   }
 }
