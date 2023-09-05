@@ -44,11 +44,6 @@ public abstract class MachineBlockEntity extends LockableContainerBlockEntity im
     public abstract void onInventoryChanged(int slot, ItemStack stack);
 
     @Override
-    protected ScreenHandler createScreenHandler(int syncId, PlayerInventory playerInventory) {
-        return null;
-    }
-
-    @Override
     public int size() {
         return this.inventory.size();
     }

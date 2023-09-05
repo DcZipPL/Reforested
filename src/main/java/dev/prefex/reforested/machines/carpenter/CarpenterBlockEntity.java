@@ -17,26 +17,31 @@ import net.minecraft.util.math.Direction;
 import org.jetbrains.annotations.Nullable;
 
 public class CarpenterBlockEntity extends MachineBlockEntity {
-	int processTime;
+	public static final int INVENTORY_SIZE = 30;
+	public static final int PROPERTY_SIZE = 2;
 
-	public PropertyDelegate properties = WrappedDelegate.create(1, index -> {
-		switch (index) {
-			case 0:
-				return CarpenterBlockEntity.this.processTime;
-			default:
-				return 0;
-		}
-	}, pair -> {
-		switch (pair.getLeft()) {
-			case 0:
-				CarpenterBlockEntity.this.processTime = pair.getRight();
-				break;
-		}
-	});
+	int processTime;
+	int maxProcessTime;
+	public final PropertyDelegate properties;
 
     public CarpenterBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
-        super(type, pos, state, "carpenter", 3);
+        super(type, pos, state, "carpenter", INVENTORY_SIZE);
+		this.properties = WrappedDelegate.create(PROPERTY_SIZE, index -> switch (index) {
+			case 0 -> CarpenterBlockEntity.this.processTime;
+			case 1 -> CarpenterBlockEntity.this.maxProcessTime;
+			default -> 0;
+		}, pair -> {
+			switch (pair.getLeft()) {
+				case 0 -> CarpenterBlockEntity.this.processTime = pair.getRight();
+				case 1 -> CarpenterBlockEntity.this.maxProcessTime = pair.getRight();
+			}
+		});
     }
+
+	@Override
+	protected ScreenHandler createScreenHandler(int syncId, PlayerInventory playerInventory) {
+		return null;
+	}
 
 	@Override
 	public void onInventoryChanged(int slot, ItemStack stack) {
