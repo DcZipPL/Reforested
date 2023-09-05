@@ -1,5 +1,6 @@
 package dev.prefex.reforested.machines.carpenter;
 
+import dev.prefex.reforested.machines.core.ModMachines;
 import dev.prefex.reforested.machines.core.WrappedDelegate;
 import dev.prefex.reforested.machines.core.MachineBlockEntity;
 import net.minecraft.block.BlockState;
@@ -24,8 +25,8 @@ public class CarpenterBlockEntity extends MachineBlockEntity {
 	int maxProcessTime;
 	public final PropertyDelegate properties;
 
-    public CarpenterBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
-        super(type, pos, state, "carpenter", INVENTORY_SIZE);
+    public CarpenterBlockEntity(BlockPos pos, BlockState state) {
+        super(ModMachines.CARPENTER_BLOCK_ENTITY, pos, state, "carpenter", INVENTORY_SIZE);
 		this.properties = WrappedDelegate.create(PROPERTY_SIZE, index -> switch (index) {
 			case 0 -> CarpenterBlockEntity.this.processTime;
 			case 1 -> CarpenterBlockEntity.this.maxProcessTime;
