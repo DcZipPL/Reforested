@@ -24,6 +24,7 @@ public class ReforestedModelGeneratorProvider extends FabricModelProvider {
 		ReforestedDataGenerator.executeBeeNestFunction(block -> {
 			blockStateModelGenerator.registerBeehive(block, this::beeNestMap);
 		});
+		ReforestedDataGenerator.executeWipBlockFunction(blockStateModelGenerator::registerSimpleCubeAll);
 	}
 
 	@Override

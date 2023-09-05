@@ -1,6 +1,7 @@
 package dev.prefex.reforested.datagen;
 
 import dev.prefex.reforested.blocks.ModBlocks;
+import dev.prefex.reforested.blocks.WipBlock;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.block.Block;
@@ -12,6 +13,7 @@ import java.util.function.Consumer;
 
 public class ReforestedDataGenerator implements DataGeneratorEntrypoint {
 	public static final Logger LOGGER = LoggerFactory.getLogger("reforested");
+
 	@Override
 	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
 		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
@@ -26,6 +28,20 @@ public class ReforestedDataGenerator implements DataGeneratorEntrypoint {
 		Field[] fields = blocksClass.getDeclaredFields();
 		for (Field field : fields) {
 			if (field.getName().contains("BEE_NEST")) {
+				try {
+					block.accept((Block) field.get(null));
+				} catch (IllegalAccessException e) {
+					throw new RuntimeException(e);
+				}
+			}
+		}
+	}
+
+	public static void executeWipBlockFunction(Consumer<Block> block) {
+		Class<ModBlocks> blocksClass = ModBlocks.class;
+		Field[] fields = blocksClass.getDeclaredFields();
+		for (Field field : fields) {
+			if (field.getType() == WipBlock.class) {
 				try {
 					block.accept((Block) field.get(null));
 				} catch (IllegalAccessException e) {

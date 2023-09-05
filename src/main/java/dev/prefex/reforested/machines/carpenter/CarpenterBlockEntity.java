@@ -5,8 +5,16 @@ import dev.prefex.reforested.machines.core.MachineBlockEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.screen.PropertyDelegate;
+import net.minecraft.screen.ScreenHandler;
+import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
+import org.jetbrains.annotations.Nullable;
 
 public class CarpenterBlockEntity extends MachineBlockEntity {
 	int processTime;
@@ -27,6 +35,31 @@ public class CarpenterBlockEntity extends MachineBlockEntity {
 	});
 
     public CarpenterBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
-        super(type, pos, state, 3, properties);
+        super(type, pos, state, "carpenter", 3);
     }
+
+	@Override
+	public void onInventoryChanged(int slot, ItemStack stack) {
+
+	}
+
+	@Override
+	public boolean isValid(int slot, ItemStack stack) {
+		return super.isValid(slot, stack);
+	}
+
+	@Override
+	public int[] getAvailableSlots(Direction side) {
+		return new int[0];
+	}
+
+	@Override
+	public boolean canInsert(int slot, ItemStack stack, @Nullable Direction dir) {
+		return false;
+	}
+
+	@Override
+	public boolean canExtract(int slot, ItemStack stack, Direction dir) {
+		return false;
+	}
 }
