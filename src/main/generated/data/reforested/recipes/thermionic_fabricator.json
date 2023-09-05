@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "reforested:sturdy_casing"
+    },
+    "C": {
+      "item": "minecraft:chest"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "I": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "pattern": [
+    "IGI",
+    "G#G",
+    "ICI"
+  ],
+  "result": {
+    "item": "reforested:thermionic_fabricator"
+  },
+  "show_notification": true
+}

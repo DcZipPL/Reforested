@@ -13,7 +13,6 @@ import net.minecraft.registry.Registry;
 
 public class RegisteredMetalOre {
 	public Item dust;
-	public Item ingot;
 	public Item nugget;
 	public Item rawOre;
 	public Block ore;
@@ -30,12 +29,10 @@ public class RegisteredMetalOre {
 		Registry.register(Registries.ITEM, Reforested.id(id + "_block"), new BlockItem(storageBlock, new FabricItemSettings()));
 
 		dust = Registry.register(Registries.ITEM, Reforested.id(id + "_dust"), new Item(new Item.Settings()));
-		ingot = Registry.register(Registries.ITEM, Reforested.id(id + "_ingot"), new Item(new Item.Settings()));
 		nugget = Registry.register(Registries.ITEM, Reforested.id(id + "_nugget"), new Item(new Item.Settings()));
 		rawOre = Registry.register(Registries.ITEM, Reforested.id("raw_" + id), new Item(new Item.Settings()));
 
 		Reforested.GROUP_ITEMS.add(new ItemStack(dust));
-		Reforested.GROUP_ITEMS.add(new ItemStack(ingot));
 		Reforested.GROUP_ITEMS.add(new ItemStack(nugget));
 		Reforested.GROUP_ITEMS.add(new ItemStack(rawOre));
 	}

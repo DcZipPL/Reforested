@@ -14,7 +14,6 @@ import net.minecraft.registry.Registry;
 public class ModBlocks {
 
 	public static final Block MEADOW_BEE_NEST = registerBeeNest("meadow");
-	public static final Block FOREST_BEE_NEST = registerBeeNest("forest");
 	public static final Block DESERT_BEE_NEST = registerBeeNest("desert");
 	public static final Block JUNGLE_BEE_NEST = registerBeeNest("jungle");
 	public static final Block SWAMP_BEE_NEST = registerBeeNest("swamp");

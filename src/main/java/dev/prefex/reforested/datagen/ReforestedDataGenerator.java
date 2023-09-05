@@ -21,6 +21,7 @@ public class ReforestedDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ReforestedEnglishLangProvider::new);
 		pack.addProvider(ReforestedBlockTagProvider::new);
 		pack.addProvider(ReforestedBlockLootTables::new);
+		pack.addProvider(ReforestedRecipeProvider::new);
 	}
 
 	public static void executeBeeNestFunction(Consumer<Block> block) {

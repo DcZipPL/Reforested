@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "reforested:bronze_gear"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "I": {
+      "item": "reforested:bronze_ingot"
+    },
+    "P": {
+      "item": "minecraft:piston"
+    }
+  },
+  "pattern": [
+    "III",
+    " G ",
+    "#P#"
+  ],
+  "result": {
+    "item": "reforested:biogas_engine"
+  },
+  "show_notification": true
+}

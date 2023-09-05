@@ -13,6 +13,9 @@ public class ModItems {
 	public static ArrayList<HoneycombItem> HONEYCOMBS = new ArrayList<>();
 	public static ArrayList<PropolisItem> PROPOLISES = new ArrayList<>();
 
+	public static final Item TIN_INGOT = register("tin_ingot");
+	public static final Item BRONZE_INGOT = register("bronze_ingot");
+
 	// Temporary Bee Item
 	public static final Item BEE_DRONE = register("bee_drone");
 	public static final Item BEE_QUEEN = register("bee_queen");
@@ -21,6 +24,7 @@ public class ModItems {
 
 	// Tools
 	public static final Item SCOOP = register("scoop", new ScoopItem());
+	public static final Item CAN = register("can");
 
 	// Forestry Mod Honeycombs
 	public static final HoneycombItem COCOA_HONEYCOMB = HoneycombItem.register("cocoa");
