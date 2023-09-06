@@ -1,6 +1,7 @@
 package dev.prefex.reforested.blocks;
 
 import dev.prefex.reforested.Reforested;
+import dev.prefex.reforested.machines.carpenter.CarpenterBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BeehiveBlock;
 import net.minecraft.block.Block;
@@ -9,6 +10,7 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.sound.BlockSoundGroup;
 
 @SuppressWarnings("unused")
 public class ModBlocks {
@@ -22,7 +24,7 @@ public class ModBlocks {
 
 	// TODO: Add rest of Forestry blocks but with red tooltip "Not implemented yet!"
 
-	public static final Block CARPENTER = register("carpenter", new WipBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
+	public static final Block CARPENTER = register("carpenter", new CarpenterBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).sounds(BlockSoundGroup.COPPER)));
 	public static final Block SQUEEZER = register("squeezer", new WipBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
 	public static final Block CENTRIFUGE = register("centrifuge", new WipBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
 	public static final Block STILL = register("still", new WipBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));

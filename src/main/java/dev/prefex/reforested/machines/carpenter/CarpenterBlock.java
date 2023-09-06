@@ -9,7 +9,7 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 public class CarpenterBlock extends MachineBlock {
-	protected CarpenterBlock(Settings settings) {
+	public CarpenterBlock(Settings settings) {
 		super(settings);
 	}
 

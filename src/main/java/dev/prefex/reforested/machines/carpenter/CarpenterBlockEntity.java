@@ -41,7 +41,7 @@ public class CarpenterBlockEntity extends MachineBlockEntity {
 
 	@Override
 	protected ScreenHandler createScreenHandler(int syncId, PlayerInventory playerInventory) {
-		return null;
+		return new CarpenterScreenHandler(syncId, playerInventory, this, this.properties);
 	}
 
 	@Override

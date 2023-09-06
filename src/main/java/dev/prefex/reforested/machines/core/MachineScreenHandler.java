@@ -4,6 +4,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SimpleInventory;
+import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.ArrayPropertyDelegate;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
@@ -16,7 +17,7 @@ public abstract class MachineScreenHandler extends ScreenHandler {
     protected PropertyDelegate propertyDelegate;
     protected World world;
 
-    public MachineScreenHandler(@Nullable ScreenHandlerType<?> type, int syncId, PlayerInventory playerInventory, int inventorySize, int propertySize) {
+    public MachineScreenHandler(@Nullable ScreenHandlerType<?> type, int syncId, PlayerInventory playerInventory, int inventorySize, int propertySize, PacketByteBuf buf) {
         this(type, syncId, playerInventory, new SimpleInventory(inventorySize), new ArrayPropertyDelegate(propertySize), inventorySize, propertySize);
     }
 

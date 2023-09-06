@@ -3,14 +3,19 @@ package dev.prefex.reforested;
 import dev.prefex.reforested.entity.ModEntities;
 import dev.prefex.reforested.entity.ReforestedBeeRenderer;
 import dev.prefex.reforested.items.ModItems;
+import dev.prefex.reforested.machines.carpenter.CarpenterScreen;
+import dev.prefex.reforested.machines.core.ModMachines;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.item.Item;
 
 public class ReforestedClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
+
+		HandledScreens.register(ModMachines.CARPENTER_SCREEN_HANDLER, CarpenterScreen::new);
 
 		// Honeycombs
 		registerColor(ModItems.COCOA_HONEYCOMB,			0xffb62b, 0x674016);
@@ -29,12 +34,6 @@ public class ReforestedClient implements ClientModInitializer {
 		registerColor(ModItems.WHEATEN_HONEYCOMB,		0xffffff, 0xfeff8f);
 		registerColor(ModItems.MOSSY_HONEYCOMB,			0x7e9939, 0x2a3313);
 		registerColor(ModItems.MELLOW_HONEYCOMB,		0xfff960, 0x886000);
-
-		// Proplis
-		registerColor(ModItems.PROPOLIS,				0xc5b24e);
-		registerColor(ModItems.STICKY_PROPOLIS,			0xc68e57);
-		registerColor(ModItems.PULSATING_PROPOLIS,		0x2ccdb1);
-		registerColor(ModItems.SILKY_PROPOLIS,			0xddff00);
 
 		EntityRendererRegistry.register(ModEntities.FOREST_BEE, ctx -> new ReforestedBeeRenderer(ctx, "forest_bee"));
 		EntityRendererRegistry.register(ModEntities.MEADOW_BEE, ctx -> new ReforestedBeeRenderer(ctx, "meadow_bee"));
