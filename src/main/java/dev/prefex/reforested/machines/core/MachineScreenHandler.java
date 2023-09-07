@@ -39,15 +39,8 @@ public abstract class MachineScreenHandler extends ScreenHandler {
 
         this.pos = BlockPos.ORIGIN;
 
-        for(int i = 0; i < 3; ++i) {
-            for(int j = 0; j < 9; ++j) {
-                this.addSlot(new Slot(playerInventory, j + i * 9 + 9, 8 + j * 18, yOffset + i * 18));
-            }
-        }
-
-        for(int i = 0; i < 9; ++i) {
-            this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));
-        }
+        makeGrid(playerInventory, 9, 8, yOffset, 3, 9);
+        makeGrid(playerInventory, 0, 8, yOffset + 142, 1, 9);
 
         this.addProperties(propertyDelegate);
     }
@@ -62,6 +55,22 @@ public abstract class MachineScreenHandler extends ScreenHandler {
     }
 
     protected void ghostSlot(int x, int y) {
-        this.addSlot(new Slot(inventory, nextIndex++, x, y));
+        this.addSlot(new GhostSlot(inventory, nextIndex++, x, y));
+    }
+
+    protected void makeGrid(Inventory inventory, int startIndex, int x, int y, int xSize, int ySize) {
+        for(int i = 0; i < xSize; ++i) {
+            for(int j = 0; j < ySize; ++j) {
+                this.addSlot(new Slot(inventory, j + i * 9 + startIndex, x + j * 18, y + i * 18));
+            }
+        }
+    }
+
+    protected void makeGhostGrid(int startIndex, int x, int y, int xSize, int ySize) {
+        for(int i = 0; i < xSize; ++i) {
+            for(int j = 0; j < ySize; ++j) {
+                this.addSlot(new GhostSlot(inventory, j + i * 9 + startIndex, x + j * 18, y + i * 18));
+            }
+        }
     }
 }
