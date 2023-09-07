@@ -19,12 +19,14 @@ public abstract class MachineScreen<T extends ScreenHandler> extends HandledScre
 
 	@Override
 	protected void drawBackground(DrawContext context, float delta, int mouseX, int mouseY) {
-		context.drawTexture(this.background, this.x, this.y, 0, 0, this.backgroundWidth, this.backgroundHeight);
+		context.drawTexture(this.background, x, y, 0, 0, this.backgroundWidth, this.backgroundHeight, 256,256);
 	}
 
 	@Override
 	public void render(DrawContext context, int mouseX, int mouseY, float delta) {
+		this.renderBackground(context);
 		super.render(context, mouseX, mouseY, delta);
+		this.drawMouseoverTooltip(context, mouseX, mouseY);
 		for (Slot slot : handler.slots) {
 			if (slot instanceof GhostSlot) {
 				float[] defaultShader = RenderSystem.getShaderColor();

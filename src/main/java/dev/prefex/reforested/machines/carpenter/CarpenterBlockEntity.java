@@ -6,8 +6,10 @@ import dev.prefex.reforested.machines.core.MachineBlockEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import org.jetbrains.annotations.Nullable;
@@ -15,7 +17,7 @@ import org.jetbrains.annotations.Nullable;
 public class CarpenterBlockEntity extends MachineBlockEntity {
 	public static final int INVENTORY_SIZE = 13;
 	public static final int PROPERTY_SIZE = 2;
-	public static final int Y_OFFSET = 84;
+	public static final int Y_OFFSET = 92;
 
 	int processTime;
 	int maxProcessTime;
@@ -38,6 +40,17 @@ public class CarpenterBlockEntity extends MachineBlockEntity {
 	@Override
 	protected ScreenHandler createScreenHandler(int syncId, PlayerInventory playerInventory) {
 		return new CarpenterScreenHandler(syncId, playerInventory, this, this.properties);
+	}
+
+	/**
+	 * Writes additional server -&gt; client screen opening data to the buffer.
+	 *
+	 * @param player the player that is opening the screen
+	 * @param buf	the packet buffer
+	 */
+	@Override
+	public void writeScreenOpeningData(ServerPlayerEntity player, PacketByteBuf buf) {
+		buf.writeBlockPos(pos);
 	}
 
 	@Override

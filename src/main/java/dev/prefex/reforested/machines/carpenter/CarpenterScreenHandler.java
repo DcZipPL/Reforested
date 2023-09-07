@@ -19,7 +19,7 @@ public class CarpenterScreenHandler extends MachineScreenHandler {
 	protected CarpenterScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate propertyDelegate) {
 		super(ModMachines.CARPENTER_SCREEN_HANDLER, syncId, playerInventory, inventory, propertyDelegate, INVENTORY_SIZE, PROPERTY_SIZE, Y_OFFSET);
 
-		slot(0,0);
+		makeGrid(inventory, 0, 8, 8, 3, 4);
 	}
 
 	@Override

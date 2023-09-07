@@ -11,10 +11,12 @@ public class CarpenterScreen extends MachineScreen<CarpenterScreenHandler> {
 
 	public CarpenterScreen(CarpenterScreenHandler handler, PlayerInventory inventory, Text title) {
 		super(handler, inventory, title, id("textures/gui/carpenter.png"));
+		this.height = 176;
+		this.width = 172;
 	}
 
 	@Override
 	protected void drawBackground(DrawContext context, float delta, int mouseX, int mouseY) {
-
+		super.drawBackground(context, delta, mouseX, mouseY);
 	}
 }
