@@ -9,16 +9,17 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.PropertyDelegate;
 
-import static dev.prefex.reforested.machines.carpenter.CarpenterBlockEntity.INVENTORY_SIZE;
-import static dev.prefex.reforested.machines.carpenter.CarpenterBlockEntity.PROPERTY_SIZE;
+import static dev.prefex.reforested.machines.carpenter.CarpenterBlockEntity.*;
 
 public class CarpenterScreenHandler extends MachineScreenHandler {
-	protected CarpenterScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate propertyDelegate) {
-		super(ModMachines.CARPENTER_SCREEN_HANDLER, syncId, playerInventory, inventory, propertyDelegate, INVENTORY_SIZE, PROPERTY_SIZE);
-	}
 
 	public CarpenterScreenHandler(int syncId, PlayerInventory playerInventory, PacketByteBuf buf) {
-		super(ModMachines.CARPENTER_SCREEN_HANDLER, syncId, playerInventory, INVENTORY_SIZE, PROPERTY_SIZE, buf);
+		super(ModMachines.CARPENTER_SCREEN_HANDLER, syncId, playerInventory, buf, INVENTORY_SIZE, PROPERTY_SIZE, Y_OFFSET);
+	}
+	protected CarpenterScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate propertyDelegate) {
+		super(ModMachines.CARPENTER_SCREEN_HANDLER, syncId, playerInventory, inventory, propertyDelegate, INVENTORY_SIZE, PROPERTY_SIZE, Y_OFFSET);
+
+		slot(0,0);
 	}
 
 	@Override

@@ -5,9 +5,12 @@ import net.minecraft.client.gui.DrawContext;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.text.Text;
 
+import static dev.prefex.reforested.Reforested.id;
+
 public class CarpenterScreen extends MachineScreen<CarpenterScreenHandler> {
+
 	public CarpenterScreen(CarpenterScreenHandler handler, PlayerInventory inventory, Text title) {
-		super(handler, inventory, title);
+		super(handler, inventory, title, id("textures/gui/carpenter.png"));
 	}
 
 	@Override

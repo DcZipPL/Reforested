@@ -4,22 +4,18 @@ import dev.prefex.reforested.machines.core.ModMachines;
 import dev.prefex.reforested.machines.core.WrappedDelegate;
 import dev.prefex.reforested.machines.core.MachineBlockEntity;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.entity.AbstractFurnaceBlockEntity;
-import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
-import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import org.jetbrains.annotations.Nullable;
 
 public class CarpenterBlockEntity extends MachineBlockEntity {
-	public static final int INVENTORY_SIZE = 30;
+	public static final int INVENTORY_SIZE = 13;
 	public static final int PROPERTY_SIZE = 2;
+	public static final int Y_OFFSET = 84;
 
 	int processTime;
 	int maxProcessTime;
