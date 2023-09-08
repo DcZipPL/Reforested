@@ -5,11 +5,9 @@ import dev.prefex.reforested.machines.carpenter.CarpenterBlockEntity;
 import dev.prefex.reforested.machines.carpenter.CarpenterScreenHandler;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerType;
-import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.screen.ScreenHandlerType;
 
 import static dev.prefex.reforested.Reforested.id;
 

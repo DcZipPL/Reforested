@@ -40,7 +40,7 @@ public abstract class MachineScreenHandler extends ScreenHandler {
         this.pos = BlockPos.ORIGIN;
 
         makeGrid(playerInventory, 9, 8, yOffset, 9, 3);
-        makeGrid(playerInventory, 0, 8, yOffset + 62, 9, 1);
+        makeGrid(playerInventory, 0, 8, yOffset + 58, 9, 1);
 
         this.addProperties(propertyDelegate);
     }

@@ -16,6 +16,8 @@ import net.minecraft.util.math.BlockPos;
 
 import java.util.Iterator;
 
+import static dev.prefex.reforested.Reforested.MOD_ID;
+
 public abstract class MachineBlockEntity extends LockableContainerBlockEntity implements ExtendedScreenHandlerFactory, SidedInventory {
     protected DefaultedList<ItemStack> inventory;
     protected String name;
@@ -47,7 +49,7 @@ public abstract class MachineBlockEntity extends LockableContainerBlockEntity im
 
     @Override
     protected Text getContainerName() {
-        return Text.translatable(this.name);
+        return Text.translatable("container."+MOD_ID+"."+this.name);
     }
 
     public boolean isEmpty() {

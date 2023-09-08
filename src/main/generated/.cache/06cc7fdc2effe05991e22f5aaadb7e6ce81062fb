@@ -1,4 +1,5 @@
-// 1.20.1	2023-09-05T20:14:17.0278476	Reforested/Recipes
+// 1.20.1	2023-09-08T15:45:45.1477539	Reforested/Recipes
+977fa72be5ebe22a947e9ea60c29b0f37d5d7cb4 data\reforested\recipes\scoop.json
 6f96ca53f4e273e5a288a5abe80a78920524676e data\reforested\advancements\recipes\misc\centrifuge.json
 dd2c2dff9932f531537b079204a12c02e95c3a85 data\reforested\recipes\peat_engine.json
 741cd1b0f5487d68e5c8bd48d828338c803f7536 data\reforested\advancements\recipes\misc\moistener.json
@@ -10,6 +11,7 @@ df0ad6d62d589788afc9ddb75b15e0d39ca47ea0 data\reforested\advancements\recipes\mi
 f5061bafae23f7dc3b629cefdc254545af2d1a1b data\reforested\recipes\centrifuge.json
 6a523acba0c657d1948e7f5f03c0a535d66f2be9 data\reforested\recipes\squeezer.json
 4a44bb4c963ca50b3c56266083b56a401f59d1d2 data\reforested\recipes\clockwork_engine.json
+6d1024e37a0fa3f27fb12ae7cde41450de9e0819 data\reforested\advancements\recipes\misc\scoop.json
 cede8d4f39cc64d0bf172c4167c86309e1d92041 data\reforested\advancements\recipes\misc\squeezer.json
 9401e2774d8b0582732fdd1294a3217ded56ae0c data\reforested\advancements\recipes\misc\clockwork_engine.json
 d498851158f1055e6d355142d2e14afd12fc2ffd data\reforested\recipes\bio_generator.json

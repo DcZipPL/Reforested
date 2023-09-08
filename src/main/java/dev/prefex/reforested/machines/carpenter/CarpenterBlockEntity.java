@@ -17,7 +17,7 @@ import org.jetbrains.annotations.Nullable;
 public class CarpenterBlockEntity extends MachineBlockEntity {
 	public static final int INVENTORY_SIZE = 13;
 	public static final int PROPERTY_SIZE = 2;
-	public static final int Y_OFFSET = 92;
+	public static final int Y_OFFSET = 86;
 
 	int processTime;
 	int maxProcessTime;

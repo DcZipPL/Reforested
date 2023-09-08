@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": {
+      "item": "reforested:bronze_ingot"
+    },
+    "W": {
+      "tag": "minecraft:wool"
+    }
+  },
+  "pattern": [
+    "SWS",
+    " S ",
+    " S "
+  ],
+  "result": {
+    "item": "reforested:scoop"
+  },
+  "show_notification": true
+}

@@ -12,7 +12,9 @@ public class CarpenterScreen extends MachineScreen<CarpenterScreenHandler> {
 	public CarpenterScreen(CarpenterScreenHandler handler, PlayerInventory inventory, Text title) {
 		super(handler, inventory, title, id("textures/gui/carpenter.png"));
 		this.height = 176;
-		this.width = 172;
+		this.width = 168;
+		this.backgroundWidth = 176;
+		this.backgroundHeight = 168;
 	}
 
 	@Override
