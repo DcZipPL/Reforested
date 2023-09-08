@@ -15,7 +15,7 @@ import net.minecraft.util.math.Direction;
 import org.jetbrains.annotations.Nullable;
 
 public class CarpenterBlockEntity extends MachineBlockEntity {
-	public static final int INVENTORY_SIZE = 13;
+	public static final int INVENTORY_SIZE = 14;
 	public static final int PROPERTY_SIZE = 2;
 	public static final int Y_OFFSET = 86;
 
@@ -65,16 +65,16 @@ public class CarpenterBlockEntity extends MachineBlockEntity {
 
 	@Override
 	public int[] getAvailableSlots(Direction side) {
-		return new int[0];
+		return new int[1];
 	}
 
 	@Override
 	public boolean canInsert(int slot, ItemStack stack, @Nullable Direction dir) {
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean canExtract(int slot, ItemStack stack, Direction dir) {
-		return false;
+		return true;
 	}
 }

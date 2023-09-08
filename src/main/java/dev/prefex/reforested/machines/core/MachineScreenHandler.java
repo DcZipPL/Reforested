@@ -31,19 +31,23 @@ public abstract class MachineScreenHandler extends ScreenHandler {
     public MachineScreenHandler(@Nullable ScreenHandlerType<?> type, int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate propertyDelegate,
                                 int inventorySize, int propertySize, int yOffset) {
         super(type, syncId);
-        checkSize(inventory, inventorySize);
-        checkDataCount(propertyDelegate, propertySize);
+        //checkSize(inventory, inventorySize);
+        //checkDataCount(propertyDelegate, propertySize);
         this.inventory = inventory;
         this.propertyDelegate = propertyDelegate;
         this.world = playerInventory.player.getWorld();
 
         this.pos = BlockPos.ORIGIN;
 
+        createSlots();
+
         makeGrid(playerInventory, 9, 8, yOffset, 9, 3);
         makeGrid(playerInventory, 0, 8, yOffset + 58, 9, 1);
 
         this.addProperties(propertyDelegate);
     }
+
+    public abstract void createSlots();
 
     @Override
     public boolean canUse(PlayerEntity player) {
@@ -69,7 +73,7 @@ public abstract class MachineScreenHandler extends ScreenHandler {
     protected void makeGhostGrid(int startIndex, int x, int y, int xSize, int ySize) {
         for(int i = 0; i < ySize; ++i) {
             for(int j = 0; j < xSize; ++j) {
-                this.addSlot(new GhostSlot(inventory, j + i * 9 + startIndex, x + j * 18, y + i * 18));
+                this.addSlot(new GhostSlot(inventory, j + i * xSize + startIndex, x + j * 18, y + i * 18));
             }
         }
     }

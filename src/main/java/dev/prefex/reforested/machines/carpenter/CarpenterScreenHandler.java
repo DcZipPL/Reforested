@@ -8,6 +8,7 @@ import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.PropertyDelegate;
+import net.minecraft.screen.slot.Slot;
 
 import static dev.prefex.reforested.machines.carpenter.CarpenterBlockEntity.*;
 
@@ -18,12 +19,21 @@ public class CarpenterScreenHandler extends MachineScreenHandler {
 	}
 	protected CarpenterScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate propertyDelegate) {
 		super(ModMachines.CARPENTER_SCREEN_HANDLER, syncId, playerInventory, inventory, propertyDelegate, INVENTORY_SIZE, PROPERTY_SIZE, Y_OFFSET);
-
-		makeGrid(inventory, 0, 8, 8, 3, 4);
 	}
 
 	@Override
 	public ItemStack quickMove(PlayerEntity player, int slot) {
 		return null;
+	}
+
+	@Override
+	public void createSlots() {
+		slot(80, 19);
+		slot(80, 54);
+		slot(116, 55);
+		slot(134, 13);
+		slot(134, 55);
+
+		makeGhostGrid(5, 10, 19, 3,3);
 	}
 }
