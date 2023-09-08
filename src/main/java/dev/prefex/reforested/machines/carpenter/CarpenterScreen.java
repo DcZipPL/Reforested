@@ -12,6 +12,7 @@ import static dev.prefex.reforested.Reforested.id;
 public class CarpenterScreen extends MachineScreen<CarpenterScreenHandler> {
 
 	public ButtonWidget lockButton;
+	public ButtonWidget redstoneButton;
 
 	public CarpenterScreen(CarpenterScreenHandler handler, PlayerInventory inventory, Text title) {
 		super(handler, inventory, title, id("textures/gui/carpenter.png"));
@@ -31,5 +32,8 @@ public class CarpenterScreen extends MachineScreen<CarpenterScreenHandler> {
 		super.init();
 		lockButton = new ButtonWidget(this.x + 65, this.y + 18, ButtonType.LOCK, Text.of("Lock recipe"));
 		this.addDrawableChild(lockButton);
+
+		redstoneButton = new ButtonWidget(this.x + 180, this.y + 18, ButtonType.REDSTONE, Text.of("Change redstone mode"));
+		this.addDrawableChild(redstoneButton);
 	}
 }

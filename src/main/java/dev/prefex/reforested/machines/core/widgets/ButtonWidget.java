@@ -12,14 +12,14 @@ import static dev.prefex.reforested.Reforested.id;
 
 public class ButtonWidget extends ClickableWidget {
 	private static final int TEXTURE_WIDTH = 60;
-	private static final int TEXTURE_HEIGHT = 72;
+	private static final int TEXTURE_HEIGHT = 96;
 	private static final int TEXTURE_SIZE = 12;
-	private static final int RIPPLE_DURATION = 10;
+	private static final int RIPPLE_DURATION = 8;
 
 	private float rippleTimer = 0;
+	private int state = 0;
 
 	protected ButtonType type;
-	protected int state = 0;
 
 	public ButtonWidget(int x, int y, @NotNull ButtonType type, Text message) {
 		super(x, y, TEXTURE_SIZE, TEXTURE_SIZE, message);
@@ -42,6 +42,7 @@ public class ButtonWidget extends ClickableWidget {
 	public void onClick(double mouseX, double mouseY) {
 		super.onClick(mouseX, mouseY);
 		rippleTimer = RIPPLE_DURATION;
+		state = (state + 1) % type.statesAmount;
 	}
 
 	@Override
@@ -50,14 +51,22 @@ public class ButtonWidget extends ClickableWidget {
 	}
 
 	private int getTextureU() {
-		return (type.ordinal() == 0 ? 0 : type.ordinal() * TEXTURE_SIZE * 2 + TEXTURE_SIZE) + rippleTimer > 0 ? TEXTURE_SIZE : 0;
+		return (type.ordinal() == 0 ? 0 : type.ordinal() * TEXTURE_SIZE * 2 + TEXTURE_SIZE) + (rippleTimer > 0 ? TEXTURE_SIZE : 0);
 	}
 
 	private int getTextureV() {
-		return this.state == 0 ? hoverTextureOffset(0) * TEXTURE_SIZE : this.state * TEXTURE_SIZE * hoverTextureOffset(1);
+		return this.state == 0 ? hoverTextureOffset() * TEXTURE_SIZE : (this.state * TEXTURE_SIZE) + (TEXTURE_SIZE * hoverTextureOffset());
 	}
 
-	private int hoverTextureOffset(int defaultOffset) {
-		return rippleTimer > 0 ? defaultOffset : (isHovered() ? type.statesAmount : defaultOffset);
+	private int hoverTextureOffset() {
+		return rippleTimer > 0 ? 0 : (isHovered() ? type.statesAmount : 0);
+	}
+
+	public void setState(int state) {
+		this.state = state;
+	}
+
+	public int getState() {
+		return state;
 	}
 }

@@ -29,7 +29,7 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 						.pattern("SWS")
 						.pattern(" S ")
 						.pattern(" S ")
-						.input('S', ModItems.BRONZE_INGOT)
+						.input('S', Items.STICK)
 						.input('W', ItemTags.WOOL),
 				ModItems.STURDY_CASING
 		).offerTo(exporter, Registries.ITEM.getId(ModItems.SCOOP));
