@@ -24,6 +24,10 @@ repositories {
 			includeGroup "curse.maven"
 		}
 	}
+	maven {
+		name = 'GeckoLib'
+		url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+	}
 }
 
 dependencies {
@@ -52,6 +56,8 @@ dependencies {
 	include "dev.onyxstudios.cardinal-components-api:cardinal-components-item:${cc_version}"
 
 	modImplementation "vazkii.patchouli:Patchouli:${patchouli_version}"
+
+	modImplementation 'software.bernie.geckolib:geckolib-fabric-1.20.1:4.2.2'
 
 	// Visit https://www.curseforge.com/minecraft/mc-mods/jade/files
 	// to get the latest version's jade_id
