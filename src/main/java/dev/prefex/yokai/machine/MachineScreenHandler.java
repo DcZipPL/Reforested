@@ -1,4 +1,4 @@
-package dev.prefex.reforested.machines.core;
+package dev.prefex.yokai.machine;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -13,6 +13,8 @@ import net.minecraft.screen.slot.Slot;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+
+import dev.prefex.yokai.GhostSlot;
 
 public abstract class MachineScreenHandler extends ScreenHandler {
     private int nextIndex = 0;

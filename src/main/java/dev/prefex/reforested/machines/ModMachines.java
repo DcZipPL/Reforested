@@ -1,4 +1,4 @@
-package dev.prefex.reforested.machines.core;
+package dev.prefex.reforested.machines;
 
 import dev.prefex.reforested.blocks.ModBlocks;
 import dev.prefex.reforested.machines.carpenter.CarpenterBlockEntity;

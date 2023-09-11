@@ -1,4 +1,4 @@
-package dev.prefex.reforested.machines.core;
+package dev.prefex.yokai.machine;
 
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.util.Pair;

@@ -1,6 +1,6 @@
 package dev.prefex.reforested.machines.carpenter;
 
-import dev.prefex.reforested.machines.core.MachineBlock;
+import dev.prefex.yokai.machine.MachineBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.util.ItemScatterer;

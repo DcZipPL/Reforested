@@ -1,6 +1,6 @@
 package dev.prefex.reforested.machines.carpenter;
 
-import dev.prefex.reforested.machines.core.MachineScreen;
+import dev.prefex.yokai.machine.MachineScreen;
 import dev.prefex.reforested.machines.core.widgets.ButtonType;
 import dev.prefex.reforested.machines.core.widgets.ButtonWidget;
 import net.minecraft.client.gui.DrawContext;

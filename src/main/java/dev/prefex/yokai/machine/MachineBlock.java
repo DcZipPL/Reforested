@@ -1,4 +1,4 @@
-package dev.prefex.reforested.machines.core;
+package dev.prefex.yokai.machine;
 
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;

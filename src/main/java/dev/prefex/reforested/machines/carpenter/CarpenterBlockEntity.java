@@ -1,8 +1,8 @@
 package dev.prefex.reforested.machines.carpenter;
 
-import dev.prefex.reforested.machines.core.ModMachines;
-import dev.prefex.reforested.machines.core.WrappedDelegate;
-import dev.prefex.reforested.machines.core.MachineBlockEntity;
+import dev.prefex.reforested.machines.ModMachines;
+import dev.prefex.yokai.machine.WrappedDelegate;
+import dev.prefex.yokai.machine.MachineBlockEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;

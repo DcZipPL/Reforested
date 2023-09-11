@@ -1,4 +1,4 @@
-package dev.prefex.reforested.machines.core;
+package dev.prefex.yokai.machine;
 
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;

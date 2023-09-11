@@ -1,4 +1,4 @@
-package dev.prefex.reforested.machines.core;
+package dev.prefex.yokai.machine;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.DrawContext;
@@ -8,6 +8,8 @@ import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+
+import dev.prefex.yokai.GhostSlot;
 
 public abstract class MachineScreen<T extends ScreenHandler> extends HandledScreen<T> {
 	protected final Identifier background;

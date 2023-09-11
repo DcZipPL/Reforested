@@ -1,7 +1,7 @@
 package dev.prefex.reforested.machines.carpenter;
 
-import dev.prefex.reforested.machines.core.MachineScreenHandler;
-import dev.prefex.reforested.machines.core.ModMachines;
+import dev.prefex.yokai.machine.MachineScreenHandler;
+import dev.prefex.reforested.machines.ModMachines;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
