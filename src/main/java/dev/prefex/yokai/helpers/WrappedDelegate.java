@@ -1,4 +1,4 @@
-package dev.prefex.yokai.machine;
+package dev.prefex.yokai.helpers;
 
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.util.Pair;
