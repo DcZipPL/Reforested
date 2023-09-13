@@ -23,6 +23,8 @@ public class ReforestedItemTagProvider extends FabricTagProvider.ItemTagProvider
 		addTag(ModTags.TIN_GEARS, ModItems.TIN_GEAR);
 		addTag(ModTags.BRONZE_GEARS, ModItems.BRONZE_GEAR);
 		addTag(ModTags.GEARS, ModItems.COPPER_GEAR, ModItems.TIN_GEAR, ModItems.BRONZE_GEAR);
+
+		addTag(ModTags.INGOTS, ModItems.TIN_INGOT, ModItems.BRONZE_INGOT);
 	}
 
 	private void addTag(TagKey<Item> tag, Item... items) {

@@ -12,7 +12,9 @@ public class ModTags {
 		return new Identifier("c", s);
 	}
 
+	public static final TagKey<Item> INGOTS = TagKey.of(RegistryKeys.ITEM, common("ingots"));
 	public static final TagKey<Item> GEARS = TagKey.of(RegistryKeys.ITEM, common("gears"));
+
 	public static final TagKey<Item> COPPER_GEARS = TagKey.of(RegistryKeys.ITEM, common("copper_gears"));
 	public static final TagKey<Item> TIN_GEARS = TagKey.of(RegistryKeys.ITEM, common("tin_gears"));
 	public static final TagKey<Item> BRONZE_GEARS = TagKey.of(RegistryKeys.ITEM, common("bronze_gears"));
