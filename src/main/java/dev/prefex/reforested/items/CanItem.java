@@ -58,6 +58,8 @@ public class CanItem extends Item {
 					return false;
 			}
 		}
+
+		otherFluid.setAmount(otherFluid.getAmount().fraction(stack.getCount()));
 		nbtCompound.put("fluid", otherFluid.toTag(new NbtCompound()));
 		return true;
 	}

@@ -1,53 +1,45 @@
 {
   "fabric:load_conditions": [
     {
-      "condition": "fabric:all_mods_loaded",
-      "values": [
-        "lightestlamp"
-      ]
-    },
-    {
       "condition": "fabric:not",
       "value": {
         "condition": "fabric:any_mod_loaded",
         "values": [
-          "techreborn",
-          "modern_industrialization",
-          "indrev"
+          "techreborn"
         ]
       }
     }
   ],
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_sturdy_casing": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "reforested:can"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_tin_ingot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "reforested:sturdy_casing"
+              "reforested:tin_ingot"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
-    },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "reforested:bronze_ingot"
-      },
-      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_sturdy_casing",
+      "has_tin_ingot",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "reforested:bronze_ingot"
+      "reforested:can"
     ]
   },
   "sends_telemetry_event": false

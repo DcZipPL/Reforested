@@ -2,6 +2,7 @@ package dev.prefex.reforested.datagen;
 
 import dev.prefex.reforested.blocks.ModBlocks;
 import dev.prefex.reforested.items.ModItems;
+import dev.prefex.reforested.util.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Blocks;
@@ -25,11 +26,17 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 
 	private ConditionJsonProvider[] conditions = null;
 
-	private void startCompat(String... modid) {
+	private void withCompat(String... modid) {
 		conditions = new ConditionJsonProvider[] { DefaultResourceConditions.allModsLoaded(modid) };
 	}
 
-	private void bowlAndStickCompat(String with, String... without) {
+	private void withoutCompat(String... without) {
+		conditions = new ConditionJsonProvider[] {
+				DefaultResourceConditions.not(DefaultResourceConditions.anyModLoaded(without))
+		};
+	}
+
+	private void oneModCompat(String with, String... without) {
 		conditions = new ConditionJsonProvider[] {
 				DefaultResourceConditions.allModsLoaded(with),
 				DefaultResourceConditions.not(DefaultResourceConditions.anyModLoaded(without))
@@ -40,14 +47,35 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 	public void generate(Consumer<RecipeJsonProvider> exporter) {
 		generateCraftingRecipes(exporter);
 
-		bowlAndStickCompat("lightestlamp", "techreborn", "modern_industrialization", "indrev");
+		oneModCompat("lightestlamp", "techreborn", "modern_industrialization", "indrev");
 		addShapelessCriteria(
 				ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.BRONZE_INGOT, 4)
 						.input(dev.prefex.lightestlamp.init.ModItems.STICKANDBOWL)
 						.input(Items.COPPER_INGOT,3)
 						.input(ModItems.TIN_INGOT),
-				ModItems.STURDY_CASING
-		).offerTo(withConditions(exporter, conditions), Registries.ITEM.getId(ModItems.BRONZE_INGOT));
+				ModItems.TIN_INGOT
+		).offerTo(withConditions(exporter, conditions), Registries.ITEM.getId(ModItems.BRONZE_INGOT)+"_lightestlamps");
+
+		withoutCompat("techreborn");
+		addShapedCriteria(
+				ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.CAN, 2)
+						.pattern(" I ")
+						.pattern("I I")
+						.pattern(" I ")
+						.input('I', ModItems.TIN_INGOT),
+				ModItems.TIN_INGOT
+		).offerTo(withConditions(exporter, conditions), Registries.ITEM.getId(ModItems.CAN));
+
+		withCompat("techreborn");
+		addShapedCriteria(
+				ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.CAN, 4)
+						.pattern(" I ")
+						.pattern("IGI")
+						.pattern(" I ")
+						.input('G', ModTags.GLASS)
+						.input('I', ModItems.TIN_INGOT),
+				ModItems.TIN_INGOT
+		).offerTo(withConditions(exporter, conditions), Registries.ITEM.getId(ModItems.CAN)+"_compat");
 	}
 
 	private void generateCraftingRecipes(Consumer<RecipeJsonProvider> exporter) {

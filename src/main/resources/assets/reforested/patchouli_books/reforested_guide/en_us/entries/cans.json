@@ -1,0 +1,16 @@
+{
+	"name": "Cans and Capsules",
+	"icon": "reforested:can",
+	"category": "reforested:utilities",
+	"priority": false,
+	"pages": [
+		{
+			"type": "patchouli:text",
+			"text": "$(item)Cans$() can store any fluids with any amount. You can click with a full $(item)Bucket$() to fill it. When are multiple $(item)Cans$() in one slot fluid from $(item)Bucket$() will be divided. If $(item)Can$() has 1000 m\uD83E\uDEA3, you can empty it with $(item)Bucket$(). $(br2)There is upgraded form of a $(item)Can$() named $(item)Capsule$() they can store from 2\uD83E\uDEA3 to 4\uD83E\uDEA3 instead of 1\uD83E\uDEA3.$(b2)$(item)Can$() or $(item)Capsule$() can be used in machines."
+		},
+		{
+			"type": "patchouli:crafting",
+			"crafting": "reforested:can"
+		}
+	]
+}

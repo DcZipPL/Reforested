@@ -8,9 +8,12 @@ import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 
 public class ModTags {
+
 	private static Identifier common(String s) {
 		return new Identifier("c", s);
 	}
+
+	public static final TagKey<Item> GLASS = TagKey.of(RegistryKeys.ITEM, common("glass"));
 
 	public static final TagKey<Item> INGOTS = TagKey.of(RegistryKeys.ITEM, common("ingots"));
 	public static final TagKey<Item> GEARS = TagKey.of(RegistryKeys.ITEM, common("gears"));
