@@ -6,10 +6,10 @@
       "item": "reforested:sturdy_casing"
     },
     "C": {
-      "item": "minecraft:chest"
+      "tag": "c:chest"
     },
     "G": {
-      "item": "minecraft:glass"
+      "tag": "c:glass"
     },
     "I": {
       "item": "minecraft:gold_ingot"

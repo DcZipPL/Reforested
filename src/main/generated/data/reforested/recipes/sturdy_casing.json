@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "#": {
-      "item": "reforested:bronze_ingot"
+      "tag": "c:bronze_ingots"
     }
   },
   "pattern": [

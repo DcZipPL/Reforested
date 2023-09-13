@@ -3,22 +3,16 @@
   "category": "misc",
   "key": {
     "#": {
-      "item": "reforested:sturdy_casing"
-    },
-    "G": {
-      "item": "minecraft:glass"
-    },
-    "I": {
       "tag": "c:tin_ingots"
     }
   },
   "pattern": [
-    "IGI",
-    "I#I",
-    "IGI"
+    " # ",
+    "# #",
+    " # "
   ],
   "result": {
-    "item": "reforested:squeezer"
+    "item": "reforested:tin_gear"
   },
   "show_notification": true
 }

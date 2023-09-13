@@ -9,7 +9,7 @@
       "item": "minecraft:glass"
     },
     "I": {
-      "item": "reforested:bronze_ingot"
+      "tag": "c:bronze_ingots"
     },
     "P": {
       "item": "minecraft:piston"

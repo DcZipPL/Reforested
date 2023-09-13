@@ -1,15 +1,4 @@
 {
-  "fabric:load_conditions": [
-    {
-      "condition": "fabric:not",
-      "value": {
-        "condition": "fabric:any_mod_loaded",
-        "values": [
-          "techreborn"
-        ]
-      }
-    }
-  ],
   "parent": "minecraft:recipes/root",
   "criteria": {
     "has_bronze_ingot": {
@@ -26,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "reforested:can"
+        "recipe": "reforested:bronze_gear"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -39,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "reforested:can"
+      "reforested:bronze_gear"
     ]
   },
   "sends_telemetry_event": false

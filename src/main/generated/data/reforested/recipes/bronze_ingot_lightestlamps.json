@@ -34,7 +34,7 @@
       "item": "minecraft:copper_ingot"
     },
     {
-      "item": "reforested:tin_ingot"
+      "tag": "c:tin_ingots"
     }
   ],
   "result": {

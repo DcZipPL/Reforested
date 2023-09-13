@@ -1,6 +1,5 @@
 package dev.prefex.reforested.datagen;
 
-import dev.prefex.lightestlamp.init.ModBlocks;
 import dev.prefex.reforested.items.ModItems;
 import dev.prefex.reforested.util.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -28,10 +27,12 @@ public class ReforestedItemTagProvider extends FabricTagProvider.ItemTagProvider
 
 		addTag(ModTags.INGOTS, ModItems.TIN_INGOT, ModItems.BRONZE_INGOT);
 
-		addTag(ModTags.GLASS, Items.GLASS, Items.TINTED_GLASS, ModBlocks.GLOWING_GLASS_BLOCK.asItem(),
+		addTag(ModTags.GLASS, Items.GLASS, Items.TINTED_GLASS, // TODO: Move ModBlocks.GLOWING_GLASS_BLOCK.asItem() to Lightest lamps
 				Items.GRAY_STAINED_GLASS, Items.BLACK_STAINED_GLASS, Items.BLUE_STAINED_GLASS, Items.GREEN_STAINED_GLASS, Items.BROWN_STAINED_GLASS, Items.CYAN_STAINED_GLASS,
 				Items.LIGHT_BLUE_STAINED_GLASS, Items.LIGHT_GRAY_STAINED_GLASS, Items.LIME_STAINED_GLASS, Items.MAGENTA_STAINED_GLASS, Items.ORANGE_STAINED_GLASS,
 				Items.PINK_STAINED_GLASS, Items.PURPLE_STAINED_GLASS, Items.RED_STAINED_GLASS, Items.WHITE_STAINED_GLASS, Items.YELLOW_STAINED_GLASS);
+
+		addTag(ModTags.CHEST, Items.CHEST);
 	}
 
 	private void addTag(TagKey<Item> tag, Item... items) {

@@ -14,7 +14,7 @@
       "tag": "c:glass"
     },
     "I": {
-      "item": "reforested:tin_ingot"
+      "tag": "c:tin_ingots"
     }
   },
   "pattern": [

@@ -9,12 +9,14 @@ import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.tag.ItemTags;
 import net.fabricmc.fabric.api.resource.conditions.v1.*;
+import net.minecraft.registry.tag.TagKey;
 
 import java.util.function.Consumer;
 
@@ -47,13 +49,17 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 	public void generate(Consumer<RecipeJsonProvider> exporter) {
 		generateCraftingRecipes(exporter);
 
+		createGearRecipe(exporter, Items.COPPER_INGOT, Items.COPPER_INGOT, ModItems.COPPER_GEAR);
+		createGearRecipe(exporter, ModTags.TIN_INGOTS, ModItems.TIN_INGOT, ModItems.TIN_GEAR);
+		createGearRecipe(exporter, ModTags.BRONZE_INGOTS, ModItems.BRONZE_INGOT, ModItems.BRONZE_GEAR);
+
 		oneModCompat("lightestlamp", "techreborn", "modern_industrialization", "indrev");
 		addShapelessCriteria(
 				ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.BRONZE_INGOT, 4)
 						.input(dev.prefex.lightestlamp.init.ModItems.STICKANDBOWL)
 						.input(Items.COPPER_INGOT,3)
-						.input(ModItems.TIN_INGOT),
-				ModItems.TIN_INGOT
+						.input(ModTags.TIN_INGOTS),
+				ModItems.BRONZE_INGOT
 		).offerTo(withConditions(exporter, conditions), Registries.ITEM.getId(ModItems.BRONZE_INGOT)+"_lightestlamps");
 
 		withoutCompat("techreborn");
@@ -62,8 +68,8 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 						.pattern(" I ")
 						.pattern("I I")
 						.pattern(" I ")
-						.input('I', ModItems.TIN_INGOT),
-				ModItems.TIN_INGOT
+						.input('I', ModTags.TIN_INGOTS),
+				ModItems.BRONZE_INGOT
 		).offerTo(withConditions(exporter, conditions), Registries.ITEM.getId(ModItems.CAN));
 
 		withCompat("techreborn");
@@ -73,8 +79,8 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 						.pattern("IGI")
 						.pattern(" I ")
 						.input('G', ModTags.GLASS)
-						.input('I', ModItems.TIN_INGOT),
-				ModItems.TIN_INGOT
+						.input('I', ModTags.TIN_INGOTS),
+				ModItems.BRONZE_INGOT
 		).offerTo(withConditions(exporter, conditions), Registries.ITEM.getId(ModItems.CAN)+"_compat");
 	}
 
@@ -94,7 +100,7 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 						.pattern("###")
 						.pattern("# #")
 						.pattern("###")
-						.input('#', ModItems.BRONZE_INGOT),
+						.input('#', ModTags.BRONZE_INGOTS),
 				ModItems.BRONZE_INGOT
 		).offerTo(exporter, Registries.ITEM.getId(ModItems.STURDY_CASING));
 
@@ -104,8 +110,8 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 						.pattern("G#G")
 						.pattern("ICI")
 						.input('I', Items.GOLD_INGOT)
-						.input('G', Blocks.GLASS)
-						.input('C', Blocks.CHEST)
+						.input('G', ModTags.GLASS)
+						.input('C', ModTags.CHEST)
 						.input('#', ModItems.STURDY_CASING),
 				ModItems.STURDY_CASING
 		).offerTo(exporter, Registries.BLOCK.getId(ModBlocks.THERMIONIC_FABRICATOR));
@@ -115,8 +121,8 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 						.pattern("IGI")
 						.pattern("I#I")
 						.pattern("IGI")
-						.input('I', ModItems.BRONZE_INGOT)
-						.input('G', Blocks.GLASS)
+						.input('I', ModTags.BRONZE_INGOTS)
+						.input('G', ModTags.GLASS)
 						.input('#', ModItems.STURDY_CASING),
 				ModItems.STURDY_CASING
 		).offerTo(exporter, Registries.BLOCK.getId(ModBlocks.CARPENTER));
@@ -127,7 +133,7 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 						.pattern("I#I")
 						.pattern("IGI")
 						.input('I', Items.COPPER_INGOT)
-						.input('G', Blocks.GLASS)
+						.input('G', ModTags.GLASS)
 						.input('#', ModItems.STURDY_CASING),
 				ModItems.STURDY_CASING
 		).offerTo(exporter, Registries.BLOCK.getId(ModBlocks.CENTRIFUGE));
@@ -138,7 +144,7 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 						.pattern("G#G")
 						.pattern("IGI")
 						.input('I', ModItems.COPPER_GEAR)
-						.input('G', Blocks.GLASS)
+						.input('G', ModTags.GLASS)
 						.input('#', ModItems.STURDY_CASING),
 				ModItems.STURDY_CASING
 		).offerTo(exporter, Registries.BLOCK.getId(ModBlocks.MOISTENER));
@@ -159,7 +165,7 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 						.pattern("IGI")
 						.pattern("I#I")
 						.pattern("IGI")
-						.input('I', ModItems.TIN_INGOT)
+						.input('I', ModTags.TIN_INGOTS)
 						.input('G', Blocks.GLASS)
 						.input('#', ModItems.STURDY_CASING),
 				ModItems.STURDY_CASING
@@ -203,11 +209,11 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 						.pattern("III")
 						.pattern(" G ")
 						.pattern("#P#")
-						.input('I', ModItems.BRONZE_INGOT)
+						.input('I', ModTags.BRONZE_INGOTS)
 						.input('G', Blocks.GLASS)
 						.input('P', Blocks.PISTON)
 						.input('#', ModItems.BRONZE_GEAR),
-				ModItems.BRONZE_INGOT
+				Items.PISTON
 		).offerTo(exporter, Registries.BLOCK.getId(ModBlocks.BIOGAS_ENGINE));
 
 		addShapedCriteria(
@@ -234,6 +240,28 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 						.input('#', ModItems.COPPER_GEAR),
 				ModItems.COPPER_GEAR
 		).offerTo(exporter, Registries.BLOCK.getId(ModBlocks.CLOCKWORK_ENGINE));
+	}
+
+	private void createGearRecipe(Consumer<RecipeJsonProvider> exporter, TagKey<Item> input, ItemConvertible unlock, Item output) {
+		addShapedCriteria(
+				ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, output)
+						.pattern(" # ")
+						.pattern("# #")
+						.pattern(" # ")
+						.input('#', input),
+				unlock
+		).offerTo(exporter, Registries.ITEM.getId(output));
+	}
+
+	private void createGearRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible input, ItemConvertible unlock, Item output) {
+		addShapedCriteria(
+				ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, output)
+						.pattern(" # ")
+						.pattern("# #")
+						.pattern(" # ")
+						.input('#', input),
+				unlock
+		).offerTo(exporter, Registries.ITEM.getId(output));
 	}
 
 	private ShapedRecipeJsonBuilder addShapedCriteria(ShapedRecipeJsonBuilder builder, ItemConvertible... itemConvertible){

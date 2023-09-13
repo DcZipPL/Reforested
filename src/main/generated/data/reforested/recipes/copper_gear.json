@@ -3,22 +3,16 @@
   "category": "misc",
   "key": {
     "#": {
-      "item": "reforested:sturdy_casing"
-    },
-    "G": {
-      "tag": "c:glass"
-    },
-    "I": {
       "item": "minecraft:copper_ingot"
     }
   },
   "pattern": [
-    "IGI",
-    "I#I",
-    "IGI"
+    " # ",
+    "# #",
+    " # "
   ],
   "result": {
-    "item": "reforested:centrifuge"
+    "item": "reforested:copper_gear"
   },
   "show_notification": true
 }
