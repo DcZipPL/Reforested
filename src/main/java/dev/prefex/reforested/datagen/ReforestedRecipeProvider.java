@@ -13,6 +13,7 @@ import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.tag.ItemTags;
+import net.fabricmc.fabric.api.resource.conditions.v1.*;
 
 import java.util.function.Consumer;
 
@@ -22,8 +23,36 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 		super(output);
 	}
 
+	private ConditionJsonProvider[] conditions = null;
+
+	private void startCompat(String... modid) {
+		conditions = new ConditionJsonProvider[] { DefaultResourceConditions.allModsLoaded(modid) };
+	}
+
+	private void bowlAndStickCompat(String with, String... without) {
+		conditions = new ConditionJsonProvider[] {
+				DefaultResourceConditions.allModsLoaded(with),
+				DefaultResourceConditions.not(DefaultResourceConditions.anyModLoaded(without))
+		};
+	}
+
 	@Override
 	public void generate(Consumer<RecipeJsonProvider> exporter) {
+		generateCraftingRecipes(exporter);
+
+		bowlAndStickCompat("lightestlamp", "techreborn", "modern_industrialization", "indrev");
+		addShapelessCriteria(
+				ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.SCOOP)
+						.input(dev.prefex.lightestlamp.init.ModItems.STICKANDBOWL)
+						.input(Items.COPPER_INGOT)
+						.input(Items.COPPER_INGOT)
+						.input(Items.COPPER_INGOT)
+						.input(ModItems.TIN_INGOT),
+				ModItems.STURDY_CASING
+		).offerTo(withConditions(exporter, conditions), Registries.ITEM.getId(ModItems.SCOOP));
+	}
+
+	private void generateCraftingRecipes(Consumer<RecipeJsonProvider> exporter) {
 		addShapedCriteria(
 				ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.SCOOP)
 						.pattern("SWS")

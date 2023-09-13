@@ -28,6 +28,17 @@ repositories {
 		name = 'GeckoLib'
 		url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
 	}
+	exclusiveContent {
+		forRepository {
+			maven {
+				name = "Modrinth"
+				url = "https://api.modrinth.com/maven"
+			}
+		}
+		filter {
+			includeGroup "maven.modrinth"
+		}
+	}
 }
 
 dependencies {
@@ -62,6 +73,8 @@ dependencies {
 	// Visit https://www.curseforge.com/minecraft/mc-mods/jade/files
 	// to get the latest version's jade_id
 	modImplementation "curse.maven:jade-324717:4710614"
+
+	modImplementation "maven.modrinth:lightest-lamps:4.1.1"
 }
 
 base {
