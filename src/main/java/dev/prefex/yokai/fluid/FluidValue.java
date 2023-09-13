@@ -71,12 +71,6 @@ public final class FluidValue {
 		return FluidTextHelper.getValueDisplay(this) + " Mb";
 	}
 
-	//TODO move away from using this
-	@Deprecated
-	public long getRawValue() {
-		return rawValue;
-	}
-
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
@@ -90,7 +84,10 @@ public final class FluidValue {
 		return Objects.hashCode(rawValue);
 	}
 
-	@Deprecated
+	public long getRawValue() {
+		return rawValue;
+	}
+
 	public static FluidValue fromRaw(long rawValue) {
 		if (rawValue < 0) {
 			rawValue = 0;

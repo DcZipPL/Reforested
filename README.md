@@ -1,5 +1,6 @@
 # Reforested
 
+> **Warning** 1.19.x mod version is skipped. See [1.20](https://github.com/DcZipPL/Reforested/blob/1.20) branch\
 > **Warning** Mod is work in progress and is not ready for use.
 
 A mod inspired by Forestry mod for newer version of Minecraft
