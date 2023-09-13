@@ -42,14 +42,12 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 
 		bowlAndStickCompat("lightestlamp", "techreborn", "modern_industrialization", "indrev");
 		addShapelessCriteria(
-				ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.SCOOP)
+				ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.BRONZE_INGOT, 4)
 						.input(dev.prefex.lightestlamp.init.ModItems.STICKANDBOWL)
-						.input(Items.COPPER_INGOT)
-						.input(Items.COPPER_INGOT)
-						.input(Items.COPPER_INGOT)
+						.input(Items.COPPER_INGOT,3)
 						.input(ModItems.TIN_INGOT),
 				ModItems.STURDY_CASING
-		).offerTo(withConditions(exporter, conditions), Registries.ITEM.getId(ModItems.SCOOP));
+		).offerTo(withConditions(exporter, conditions), Registries.ITEM.getId(ModItems.BRONZE_INGOT));
 	}
 
 	private void generateCraftingRecipes(Consumer<RecipeJsonProvider> exporter) {

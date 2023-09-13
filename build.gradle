@@ -78,6 +78,9 @@ dependencies {
 	// to get the latest version's jade_id
 	modImplementation "curse.maven:jade-324717:4710614"
 
+	modImplementation ("TechReborn:TechReborn-1.20:${techreborn_version}") {
+		exclude(group: "net.fabricmc.fabric-api")
+	}
 	modImplementation "maven.modrinth:lightest-lamps:4.1.1"
 }
 

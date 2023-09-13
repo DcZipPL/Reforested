@@ -68,7 +68,7 @@ public final class FluidValue {
 
 	@Override
 	public String toString() {
-		return FluidTextHelper.getValueDisplay(this) + " Mb";
+		return FluidTextHelper.getValueDisplay(this) + " m\uD83E\uDEA3";
 	}
 
 	@Override

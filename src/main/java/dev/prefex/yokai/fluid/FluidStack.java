@@ -46,6 +46,10 @@ public class FluidStack implements NbtSerializable {
 		fromTag(tag);
 	}
 
+	private FluidVariant getRawFluid() {
+		return fluid;
+	}
+
 	public FluidVariant getFluid() {
 		if (isEmpty()) return FluidVariant.blank();
 		else return fluid;
@@ -76,7 +80,7 @@ public class FluidStack implements NbtSerializable {
 	}
 
 	public boolean isEmpty() {
-		return this.getFluid().isBlank() || this.getAmount().isEmpty();
+		return this.getRawFluid().isBlank() || this.getAmount().isEmpty();
 	}
 
 	public FluidStack copy() {
