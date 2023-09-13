@@ -57,7 +57,11 @@ dependencies {
 
 	modImplementation "vazkii.patchouli:Patchouli:${patchouli_version}"
 
-	modImplementation 'software.bernie.geckolib:geckolib-fabric-1.20.1:4.2.2'
+	include modApi("teamreborn:energy:${energy_version}") {
+		exclude(group: "net.fabricmc.fabric-api")
+	}
+
+	modImplementation "software.bernie.geckolib:geckolib-fabric-${minecraft_version}:${gecko_lib}"
 
 	// Visit https://www.curseforge.com/minecraft/mc-mods/jade/files
 	// to get the latest version's jade_id

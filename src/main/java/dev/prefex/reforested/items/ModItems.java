@@ -24,7 +24,7 @@ public class ModItems {
 
 	// Tools
 	public static final Item SCOOP = register("scoop", new ScoopItem());
-	public static final Item CAN = register("can");
+	public static final Item CAN = register("can", new CanItem(new Item.Settings().maxCount(16)));
 
 	// Forestry Mod Honeycombs
 	public static final HoneycombItem COCOA_HONEYCOMB = HoneycombItem.register("cocoa");

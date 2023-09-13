@@ -56,7 +56,7 @@ public class ModBlocks {
 	public static final Block FARM_GEARBOX = register("farm_gearbox", new WipBlock(AbstractBlock.Settings.copy(Blocks.STONE)));
 
 	public static final Block HUMUS = register("humus", new WipBlock(AbstractBlock.Settings.copy(Blocks.DIRT)));
-	public static final Block BOG_EARTH = register("bog_earth", new WipBlock(AbstractBlock.Settings.copy(Blocks.DIRT)));
+	public static final Block BOG_EARTH = register("bog_earth", new BogEarthBlock(AbstractBlock.Settings.copy(Blocks.DIRT)));
 
 	public static final Block APATITE_ORE = register("apatite_ore", new WipBlock(AbstractBlock.Settings.copy(Blocks.COAL_ORE)));
 	public static final Block BEE_HOUSE = register("bee_house", new WipBlock(AbstractBlock.Settings.copy(Blocks.BEEHIVE)));
