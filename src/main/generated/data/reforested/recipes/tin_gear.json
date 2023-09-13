@@ -4,11 +4,14 @@
   "key": {
     "#": {
       "tag": "c:tin_ingots"
+    },
+    "G": {
+      "item": "reforested:stone_gear"
     }
   },
   "pattern": [
     " # ",
-    "# #",
+    "#G#",
     " # "
   ],
   "result": {

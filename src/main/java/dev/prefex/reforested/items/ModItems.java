@@ -75,6 +75,7 @@ public class ModItems {
 	public static final Item GOOD_CIRCUIT = register("good_circuit");
 	public static final Item ADVANCED_CIRCUIT = register("advanced_circuit");
 
+	public static final Item STONE_GEAR = register("stone_gear");
 	public static final Item BRONZE_GEAR = register("bronze_gear");
 	public static final Item COPPER_GEAR = register("copper_gear");
 	public static final Item TIN_GEAR = register("tin_gear");

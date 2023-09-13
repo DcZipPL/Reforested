@@ -3,19 +3,16 @@
   "category": "misc",
   "key": {
     "#": {
-      "tag": "c:bronze_ingots"
-    },
-    "G": {
-      "item": "reforested:stone_gear"
+      "item": "minecraft:cobblestone"
     }
   },
   "pattern": [
     " # ",
-    "#G#",
+    "# #",
     " # "
   ],
   "result": {
-    "item": "reforested:bronze_gear"
+    "item": "reforested:stone_gear"
   },
   "show_notification": true
 }

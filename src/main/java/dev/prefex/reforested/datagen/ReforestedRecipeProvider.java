@@ -49,6 +49,15 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 	public void generate(Consumer<RecipeJsonProvider> exporter) {
 		generateCraftingRecipes(exporter);
 
+		addShapedCriteria(
+				ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.STONE_GEAR)
+						.pattern(" # ")
+						.pattern("# #")
+						.pattern(" # ")
+						.input('#', Items.COBBLESTONE), // TODO: Use cobblestone tag
+				Items.COBBLESTONE
+		).offerTo(exporter, Registries.ITEM.getId(ModItems.STONE_GEAR));
+
 		createGearRecipe(exporter, Items.COPPER_INGOT, Items.COPPER_INGOT, ModItems.COPPER_GEAR);
 		createGearRecipe(exporter, ModTags.TIN_INGOTS, ModItems.TIN_INGOT, ModItems.TIN_GEAR);
 		createGearRecipe(exporter, ModTags.BRONZE_INGOTS, ModItems.BRONZE_INGOT, ModItems.BRONZE_GEAR);
@@ -246,8 +255,9 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 		addShapedCriteria(
 				ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, output)
 						.pattern(" # ")
-						.pattern("# #")
+						.pattern("#G#")
 						.pattern(" # ")
+						.input('G', ModItems.STONE_GEAR)
 						.input('#', input),
 				unlock
 		).offerTo(exporter, Registries.ITEM.getId(output));
@@ -257,8 +267,9 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 		addShapedCriteria(
 				ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, output)
 						.pattern(" # ")
-						.pattern("# #")
+						.pattern("#G#")
 						.pattern(" # ")
+						.input('G', ModItems.STONE_GEAR)
 						.input('#', input),
 				unlock
 		).offerTo(exporter, Registries.ITEM.getId(output));

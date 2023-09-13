@@ -4,11 +4,14 @@
   "key": {
     "#": {
       "item": "minecraft:copper_ingot"
+    },
+    "G": {
+      "item": "reforested:stone_gear"
     }
   },
   "pattern": [
     " # ",
-    "# #",
+    "#G#",
     " # "
   ],
   "result": {

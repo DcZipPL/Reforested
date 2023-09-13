@@ -23,7 +23,8 @@ public class ReforestedItemTagProvider extends FabricTagProvider.ItemTagProvider
 		addTag(ModTags.COPPER_GEARS, ModItems.COPPER_GEAR);
 		addTag(ModTags.TIN_GEARS, ModItems.TIN_GEAR);
 		addTag(ModTags.BRONZE_GEARS, ModItems.BRONZE_GEAR);
-		addTag(ModTags.GEARS, ModItems.COPPER_GEAR, ModItems.TIN_GEAR, ModItems.BRONZE_GEAR);
+		addTag(ModTags.STONE_GEARS, ModItems.STONE_GEAR);
+		addTag(ModTags.GEARS, ModItems.COPPER_GEAR, ModItems.TIN_GEAR, ModItems.BRONZE_GEAR, ModItems.STONE_GEAR);
 
 		addTag(ModTags.INGOTS, ModItems.TIN_INGOT, ModItems.BRONZE_INGOT);
 

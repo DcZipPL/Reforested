@@ -1,18 +1,18 @@
-// 1.20.1	2023-09-14T00:34:17.1072622	Reforested/Recipes
+// 1.20.1	2023-09-14T00:42:19.2197905	Reforested/Recipes
 32095479370c58fba7b04d1248bdfbc7bd5a9369 data\reforested\recipes\scoop.json
 6f96ca53f4e273e5a288a5abe80a78920524676e data\reforested\advancements\recipes\misc\centrifuge.json
 dd2c2dff9932f531537b079204a12c02e95c3a85 data\reforested\recipes\peat_engine.json
 741cd1b0f5487d68e5c8bd48d828338c803f7536 data\reforested\advancements\recipes\misc\moistener.json
 de5f96e56ded3cf578291a58b9aaaed8dfc4de3f data\reforested\advancements\recipes\misc\can_compat.json
-c342077503ead93bfdd8654595d3691fa18b6d67 data\reforested\recipes\moistener.json
 9160226dab74925af67df3fb90a5bc492393d34b data\reforested\recipes\biogas_engine.json
+c342077503ead93bfdd8654595d3691fa18b6d67 data\reforested\recipes\moistener.json
 6fe01e5cf4e22ce55e6b02e00783c6283683c7fb data\reforested\advancements\recipes\misc\peat_engine.json
-e731c7ed7141b18505953b317de999c80f8b443a data\reforested\recipes\bronze_gear.json
+ddffe9dec3ce8c60c84b287e3899bb923c0b5552 data\reforested\recipes\bronze_gear.json
 df0ad6d62d589788afc9ddb75b15e0d39ca47ea0 data\reforested\advancements\recipes\misc\still.json
 d219fd5a5de73ab53ec0445ab5172d98b8cedc5a data\reforested\recipes\bronze_ingot_lightestlamps.json
 69eb91fab95eb393f63d96ab7ac2838c723c9940 data\reforested\advancements\recipes\misc\sturdy_casing.json
 955b2433835e5778780d690afb5aae51ad555b2f data\reforested\advancements\recipes\misc\tin_gear.json
-33a98008bac0eadf2e8804450a5af3776da2085b data\reforested\recipes\tin_gear.json
+68685bf0a075a4f30d668a44a16ff0098ee50724 data\reforested\recipes\tin_gear.json
 289c88da625cd24ccbb15dd996031aa316abed0f data\reforested\recipes\centrifuge.json
 f8f65cb755bb8f06cc94f55c9463346cf12f8048 data\reforested\recipes\squeezer.json
 4a44bb4c963ca50b3c56266083b56a401f59d1d2 data\reforested\recipes\clockwork_engine.json
@@ -22,7 +22,8 @@ cede8d4f39cc64d0bf172c4167c86309e1d92041 data\reforested\advancements\recipes\mi
 9401e2774d8b0582732fdd1294a3217ded56ae0c data\reforested\advancements\recipes\misc\clockwork_engine.json
 d498851158f1055e6d355142d2e14afd12fc2ffd data\reforested\recipes\bio_generator.json
 1846693b9ab4797e59ea8b96197fa61331eca326 data\reforested\recipes\still.json
-f2aa460d7d5d271fc8190ad184df062df67fbc21 data\reforested\recipes\copper_gear.json
+866c34601a1ca6d540f141979d1fe0c20448f5e3 data\reforested\recipes\copper_gear.json
+a4135b83399accd82bc303b9ce4400c9a07f2971 data\reforested\advancements\recipes\misc\stone_gear.json
 402b679fba60955456997cb1125f5de4b649ab06 data\reforested\recipes\can.json
 5164570808ed0bd2d6748270c1f902203f6aa839 data\reforested\recipes\can_compat.json
 2fa3adf10cd15204008c1a814b2fabd205e60b25 data\reforested\advancements\recipes\misc\carpenter.json
@@ -35,6 +36,7 @@ f2aa460d7d5d271fc8190ad184df062df67fbc21 data\reforested\recipes\copper_gear.jso
 a1b446318ea5677e3817579539600df1a1a8b429 data\reforested\recipes\thermionic_fabricator.json
 d854be9a582ed9064252c6f961f91b4df9d761c2 data\reforested\recipes\fermenter.json
 9d327694d940601938e0af18b46affa7549b7a60 data\reforested\advancements\recipes\misc\bio_generator.json
+801dc8762291ee2c3ea2f60c70558f99f4bc22f6 data\reforested\recipes\stone_gear.json
 06064314fe78deb2508d05450ac010b07d022375 data\reforested\recipes\sturdy_casing.json
 1ea26ae3cb1576a19a7ee0c8dae0d019588a9175 data\reforested\advancements\recipes\misc\can.json
 2b4e0eda655a388cae4baed1a5830e6b9ce4d97f data\reforested\advancements\recipes\misc\fermenter.json
