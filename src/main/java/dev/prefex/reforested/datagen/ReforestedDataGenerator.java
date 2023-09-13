@@ -20,6 +20,7 @@ public class ReforestedDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ReforestedModelGeneratorProvider::new);
 		pack.addProvider(ReforestedEnglishLangProvider::new);
 		pack.addProvider(ReforestedBlockTagProvider::new);
+		pack.addProvider(ReforestedItemTagProvider::new);
 		pack.addProvider(ReforestedBlockLootTables::new);
 		pack.addProvider(ReforestedRecipeProvider::new);
 	}
