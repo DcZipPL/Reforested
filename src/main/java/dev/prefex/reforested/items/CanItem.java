@@ -24,7 +24,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class CanItem extends Item {
-	public static final long VOLUME = FluidValue.BUCKET.getRawValue();
 
 	public CanItem(Settings settings) {
 		super(settings);
@@ -47,14 +46,19 @@ public class CanItem extends Item {
 		return super.onStackClicked(stack, slot, clickType, player);
 	}
 
-	private boolean addFluid(ItemStack stack, FluidStack fluid) {
+	private boolean addFluid(ItemStack stack, FluidStack otherFluid) {
 		NbtCompound nbtCompound = stack.getOrCreateNbt();
-		if (nbtCompound.contains("fluid")) { // TODO: do it through FluidStack
-			if (nbtCompound.getCompound("fluid").getLong("amount") >= VOLUME)
-				return false;
+		if (nbtCompound.contains("fluid")) {
+			FluidStack fluid = FluidStack.EMPTY;
+			fluid.fromTag(nbtCompound.getCompound("fluid"));
+			if (!fluid.isEmpty()) {
+				if (fluid.getAmount().equalOrMoreThan(FluidValue.BUCKET))
+					return false;
+				else if (!fluid.getFluid().equals(otherFluid.getFluid()))
+					return false;
+			}
 		}
-		// TODO: add other fluid check
-		nbtCompound.put("fluid", fluid.toTag(new NbtCompound()));
+		nbtCompound.put("fluid", otherFluid.toTag(new NbtCompound()));
 		return true;
 	}
 
@@ -63,7 +67,7 @@ public class CanItem extends Item {
 		FluidStack fluid = FluidStack.EMPTY;
 		fluid.fromTag(stack.getOrCreateNbt().getCompound("fluid"));
 
-		tooltip.add(Text.translatable(Registries.FLUID.getId(fluid.getFluid().getFluid()).toTranslationKey()).append(Text.literal(" " + fluid.getAmount().toString())).setStyle(Style.EMPTY.withColor(Formatting.GRAY)));
+		tooltip.add(Text.translatable("block." + Registries.FLUID.getId(fluid.getFluid().getFluid()).toTranslationKey()).append(Text.literal(" " + fluid.getAmount().toString())).setStyle(Style.EMPTY.withColor(Formatting.GRAY)));
 		super.appendTooltip(stack, world, tooltip, context);
 	}
 }

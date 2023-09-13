@@ -31,10 +31,10 @@ public abstract class MachineScreen<T extends ScreenHandler> extends HandledScre
 		this.drawMouseoverTooltip(context, mouseX, mouseY);
 		for (Slot slot : handler.slots) {
 			if (slot instanceof GhostSlot) {
-				float[] defaultShader = RenderSystem.getShaderColor();
+				float[] defaultShader = RenderSystem.getShaderColor().clone();
 				RenderSystem.setShaderColor(defaultShader[0], defaultShader[1], defaultShader[2], 0.5f);
-				context.drawItem(((GhostSlot) slot).ghost, slot.x, slot.y + 10);
-				RenderSystem.setShaderColor(defaultShader[0], defaultShader[1], defaultShader[2], defaultShader[3]);
+				context.drawItem(((GhostSlot) slot).ghost, slot.x + x, slot.y + y);
+				RenderSystem.setShaderColor(defaultShader[0], defaultShader[1], defaultShader[2], 1.0f);
 			}
 		}
 	}
