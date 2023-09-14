@@ -2,10 +2,8 @@ package dev.prefex.reforested.blocks;
 
 import dev.prefex.reforested.Reforested;
 import dev.prefex.reforested.machines.carpenter.CarpenterBlock;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.BeehiveBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
+import dev.prefex.reforested.util.WoodSet;
+import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
@@ -61,6 +59,12 @@ public class ModBlocks {
 	public static final WipBlock APATITE_ORE = (WipBlock) register("apatite_ore", new WipBlock(AbstractBlock.Settings.copy(Blocks.COAL_ORE)));
 	public static final WipBlock BEE_HOUSE = (WipBlock) register("bee_house", new WipBlock(AbstractBlock.Settings.copy(Blocks.BEEHIVE)));
 	public static final WipBlock APIARY = (WipBlock) register("apiary", new WipBlock(AbstractBlock.Settings.copy(Blocks.BEEHIVE)));
+
+	public static final WoodSet HAWTHORN = new WoodSet("hawthorn", MapColor.BROWN, MapColor.BROWN);
+	public static final WoodSet DAIR = new WoodSet("dair", MapColor.BROWN, MapColor.BROWN);
+	public static final WoodSet WILLOW = new WoodSet("willow", MapColor.BROWN, MapColor.BROWN);
+	public static final WoodSet NUM_NUM = new WoodSet("num_num", MapColor.BLUE, MapColor.LAPIS_BLUE);
+	public static final WoodSet EUCALYPTUS = new WoodSet("eucalyptus", MapColor.RAW_IRON_PINK, MapColor.TEAL);
 
 	public static Block registerBeeNest(String name) {
 		return register(name + "_bee_nest", new BeehiveBlock(AbstractBlock.Settings.copy(Blocks.BEE_NEST)));
