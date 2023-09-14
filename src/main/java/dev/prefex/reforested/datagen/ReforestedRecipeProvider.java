@@ -54,7 +54,7 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 						.pattern(" # ")
 						.pattern("# #")
 						.pattern(" # ")
-						.input('#', Items.COBBLESTONE), // TODO: Use cobblestone tag
+						.input('#', ModTags.COBBLED),
 				Items.COBBLESTONE
 		).offerTo(exporter, Registries.ITEM.getId(ModItems.STONE_GEAR));
 
@@ -87,7 +87,7 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 						.pattern(" I ")
 						.pattern("IGI")
 						.pattern(" I ")
-						.input('G', ModTags.GLASS)
+						.input('G', Items.GLASS)
 						.input('I', ModTags.TIN_INGOTS),
 				ModItems.BRONZE_INGOT
 		).offerTo(withConditions(exporter, conditions), Registries.ITEM.getId(ModItems.CAN)+"_compat");
@@ -119,7 +119,7 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 						.pattern("G#G")
 						.pattern("ICI")
 						.input('I', Items.GOLD_INGOT)
-						.input('G', ModTags.GLASS)
+						.input('G', Items.GLASS)
 						.input('C', ModTags.CHEST)
 						.input('#', ModItems.STURDY_CASING),
 				ModItems.STURDY_CASING
@@ -131,7 +131,7 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 						.pattern("I#I")
 						.pattern("IGI")
 						.input('I', ModTags.BRONZE_INGOTS)
-						.input('G', ModTags.GLASS)
+						.input('G', Items.GLASS)
 						.input('#', ModItems.STURDY_CASING),
 				ModItems.STURDY_CASING
 		).offerTo(exporter, Registries.BLOCK.getId(ModBlocks.CARPENTER));
@@ -142,7 +142,7 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 						.pattern("I#I")
 						.pattern("IGI")
 						.input('I', Items.COPPER_INGOT)
-						.input('G', ModTags.GLASS)
+						.input('G', Items.GLASS)
 						.input('#', ModItems.STURDY_CASING),
 				ModItems.STURDY_CASING
 		).offerTo(exporter, Registries.BLOCK.getId(ModBlocks.CENTRIFUGE));
@@ -153,7 +153,7 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 						.pattern("G#G")
 						.pattern("IGI")
 						.input('I', ModItems.COPPER_GEAR)
-						.input('G', ModTags.GLASS)
+						.input('G', Items.GLASS)
 						.input('#', ModItems.STURDY_CASING),
 				ModItems.STURDY_CASING
 		).offerTo(exporter, Registries.BLOCK.getId(ModBlocks.MOISTENER));

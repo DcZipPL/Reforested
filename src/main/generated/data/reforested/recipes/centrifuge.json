@@ -6,7 +6,7 @@
       "item": "reforested:sturdy_casing"
     },
     "G": {
-      "tag": "c:glass"
+      "item": "minecraft:glass"
     },
     "I": {
       "item": "minecraft:copper_ingot"

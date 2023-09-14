@@ -25,6 +25,9 @@ public class ModTags {
 	public static final TagKey<Item> BRONZE_GEARS = TagKey.of(RegistryKeys.ITEM, common("bronze_gears"));
 	public static final TagKey<Item> STONE_GEARS = TagKey.of(RegistryKeys.ITEM, common("stone_gears"));
 
+	public static final TagKey<Item> TIN_DUSTS = TagKey.of(RegistryKeys.ITEM, common("tin_dusts"));
+	public static final TagKey<Item> RAW_TIN_ORES = TagKey.of(RegistryKeys.ITEM, common("raw_tin_ores"));
+
 	public static final TagKey<Item> TIN_INGOTS = TagKey.of(RegistryKeys.ITEM, common("tin_ingots"));
 	public static final TagKey<Item> BRONZE_INGOTS = TagKey.of(RegistryKeys.ITEM, common("bronze_ingots"));
 

@@ -9,7 +9,7 @@
       "tag": "c:chest"
     },
     "G": {
-      "tag": "c:glass"
+      "item": "minecraft:glass"
     },
     "I": {
       "item": "minecraft:gold_ingot"
