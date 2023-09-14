@@ -43,7 +43,7 @@ public class ReforestedDataGenerator implements DataGeneratorEntrypoint {
 		Class<ModBlocks> blocksClass = ModBlocks.class;
 		Field[] fields = blocksClass.getDeclaredFields();
 		for (Field field : fields) {
-			if (field.getType() == WipBlock.class) {
+			if (field.getType().getName().equals(WipBlock.class.getName())) {
 				try {
 					block.accept((Block) field.get(null));
 				} catch (IllegalAccessException e) {

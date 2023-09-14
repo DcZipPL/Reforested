@@ -13,6 +13,8 @@ import net.minecraft.util.Identifier;
 
 import java.util.Optional;
 
+import static net.minecraft.data.client.BlockStateModelGenerator.createNorthDefaultHorizontalRotationStates;
+
 public class ReforestedModelGeneratorProvider extends FabricModelProvider {
 
 	ReforestedModelGeneratorProvider(FabricDataOutput generator) {
@@ -25,6 +27,9 @@ public class ReforestedModelGeneratorProvider extends FabricModelProvider {
 			blockStateModelGenerator.registerBeehive(block, this::beeNestMap);
 		});
 		ReforestedDataGenerator.executeWipBlockFunction(blockStateModelGenerator::registerSimpleCubeAll);
+		//ReforestedDataGenerator.executeWipBlockFunction(block -> {
+		//	blockStateModelGenerator.register(new Identifier("reforested", "block/basic_machine"), block);
+		//});
 	}
 
 	@Override
@@ -41,12 +46,21 @@ public class ReforestedModelGeneratorProvider extends FabricModelProvider {
 		}
 	}
 
-	private static Identifier getSubId(Block block, String suffix) {
+	public final void registerSimpleMachine(Block block, TexturedModel.Factory factory, BlockStateModelGenerator blockStateModelGenerator) {
+		/*Identifier identifier = */ factory.upload(block, blockStateModelGenerator.modelCollector);
+		//Identifier identifier2 = TextureMap.getSubId(cooker, "_front_on");
+		/*modelFactory.get(cooker).textures((textures) -> {
+			textures.put(TextureKey.FRONT, identifier2);
+		}).upload(cooker, "_on", blockStateModelGenerator.modelCollector);*/
+		//blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(block).coordinate(createNorthDefaultHorizontalRotationStates()));
+	}
+
+	private static Identifier getBeeNestId(Block block, String suffix) {
 		Identifier identifier = Registries.BLOCK.getId(block);
 		return identifier.withPath((path) -> "block/bee_nest/" + path + suffix);
 	}
 
 	private TextureMap beeNestMap(Block block) {
-		return (new TextureMap()).put(TextureKey.SIDE, getSubId(block, "_side")).put(TextureKey.FRONT, getSubId(block, "_front")).put(TextureKey.TOP, getSubId(block, "_top")).put(TextureKey.BOTTOM, getSubId(block, "_bottom"));
+		return (new TextureMap()).put(TextureKey.SIDE, getBeeNestId(block, "_side")).put(TextureKey.FRONT, getBeeNestId(block, "_front")).put(TextureKey.TOP, getBeeNestId(block, "_top")).put(TextureKey.BOTTOM, getBeeNestId(block, "_bottom"));
 	}
 }
