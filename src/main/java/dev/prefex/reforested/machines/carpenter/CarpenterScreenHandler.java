@@ -1,5 +1,6 @@
 package dev.prefex.reforested.machines.carpenter;
 
+import dev.prefex.reforested.Reforested;
 import dev.prefex.yokai.machine.MachineScreenHandler;
 import dev.prefex.reforested.machines.ModMachines;
 import net.minecraft.entity.player.PlayerEntity;
@@ -8,7 +9,6 @@ import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.PropertyDelegate;
-import net.minecraft.screen.slot.Slot;
 
 import static dev.prefex.reforested.machines.carpenter.CarpenterBlockEntity.*;
 
@@ -23,7 +23,8 @@ public class CarpenterScreenHandler extends MachineScreenHandler {
 
 	@Override
 	public ItemStack quickMove(PlayerEntity player, int slot) {
-		return null;
+		Reforested.LOGGER.error("Quick move not implemented!");
+		return ItemStack.EMPTY;
 	}
 
 	@Override

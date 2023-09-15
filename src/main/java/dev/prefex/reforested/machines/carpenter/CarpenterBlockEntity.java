@@ -1,18 +1,29 @@
 package dev.prefex.reforested.machines.carpenter;
 
+import dev.prefex.reforested.items.ModItems;
 import dev.prefex.reforested.machines.ModMachines;
+import dev.prefex.yokai.fluid.FluidStack;
+import dev.prefex.yokai.helpers.DefaultedListCollector;
 import dev.prefex.yokai.helpers.WrappedDelegate;
 import dev.prefex.yokai.machine.MachineBlockEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.network.PacketByteBuf;
+import net.minecraft.recipe.Ingredient;
+import net.minecraft.recipe.RecipeManager;
+import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.stream.Stream;
 
 public class CarpenterBlockEntity extends MachineBlockEntity {
 	public static final int INVENTORY_SIZE = 14;
@@ -22,6 +33,13 @@ public class CarpenterBlockEntity extends MachineBlockEntity {
 	int processTime;
 	int maxProcessTime;
 	public final PropertyDelegate properties;
+	private final RecipeManager.MatchGetter<Inventory, ? extends CarpenterRecipe> matchGetter;
+
+	public static final CarpenterRecipe testRecipe = new CarpenterRecipe(FluidStack.EMPTY, Stream.of(
+			Items.AIR, Items.AIR, Items.AIR,
+			Items.DIAMOND, ModItems.STURDY_CASING, Items.DIAMOND,
+			Items.AIR, Items.AIR, Items.AIR
+	).map(Ingredient::ofItems).collect(DefaultedListCollector.toList()), Ingredient.ofItems(ModItems.STURDY_CASING), new ItemStack(ModItems.HARDENED_CASING), 3, 3);
 
     public CarpenterBlockEntity(BlockPos pos, BlockState state) {
         super(ModMachines.CARPENTER_BLOCK_ENTITY, pos, state, "carpenter", INVENTORY_SIZE);
@@ -35,7 +53,27 @@ public class CarpenterBlockEntity extends MachineBlockEntity {
 				case 1 -> CarpenterBlockEntity.this.maxProcessTime = pair.getRight();
 			}
 		});
+		this.matchGetter = RecipeManager.createCachedMatchGetter(CarpenterRecipe.Type.INSTANCE);
     }
+
+	public static void tick(World world, BlockPos blockPos, BlockState blockState, CarpenterBlockEntity self) {
+		CarpenterRecipe recipe = self.matchGetter.getFirstMatch(self, world).orElse(null);
+
+		self.maxProcessTime = 50;
+
+		if (recipe != null) {
+			if (self.processTime < self.maxProcessTime) {
+				self.processTime++;
+			} else {
+				self.processTime = 0;
+				//self.maxProcessTime = 0;
+				self.inventory.set(0, recipe.getResult((DynamicRegistryManager) world.getRecipeManager())[0]);
+			}
+		} else {
+			self.processTime = 0;
+			//self.maxProcessTime = 0;
+		}
+	}
 
 	@Override
 	protected ScreenHandler createScreenHandler(int syncId, PlayerInventory playerInventory) {

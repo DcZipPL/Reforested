@@ -1,8 +1,11 @@
 package dev.prefex.reforested.machines.carpenter;
 
+import dev.prefex.reforested.machines.ModMachines;
 import dev.prefex.yokai.machine.MachineBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.BlockEntityTicker;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -28,5 +31,11 @@ public class CarpenterBlock extends MachineBlock {
 			}
 			super.onStateReplaced(state, world, pos, newState, moved);
 		}
+	}
+
+	@Nullable
+	@Override
+	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
+		return checkType(type, ModMachines.CARPENTER_BLOCK_ENTITY, CarpenterBlockEntity::tick);
 	}
 }
