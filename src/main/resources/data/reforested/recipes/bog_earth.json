@@ -1,0 +1,24 @@
+{
+	"type": "reforested:carpenter",
+	"frame": [],
+	"key": {
+		"M": {
+			"item": "reforested:mulch"
+		},
+		"D": {
+			"item": "minecraft:dirt"
+		},
+		"S": {
+			"item": "minecraft:sand"
+		}
+	},
+	"pattern": [
+		"DSD",
+		"SMS",
+		"DSD"
+	],
+	"result": {
+		"item": "reforested:bog_earth",
+		"count": 8
+	}
+}

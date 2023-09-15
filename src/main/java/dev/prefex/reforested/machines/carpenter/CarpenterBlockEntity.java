@@ -14,7 +14,6 @@ import net.minecraft.item.Items;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.RecipeManager;
-import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -24,6 +23,8 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.stream.Stream;
+
+import static dev.prefex.reforested.Reforested.id;
 
 public class CarpenterBlockEntity extends MachineBlockEntity {
 	public static final int INVENTORY_SIZE = 14;
@@ -35,7 +36,7 @@ public class CarpenterBlockEntity extends MachineBlockEntity {
 	public final PropertyDelegate properties;
 	private final RecipeManager.MatchGetter<Inventory, ? extends CarpenterRecipe> matchGetter;
 
-	public static final CarpenterRecipe testRecipe = new CarpenterRecipe(FluidStack.EMPTY, Stream.of(
+	public static final CarpenterRecipe testRecipe = new CarpenterRecipe(id("test"),FluidStack.EMPTY, Stream.of(
 			Items.AIR, Items.AIR, Items.AIR,
 			Items.DIAMOND, ModItems.STURDY_CASING, Items.DIAMOND,
 			Items.AIR, Items.AIR, Items.AIR
@@ -62,14 +63,17 @@ public class CarpenterBlockEntity extends MachineBlockEntity {
 		self.maxProcessTime = 50;
 
 		if (recipe != null) {
+			self.inventory.set(10, recipe.getResult(world.getRegistryManager())[0].copy());
+
 			if (self.processTime < self.maxProcessTime) {
 				self.processTime++;
 			} else {
 				self.processTime = 0;
 				//self.maxProcessTime = 0;
-				self.inventory.set(0, recipe.getResult((DynamicRegistryManager) world.getRecipeManager())[0]);
+				self.inventory.set(11, recipe.getResult(world.getRegistryManager())[0].copy());
 			}
 		} else {
+			self.inventory.set(10, ItemStack.EMPTY);
 			self.processTime = 0;
 			//self.maxProcessTime = 0;
 		}

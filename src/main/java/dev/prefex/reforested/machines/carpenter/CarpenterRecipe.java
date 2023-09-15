@@ -21,6 +21,10 @@ import java.util.Map;
 import static dev.prefex.reforested.Reforested.id;
 
 public class CarpenterRecipe extends ExtendedRecipe {
+	private final int GRID_WIDTH = 3;
+	private final int GRID_HEIGHT = 3;
+
+	final Identifier id;
 	final int width;
 	final int height;
 	final FluidStack fluid;
@@ -28,7 +32,8 @@ public class CarpenterRecipe extends ExtendedRecipe {
 	final Ingredient frame;
 	final ItemStack output;
 
-	public CarpenterRecipe(FluidStack fluid, DefaultedList<Ingredient> input, Ingredient frame, ItemStack output, int width, int height) {
+	public CarpenterRecipe(Identifier id, FluidStack fluid, DefaultedList<Ingredient> input, Ingredient frame, ItemStack output, int width, int height) {
+		this.id = id;
 		this.fluid = fluid;
 		this.input = input;
 		this.frame = frame;
@@ -61,8 +66,8 @@ public class CarpenterRecipe extends ExtendedRecipe {
 
 	@Override
 	public boolean matches(Inventory recipeInputInventory, World world) {
-		for(int i = 0; i <= 0; ++i) {
-			for(int j = 0; j <= 0; ++j) {
+		for(int i = 0; i <= GRID_WIDTH - this.width; ++i) {
+			for(int j = 0; j <= GRID_HEIGHT - this.height; ++j) {
 				if (this.matchesPattern(recipeInputInventory, i, j, true)) {
 					return true;
 				}
@@ -77,8 +82,8 @@ public class CarpenterRecipe extends ExtendedRecipe {
 	}
 
 	private boolean matchesPattern(Inventory inv, int offsetX, int offsetY, boolean flipped) {
-		for(int i = 0; i < width; ++i) {
-			for(int j = 0; j < height; ++j) {
+		for(int i = 0; i < GRID_WIDTH; ++i) {
+			for(int j = 0; j < GRID_HEIGHT; ++j) {
 				int k = i - offsetX;
 				int l = j - offsetY;
 				Ingredient ingredient = Ingredient.EMPTY;
@@ -90,7 +95,7 @@ public class CarpenterRecipe extends ExtendedRecipe {
 					}
 				}
 
-				if (!ingredient.test(inv.getStack(i + j * width))) {
+				if (!ingredient.test(inv.getStack(i + j * GRID_WIDTH))) {
 					return false;
 				}
 			}
@@ -119,9 +124,9 @@ public class CarpenterRecipe extends ExtendedRecipe {
 			int j = strings.length;
 			DefaultedList<Ingredient> defaultedList = ShapedRecipe.createPatternMatrix(strings, map, i, j);
 
-			Ingredient frame = Ingredient.fromJson(jsonObject.get("frame"));
+			Ingredient frame = Ingredient.fromJson(jsonObject.get("frame"), true);
 			ItemStack result = ShapedRecipe.outputFromJson(JsonHelper.getObject(jsonObject, "result"));
-			return new CarpenterRecipe(fluidStack, defaultedList, frame, result, i, j);
+			return new CarpenterRecipe(identifier, fluidStack, defaultedList, frame, result, i, j);
 		}
 
 		public CarpenterRecipe read(Identifier identifier, PacketByteBuf packetByteBuf) {
@@ -135,7 +140,7 @@ public class CarpenterRecipe extends ExtendedRecipe {
 
 			Ingredient frame = Ingredient.fromPacket(packetByteBuf);
 			ItemStack result = packetByteBuf.readItemStack();
-			return new CarpenterRecipe(fluidStack, defaultedList, frame, result, i, j);
+			return new CarpenterRecipe(identifier, fluidStack, defaultedList, frame, result, i, j);
 		}
 
 		public void write(PacketByteBuf packetByteBuf, CarpenterRecipe shapedRecipe) {
@@ -153,7 +158,7 @@ public class CarpenterRecipe extends ExtendedRecipe {
 	// Registry boilerplate
 	@Override
 	public Identifier getId() {
-		return Type.ID;
+		return id;
 	}
 	@Override
 	public RecipeType<?> getType() {
