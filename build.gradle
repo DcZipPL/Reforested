@@ -118,6 +118,8 @@ jar {
 }
 
 loom {
+	accessWidenerPath = file("src/main/resources/reforested.accesswidener")
+
 	runs {
 		//
 		// This adds a new gradle task that runs the datagen API: "gradlew runDatagenClient"

@@ -2,7 +2,6 @@
   "schemaVersion": 1,
   "id": "reforested",
   "version": "${version}",
-
   "name": "Reforested",
   "description": "A mod inspired by Forestry Mod.",
   "authors": [
@@ -32,6 +31,7 @@
   "mixins": [
     "reforested.mixins.json"
   ],
+  "accessWidener" : "reforested.accesswidener",
 
   "depends": {
     "fabricloader": ">=0.14.22",
