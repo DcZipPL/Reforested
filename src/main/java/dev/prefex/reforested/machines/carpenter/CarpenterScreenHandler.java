@@ -29,12 +29,19 @@ public class CarpenterScreenHandler extends MachineScreenHandler {
 
 	@Override
 	public void createSlots() {
-		slot(80, 19);
-		slot(80, 54);
-		slot(116, 55);
-		slot(134, 13);
-		slot(134, 55);
+		// Crafting grid
+		makeGhostGrid(0, 10, 19, 3,3);
+		skipSlots(9);
 
-		makeGhostGrid(5, 10, 19, 3,3);
+		// Input slot
+		slot(80, 19);
+
+		// Process slots
+		intermediateSlot(80, 54);
+		resultSlot(116, 55);
+
+		// Fluid slots
+		slot(134, 13);
+		resultSlot(134, 55);
 	}
 }

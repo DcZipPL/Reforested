@@ -1,5 +1,7 @@
 package dev.prefex.yokai.machine;
 
+import dev.prefex.yokai.slots.ProcessSlot;
+import dev.prefex.yokai.slots.ResultSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
@@ -14,12 +16,13 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-import dev.prefex.yokai.GhostSlot;
+import dev.prefex.yokai.slots.GhostSlot;
 
 public abstract class MachineScreenHandler extends ScreenHandler {
     private int nextIndex = 0;
 
     protected Inventory inventory;
+    protected PlayerEntity accessor;
     protected PropertyDelegate propertyDelegate;
     protected World world;
     protected BlockPos pos;
@@ -38,6 +41,7 @@ public abstract class MachineScreenHandler extends ScreenHandler {
         this.inventory = inventory;
         this.propertyDelegate = propertyDelegate;
         this.world = playerInventory.player.getWorld();
+        this.accessor = playerInventory.player;
 
         this.pos = BlockPos.ORIGIN;
 
@@ -56,8 +60,20 @@ public abstract class MachineScreenHandler extends ScreenHandler {
         return this.inventory.canPlayerUse(player);
     }
 
+    protected void skipSlots(int amount) {
+        nextIndex += amount;
+    }
+
     protected void slot(int x, int y) {
         this.addSlot(new Slot(inventory, nextIndex++, x, y));
+    }
+
+    protected void intermediateSlot(int x, int y) {
+        this.addSlot(new ProcessSlot(inventory, nextIndex++, x, y));
+    }
+
+    protected void resultSlot(int x, int y) {
+        this.addSlot(new ResultSlot(accessor, inventory, nextIndex++, x, y));
     }
 
     protected void ghostSlot(int x, int y) {

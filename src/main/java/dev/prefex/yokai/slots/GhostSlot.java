@@ -1,4 +1,4 @@
-package dev.prefex.yokai;
+package dev.prefex.yokai.slots;
 
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
