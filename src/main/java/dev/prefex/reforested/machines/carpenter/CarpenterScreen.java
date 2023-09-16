@@ -16,16 +16,16 @@ public class CarpenterScreen extends MachineScreen<CarpenterScreenHandler> {
 
 	public CarpenterScreen(CarpenterScreenHandler handler, PlayerInventory inventory, Text title) {
 		super(handler, inventory, title, id("textures/gui/carpenter.png"));
-		this.height = 204;
+		this.height = 176;
 		this.width = 168;
-		this.backgroundWidth = 204;
+		this.backgroundWidth = 176;
 		this.backgroundHeight = 168;
 	}
 
 	@Override
 	protected void drawBackground(DrawContext context, float delta, int mouseX, int mouseY) {
 		super.drawBackground(context, delta, mouseX, mouseY);
-		context.drawTexture(this.controlsBackground, x + backgroundWidth - 25, y, 72, 0, 24, 89, 176, 112);
+		context.drawTexture(this.controlsBackground, x + backgroundWidth - 25, y, 72, 0, 24, 89);
 	}
 
 	@Override
@@ -34,7 +34,7 @@ public class CarpenterScreen extends MachineScreen<CarpenterScreenHandler> {
 		lockButton = new ButtonWidget(this.x + 65, this.y + 18, ButtonType.LOCK, Text.of("Lock recipe"));
 		this.addDrawableChild(lockButton);
 
-		redstoneButton = new ButtonWidget(this.x + 185, this.y + 6, ButtonType.REDSTONE, Text.of("Change redstone mode"));
+		redstoneButton = new ButtonWidget(this.x + 180, this.y + 18, ButtonType.REDSTONE, Text.of("Change redstone mode"));
 		this.addDrawableChild(redstoneButton);
 	}
 }

@@ -24,7 +24,7 @@ public abstract class MachineScreen<T extends ScreenHandler> extends HandledScre
 
 	@Override
 	protected void drawBackground(DrawContext context, float delta, int mouseX, int mouseY) {
-		context.drawTexture(this.background, x, y, 0, 0, this.backgroundWidth - 28, this.backgroundHeight, 256,256);
+		context.drawTexture(this.background, x, y, 0, 0, this.backgroundWidth, this.backgroundHeight, 256,256);
 	}
 
 	@Override
