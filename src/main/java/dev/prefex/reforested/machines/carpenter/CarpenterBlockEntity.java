@@ -23,7 +23,7 @@ import team.reborn.energy.api.base.SimpleEnergyStorage;
 
 public class CarpenterBlockEntity extends MachineBlockEntity {
 	public static final int INVENTORY_SIZE = 14;
-	public static final int PROPERTY_SIZE = 2;
+	public static final int PROPERTY_SIZE = 4;
 	public static final int Y_OFFSET = 86;
 
 	int processTime;
@@ -38,11 +38,15 @@ public class CarpenterBlockEntity extends MachineBlockEntity {
 		this.properties = WrappedDelegate.create(PROPERTY_SIZE, index -> switch (index) {
 			case 0 -> CarpenterBlockEntity.this.processTime;
 			case 1 -> CarpenterBlockEntity.this.maxProcessTime;
+			case 2 -> (int) CarpenterBlockEntity.this.energyStorage.amount;
+			case 3 -> (int) CarpenterBlockEntity.this.energyStorage.capacity;
 			default -> 0;
 		}, pair -> {
 			switch (pair.getLeft()) {
 				case 0 -> CarpenterBlockEntity.this.processTime = pair.getRight();
 				case 1 -> CarpenterBlockEntity.this.maxProcessTime = pair.getRight();
+				case 2 -> CarpenterBlockEntity.this.energyStorage.amount = pair.getRight();
+				case 3 -> throw new UnsupportedOperationException("Energy storage is immutable!");
 			}
 		});
 		this.matchGetter = RecipeManager.createCachedMatchGetter(CarpenterRecipe.Type.INSTANCE);

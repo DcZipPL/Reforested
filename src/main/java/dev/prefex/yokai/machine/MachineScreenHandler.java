@@ -23,9 +23,9 @@ public abstract class MachineScreenHandler extends ScreenHandler {
 
     protected Inventory inventory;
     protected PlayerEntity accessor;
-    protected PropertyDelegate propertyDelegate;
     protected World world;
     protected BlockPos pos;
+    public PropertyDelegate properties;
 
     public MachineScreenHandler(@Nullable ScreenHandlerType<?> type, int syncId, PlayerInventory playerInventory, PacketByteBuf buf,
                                 int inventorySize, int propertySize, int yOffset) {
@@ -39,7 +39,7 @@ public abstract class MachineScreenHandler extends ScreenHandler {
         //checkSize(inventory, inventorySize);
         //checkDataCount(propertyDelegate, propertySize);
         this.inventory = inventory;
-        this.propertyDelegate = propertyDelegate;
+        this.properties = propertyDelegate;
         this.world = playerInventory.player.getWorld();
         this.accessor = playerInventory.player;
 

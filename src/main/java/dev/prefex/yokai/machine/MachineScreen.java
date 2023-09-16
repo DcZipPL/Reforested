@@ -45,6 +45,10 @@ public abstract class MachineScreen<T extends ScreenHandler> extends HandledScre
 	}
 
 	protected static class Controls {
+		public static void draw(DrawContext context, Identifier id, int x, int y, Rect2i controlRect) {
+			context.drawTexture(id, x, y, controlRect.getX(), controlRect.getY(), controlRect.getWidth(), controlRect.getHeight());
+		}
+
 		public static void drawControl(DrawContext context, int x, int y, Rect2i controlRect) {
 			context.drawTexture(Controls.background, x, y, controlRect.getX(), controlRect.getY(), controlRect.getWidth(), controlRect.getHeight());
 		}
