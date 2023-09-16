@@ -32,23 +32,23 @@ public class CarpenterScreen extends MachineScreen<CarpenterScreenHandler> {
 	@Override
 	protected void drawBackground(DrawContext context, float delta, int mouseX, int mouseY) {
 		super.drawBackground(context, delta, mouseX, mouseY);
-		Controls.drawControl(context, x - 28, y, Controls.RI_E);
-		Controls.drawControl(context, x - 22, y + 34, Controls.ENERGY_BAR_FULL);
+		Controls.draw(context, id(Controls.background), x - 28, y, Controls.RI_E);
+		Controls.draw(context, id(Controls.background), x - 22, y + 34, Controls.ENERGY_BAR_FULL);
 		Controls.draw(context, background, x + 98, y + 52, PROGRESS);
-		drawEnergyTooltip(context);
+		drawEnergyTooltip(context, mouseX, mouseY);
 	}
 
-	private void drawEnergyTooltip(DrawContext context) {
+	private void drawEnergyTooltip(DrawContext context, int mouseX, int mouseY) {
 		float power_percent = (float) getScreenHandler().properties.get(2) / (float) getScreenHandler().properties.get(3);
 		context.drawTooltip(textRenderer, List.of(
 				(Text) Text.translatable("tooltip.reforested.machine.energy_stored"),
 				(Text) Text.literal(getScreenHandler().properties.get(2)+"/"+(1600)+" ⚡"),
 				(Text) Text.literal(Math.round(power_percent*10000)/100+"%")
-						.getWithStyle(Style.EMPTY.withColor(power_percent < 0.5f ?
+						.setStyle(Style.EMPTY.withColor(power_percent < 0.5f ?
 								blend(new Color(0xff0000),new Color(0xffff00),power_percent*2f).getRGB()
 								: blend(new Color(0xffff00),new Color(0x00ff00),power_percent*2f-1f).getRGB()
 						))
-		),x+4,y+4);
+		),mouseX+4,mouseY+4);
 	}
 
 	@Override

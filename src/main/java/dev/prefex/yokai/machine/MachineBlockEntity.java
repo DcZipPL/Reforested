@@ -16,17 +16,17 @@ import net.minecraft.util.math.BlockPos;
 
 import java.util.Iterator;
 
-import static dev.prefex.reforested.Reforested.MOD_ID;
-
 public abstract class MachineBlockEntity extends LockableContainerBlockEntity implements ExtendedScreenHandlerFactory, SidedInventory {
+    private final String modid;
     protected DefaultedList<ItemStack> inventory;
     protected String name;
 
-    public MachineBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state,
+    public MachineBlockEntity(BlockEntityType<?> type, String modid, BlockPos pos, BlockState state,
                               String name, int inventorySize) {
         super(type, pos, state);
         this.name = name;
         this.inventory = DefaultedList.ofSize(inventorySize, ItemStack.EMPTY);
+        this.modid = modid != null ? modid : "yokai";
     }
 
     public void readNbt(NbtCompound nbt) {
@@ -49,7 +49,7 @@ public abstract class MachineBlockEntity extends LockableContainerBlockEntity im
 
     @Override
     protected Text getContainerName() {
-        return Text.translatable("container."+MOD_ID+"."+this.name);
+        return Text.translatable("container."+modid+"."+this.name);
     }
 
     public boolean isEmpty() {

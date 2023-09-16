@@ -1,11 +1,9 @@
 package dev.prefex.yokai.slots;
 
-import net.minecraft.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.slot.Slot;
-import net.minecraft.server.network.ServerPlayerEntity;
 
 public class ResultSlot extends Slot {
 	private final PlayerEntity player;

@@ -1,7 +1,6 @@
 package dev.prefex.yokai.machine;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import dev.prefex.yokai.Vec2i;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.util.math.Rect2i;
@@ -12,9 +11,6 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 import dev.prefex.yokai.slots.GhostSlot;
-import net.minecraft.util.math.Vec2f;
-
-import static dev.prefex.reforested.Reforested.id;
 
 public abstract class MachineScreen<T extends ScreenHandler> extends HandledScreen<T> {
 	protected final Identifier background;
@@ -49,11 +45,7 @@ public abstract class MachineScreen<T extends ScreenHandler> extends HandledScre
 			context.drawTexture(id, x, y, controlRect.getX(), controlRect.getY(), controlRect.getWidth(), controlRect.getHeight());
 		}
 
-		public static void drawControl(DrawContext context, int x, int y, Rect2i controlRect) {
-			context.drawTexture(Controls.background, x, y, controlRect.getX(), controlRect.getY(), controlRect.getWidth(), controlRect.getHeight());
-		}
-
-		public static final Identifier background = id("textures/gui/controls_info.png");
+		public static final String background = "textures/gui/controls_info.png";
 
 		/**
 		 * Redstone and Info control
