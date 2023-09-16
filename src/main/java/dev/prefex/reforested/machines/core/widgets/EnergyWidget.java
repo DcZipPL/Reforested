@@ -16,6 +16,7 @@ public class EnergyWidget implements Drawable, Widget {
 	private final Identifier texture;
 	private int x;
 	private int y;
+	private int progress;
 
 	public static final Rect2i ENERGY_BAR = new Rect2i(0, 96, 12, 49);
 	public static final Rect2i ENERGY_BAR_FULL = new Rect2i(12, 96, 12, 49);
@@ -33,6 +34,11 @@ public class EnergyWidget implements Drawable, Widget {
 	@Override
 	public void render(DrawContext context, int mouseX, int mouseY, float delta) {
 		context.drawTexture(texture, this.getX(), this.getY(), ENERGY_BAR.getX(), ENERGY_BAR.getY(), ENERGY_BAR.getWidth(), ENERGY_BAR.getHeight(), 256, 256);
+		context.drawTexture(texture, this.getX(), this.getY() + ENERGY_BAR.getHeight() - progress, ENERGY_BAR_FULL.getX(), ENERGY_BAR_FULL.getY() + ENERGY_BAR_FULL.getHeight() - progress, ENERGY_BAR_FULL.getWidth(), progress, 256, 256);
+	}
+
+	public void setProgress(int progress) {
+		this.progress = progress;
 	}
 
 	@Override

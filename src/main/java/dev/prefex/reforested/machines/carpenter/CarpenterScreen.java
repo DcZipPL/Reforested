@@ -15,6 +15,7 @@ import java.awt.*;
 import java.util.List;
 
 import static dev.prefex.reforested.Reforested.id;
+import static dev.prefex.reforested.machines.core.widgets.EnergyWidget.ENERGY_BAR;
 import static dev.prefex.yokai.helpers.ColorBlender.blend;
 
 public class CarpenterScreen extends MachineScreen<CarpenterScreenHandler> {
@@ -41,6 +42,7 @@ public class CarpenterScreen extends MachineScreen<CarpenterScreenHandler> {
 		// TODO: Move this to the EnergyWidget
 		if (energyWidget.isMouseOver(mouseX, mouseY))
 			drawEnergyTooltip(context, mouseX, mouseY);
+		energyWidget.setProgress((int)((float)getScreenHandler().properties.get(2)/(float)getScreenHandler().properties.get(3)*ENERGY_BAR.getHeight()));
 	}
 
 	private void drawEnergyTooltip(DrawContext context, int mouseX, int mouseY) {
