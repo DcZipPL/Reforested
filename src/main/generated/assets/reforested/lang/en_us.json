@@ -191,5 +191,5 @@
   "item.reforested.wheaten_honeycomb": "Wheaten Honeycomb",
   "item.reforested.wood_pulp": "Wood Pulp",
   "item.reforested.woven_silk": "Woven Silk",
-  "tooltip.reforested.machine.energy_stored": "Carpenter"
+  "tooltip.reforested.machine.energy_stored": "Energy stored"
 }

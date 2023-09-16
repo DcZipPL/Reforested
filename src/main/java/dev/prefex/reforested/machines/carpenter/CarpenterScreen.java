@@ -5,11 +5,11 @@ import dev.prefex.yokai.machine.MachineScreen;
 import dev.prefex.reforested.machines.core.widgets.ButtonType;
 import dev.prefex.reforested.machines.core.widgets.ButtonWidget;
 import net.minecraft.client.gui.DrawContext;
-import net.minecraft.client.gui.Drawable;
 import net.minecraft.client.util.math.Rect2i;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 
 import java.awt.*;
 import java.util.List;
@@ -38,6 +38,7 @@ public class CarpenterScreen extends MachineScreen<CarpenterScreenHandler> {
 		Controls.draw(context, id(Controls.background), x - 28, y, Controls.RI_E);
 		//Controls.draw(context, id(Controls.background), x - 22, y + 34, EnergyWidget.ENERGY_BAR_FULL);
 		Controls.draw(context, background, x + 98, y + 52, PROGRESS);
+		// TODO: Move this to the EnergyWidget
 		if (energyWidget.isMouseOver(mouseX, mouseY))
 			drawEnergyTooltip(context, mouseX, mouseY);
 	}
@@ -46,7 +47,7 @@ public class CarpenterScreen extends MachineScreen<CarpenterScreenHandler> {
 		float power_percent = (float) getScreenHandler().properties.get(2) / (float) getScreenHandler().properties.get(3);
 		context.drawTooltip(textRenderer, List.of(
 				(Text) Text.translatable("tooltip.reforested.machine.energy_stored"),
-				(Text) Text.literal(getScreenHandler().properties.get(2)+"/"+(1600)+" ⚡"),
+				(Text) Text.literal(getScreenHandler().getEnergyString()+"/"+getScreenHandler().getMaxEnergyString()+" ⚡").setStyle(Style.EMPTY.withColor(Formatting.GRAY)),
 				(Text) Text.literal(Math.round(power_percent*10000)/100+"%")
 						.setStyle(Style.EMPTY.withColor(power_percent < 0.5f ?
 								blend(new Color(0xff0000),new Color(0xffff00),power_percent*2f).getRGB()

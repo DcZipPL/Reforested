@@ -33,7 +33,7 @@ public class CarpenterBlockEntity extends MachineBlockEntity {
 	public final PropertyDelegate properties;
 	private final RecipeManager.MatchGetter<Inventory, ? extends CarpenterRecipe> matchGetter;
 
-	public final SimpleEnergyStorage energyStorage = new SimpleEnergyStorage(1600, 128, 0);
+	public final SimpleEnergyStorage energyStorage = new SimpleEnergyStorage(3200, 256, 0);
 
     public CarpenterBlockEntity(BlockPos pos, BlockState state) {
         super(ModMachines.CARPENTER_BLOCK_ENTITY, id("carpenter"), pos, state, INVENTORY_SIZE);

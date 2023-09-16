@@ -1,0 +1,16 @@
+{
+	"name": "Carpenter",
+	"icon": "reforested:carpenter",
+	"category": "reforested:machines",
+	"priority": true,
+	"pages": [
+		{
+			"type": "patchouli:text",
+			"text": "Reforested uses $(thing)⚡ (Joules / spark)$() as energy value. It is fully compatible with TechReborns $(thing)E$().$(br2)The conversion rate is 1:1 but the $(thing)⚡$() is more powerful than $(thing)E$() by a factor of 16. This means that 16 $(thing)E$() is 1 $(thing)⚡$()."
+		},
+		{
+			"type": "patchouli:crafting",
+			"crafting": "reforested:carpenter"
+		}
+	]
+}
