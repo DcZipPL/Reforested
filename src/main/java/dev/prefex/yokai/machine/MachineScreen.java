@@ -11,8 +11,11 @@ import net.minecraft.util.Identifier;
 
 import dev.prefex.yokai.slots.GhostSlot;
 
+import static dev.prefex.reforested.Reforested.id;
+
 public abstract class MachineScreen<T extends ScreenHandler> extends HandledScreen<T> {
 	protected final Identifier background;
+	protected final Identifier controlsBackground = id("textures/gui/controls_info.png");
 
 	public MachineScreen(T handler, PlayerInventory inventory, Text title, Identifier background) {
 		super(handler, inventory, title);
@@ -21,7 +24,7 @@ public abstract class MachineScreen<T extends ScreenHandler> extends HandledScre
 
 	@Override
 	protected void drawBackground(DrawContext context, float delta, int mouseX, int mouseY) {
-		context.drawTexture(this.background, x, y, 0, 0, this.backgroundWidth, this.backgroundHeight, 256,256);
+		context.drawTexture(this.background, x, y, 0, 0, this.backgroundWidth - 28, this.backgroundHeight, 256,256);
 	}
 
 	@Override
