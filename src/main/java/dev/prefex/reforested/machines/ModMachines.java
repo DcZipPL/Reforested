@@ -9,6 +9,7 @@ import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerType;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import team.reborn.energy.api.EnergyStorage;
 
 import static dev.prefex.reforested.Reforested.id;
 
@@ -30,5 +31,11 @@ public class ModMachines {
 	public static void init() {
 		Registry.register(Registries.RECIPE_SERIALIZER, CarpenterRecipe.Type.ID, CarpenterRecipe.Serializer.INSTANCE);
 		Registry.register(Registries.RECIPE_TYPE, CarpenterRecipe.Type.ID, CarpenterRecipe.Type.INSTANCE);
+
+		EnergyStorage.SIDED.registerForBlockEntities((blockEntity, context) -> {
+					if (blockEntity instanceof CarpenterBlockEntity be) return be.energyStorage;
+					else return null;
+				}, CARPENTER_BLOCK_ENTITY
+		);
 	}
 }

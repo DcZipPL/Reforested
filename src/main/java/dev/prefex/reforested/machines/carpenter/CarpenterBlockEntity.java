@@ -1,8 +1,6 @@
 package dev.prefex.reforested.machines.carpenter;
 
-import dev.prefex.reforested.items.ModItems;
 import dev.prefex.reforested.machines.ModMachines;
-import dev.prefex.yokai.fluid.FluidStack;
 import dev.prefex.yokai.helpers.DefaultedListCollector;
 import dev.prefex.yokai.helpers.WrappedDelegate;
 import dev.prefex.yokai.machine.MachineBlockEntity;
@@ -10,9 +8,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.network.PacketByteBuf;
-import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.RecipeManager;
 import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.screen.PropertyDelegate;
@@ -23,10 +19,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.stream.Stream;
-
-import static dev.prefex.reforested.Reforested.id;
+import team.reborn.energy.api.base.SimpleEnergyStorage;
 
 public class CarpenterBlockEntity extends MachineBlockEntity {
 	public static final int INVENTORY_SIZE = 14;
@@ -38,11 +31,7 @@ public class CarpenterBlockEntity extends MachineBlockEntity {
 	public final PropertyDelegate properties;
 	private final RecipeManager.MatchGetter<Inventory, ? extends CarpenterRecipe> matchGetter;
 
-	public static final CarpenterRecipe testRecipe = new CarpenterRecipe(id("test"),FluidStack.EMPTY, Stream.of(
-			Items.AIR, Items.AIR, Items.AIR,
-			Items.DIAMOND, ModItems.STURDY_CASING, Items.DIAMOND,
-			Items.AIR, Items.AIR, Items.AIR
-	).map(Ingredient::ofItems).collect(DefaultedListCollector.toList()), Ingredient.ofItems(ModItems.STURDY_CASING), new ItemStack(ModItems.HARDENED_CASING), 3, 3);
+	public final SimpleEnergyStorage energyStorage = new SimpleEnergyStorage(1600, 128, 0);
 
     public CarpenterBlockEntity(BlockPos pos, BlockState state) {
         super(ModMachines.CARPENTER_BLOCK_ENTITY, pos, state, "carpenter", INVENTORY_SIZE);
