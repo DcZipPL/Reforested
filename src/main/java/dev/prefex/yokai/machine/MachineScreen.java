@@ -63,7 +63,5 @@ public abstract class MachineScreen<T extends ScreenHandler> extends HandledScre
 		 * Redstone, Info and Energy
 		 */
 		public static final Rect2i RI_E = new Rect2i(72, 0, 24, 89);
-
-		public static final Rect2i ENERGY_BAR_FULL = new Rect2i(103, 52, 12, 49);
 	}
 }

@@ -21,6 +21,8 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import team.reborn.energy.api.base.SimpleEnergyStorage;
 
+import static dev.prefex.reforested.Reforested.id;
+
 public class CarpenterBlockEntity extends MachineBlockEntity {
 	public static final int INVENTORY_SIZE = 14;
 	public static final int PROPERTY_SIZE = 4;
@@ -34,7 +36,7 @@ public class CarpenterBlockEntity extends MachineBlockEntity {
 	public final SimpleEnergyStorage energyStorage = new SimpleEnergyStorage(1600, 128, 0);
 
     public CarpenterBlockEntity(BlockPos pos, BlockState state) {
-        super(ModMachines.CARPENTER_BLOCK_ENTITY, pos, state, "carpenter", INVENTORY_SIZE);
+        super(ModMachines.CARPENTER_BLOCK_ENTITY, id("carpenter"), pos, state, INVENTORY_SIZE);
 		this.properties = WrappedDelegate.create(PROPERTY_SIZE, index -> switch (index) {
 			case 0 -> CarpenterBlockEntity.this.processTime;
 			case 1 -> CarpenterBlockEntity.this.maxProcessTime;

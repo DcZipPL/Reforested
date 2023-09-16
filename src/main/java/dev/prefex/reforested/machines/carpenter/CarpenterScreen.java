@@ -1,9 +1,11 @@
 package dev.prefex.reforested.machines.carpenter;
 
+import dev.prefex.reforested.machines.core.widgets.EnergyWidget;
 import dev.prefex.yokai.machine.MachineScreen;
 import dev.prefex.reforested.machines.core.widgets.ButtonType;
 import dev.prefex.reforested.machines.core.widgets.ButtonWidget;
 import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.gui.Drawable;
 import net.minecraft.client.util.math.Rect2i;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.text.Style;
@@ -20,6 +22,7 @@ public class CarpenterScreen extends MachineScreen<CarpenterScreenHandler> {
 
 	public ButtonWidget lockButton;
 	public ButtonWidget redstoneButton;
+	private EnergyWidget energyWidget;
 
 	public CarpenterScreen(CarpenterScreenHandler handler, PlayerInventory inventory, Text title) {
 		super(handler, inventory, title, id("textures/gui/carpenter.png"));
@@ -33,9 +36,10 @@ public class CarpenterScreen extends MachineScreen<CarpenterScreenHandler> {
 	protected void drawBackground(DrawContext context, float delta, int mouseX, int mouseY) {
 		super.drawBackground(context, delta, mouseX, mouseY);
 		Controls.draw(context, id(Controls.background), x - 28, y, Controls.RI_E);
-		Controls.draw(context, id(Controls.background), x - 22, y + 34, Controls.ENERGY_BAR_FULL);
+		//Controls.draw(context, id(Controls.background), x - 22, y + 34, EnergyWidget.ENERGY_BAR_FULL);
 		Controls.draw(context, background, x + 98, y + 52, PROGRESS);
-		drawEnergyTooltip(context, mouseX, mouseY);
+		if (energyWidget.isMouseOver(mouseX, mouseY))
+			drawEnergyTooltip(context, mouseX, mouseY);
 	}
 
 	private void drawEnergyTooltip(DrawContext context, int mouseX, int mouseY) {
@@ -59,5 +63,8 @@ public class CarpenterScreen extends MachineScreen<CarpenterScreenHandler> {
 
 		redstoneButton = new ButtonWidget(this.x - 22, this.y + 6, ButtonType.REDSTONE, Text.of("Change redstone mode"));
 		this.addDrawableChild(redstoneButton);
+
+		energyWidget = new EnergyWidget(id(Controls.background), x - 22, y + 34);
+		this.addDrawable(energyWidget);
 	}
 }
