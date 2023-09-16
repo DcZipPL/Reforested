@@ -25,7 +25,7 @@ public class CarpenterScreen extends MachineScreen<CarpenterScreenHandler> {
 	@Override
 	protected void drawBackground(DrawContext context, float delta, int mouseX, int mouseY) {
 		super.drawBackground(context, delta, mouseX, mouseY);
-		context.drawTexture(this.controlsBackground, x + backgroundWidth - 25, y, 72, 0, 24, 89);
+		Controls.drawControl(context, x - 22, y + 6, Controls.RI_E);
 	}
 
 	@Override
@@ -34,7 +34,7 @@ public class CarpenterScreen extends MachineScreen<CarpenterScreenHandler> {
 		lockButton = new ButtonWidget(this.x + 65, this.y + 18, ButtonType.LOCK, Text.of("Lock recipe"));
 		this.addDrawableChild(lockButton);
 
-		redstoneButton = new ButtonWidget(this.x + 180, this.y + 18, ButtonType.REDSTONE, Text.of("Change redstone mode"));
+		redstoneButton = new ButtonWidget(this.x - 22, this.y + 6, ButtonType.REDSTONE, Text.of("Change redstone mode"));
 		this.addDrawableChild(redstoneButton);
 	}
 }
