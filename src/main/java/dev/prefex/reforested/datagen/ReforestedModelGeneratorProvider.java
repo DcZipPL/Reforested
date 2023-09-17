@@ -1,8 +1,10 @@
 package dev.prefex.reforested.datagen;
 
 import dev.prefex.reforested.Reforested;
+import dev.prefex.reforested.blocks.ModBlocks;
 import dev.prefex.reforested.items.HoneycombItem;
 import dev.prefex.reforested.items.ModItems;
+import dev.prefex.reforested.util.WoodSet;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
@@ -11,6 +13,7 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 
+import java.lang.reflect.Field;
 import java.util.Optional;
 
 import static net.minecraft.data.client.BlockStateModelGenerator.createNorthDefaultHorizontalRotationStates;
@@ -30,6 +33,25 @@ public class ReforestedModelGeneratorProvider extends FabricModelProvider {
 		//ReforestedDataGenerator.executeWipBlockFunction(block -> {
 		//	blockStateModelGenerator.register(new Identifier("reforested", "block/basic_machine"), block);
 		//});
+
+		Class<ModBlocks> blocksClass = ModBlocks.class;
+		Field[] fields = blocksClass.getDeclaredFields();
+		for (Field field : fields) {
+			if (field.getType().getName().equals(WoodSet.class.getName())) {
+				try {
+					WoodSet woodSet = (WoodSet) field.get(null);
+					blockStateModelGenerator.registerFlowerPotPlant(woodSet.sapling, woodSet.potted_sapling, BlockStateModelGenerator.TintType.NOT_TINTED);
+					blockStateModelGenerator.registerLog(woodSet.log).log(woodSet.log).wood(woodSet.wood);
+					blockStateModelGenerator.registerLog(woodSet.strippedLog).log(woodSet.strippedLog).wood(woodSet.strippedWood);
+					blockStateModelGenerator.registerSimpleCubeAll(woodSet.planks);
+					blockStateModelGenerator.registerSimpleCubeAll(woodSet.leaves);
+					blockStateModelGenerator.registerTrapdoor(woodSet.trapdoor);
+					blockStateModelGenerator.registerDoor(woodSet.door);
+				} catch (IllegalAccessException e) {
+					throw new RuntimeException(e);
+				}
+			}
+		}
 	}
 
 	@Override

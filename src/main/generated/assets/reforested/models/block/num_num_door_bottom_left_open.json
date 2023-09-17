@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_left_open",
+  "textures": {
+    "bottom": "reforested:block/num_num_door_bottom",
+    "top": "reforested:block/num_num_door_top"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "reforested:block/eucalyptus_stripped_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "reforested:block/eucalyptus_stripped_wood"
+    },
+    "axis=z": {
+      "model": "reforested:block/eucalyptus_stripped_wood",
+      "x": 90
+    }
+  }
+}
