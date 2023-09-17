@@ -1,0 +1,16 @@
+{
+	"name": "Centrifuge",
+	"icon": "reforested:centrifuge",
+	"category": "reforested:machines",
+	"priority": false,
+	"pages": [
+		{
+			"type": "patchouli:text",
+			"text": "Centrifuge allows to process honeycombs into honey and beeswax. It can produce byproducts like propolis and royal jelly when specific honeycombs is used.$(br2)Machine uses 1.125⚡/tick or 9E/s."
+		},
+		{
+			"type": "patchouli:crafting",
+			"recipe": "reforested:centrifuge"
+		}
+	]
+}

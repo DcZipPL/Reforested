@@ -1,0 +1,16 @@
+{
+	"name": "Carpenter",
+	"icon": "reforested:carpenter",
+	"category": "reforested:machines",
+	"priority": false,
+	"pages": [
+		{
+			"type": "patchouli:text",
+			"text": "Carpenter allows to craft more advanced items by using liquid and extra \"frame\" slot.$(br2)Machine uses 1.125⚡/tick or 9E/s."
+		},
+		{
+			"type": "patchouli:crafting",
+			"recipe": "reforested:carpenter"
+		}
+	]
+}

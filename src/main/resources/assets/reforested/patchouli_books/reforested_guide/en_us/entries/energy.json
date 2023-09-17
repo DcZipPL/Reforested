@@ -1,6 +1,6 @@
 {
-	"name": "Carpenter",
-	"icon": "reforested:carpenter",
+	"name": "Energy",
+	"icon": "reforested:redstone_engine",
 	"category": "reforested:machines",
 	"priority": true,
 	"pages": [

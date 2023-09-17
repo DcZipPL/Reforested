@@ -1,0 +1,16 @@
+{
+	"name": "Squeezer",
+	"icon": "reforested:squeezer",
+	"category": "reforested:machines",
+	"priority": false,
+	"pages": [
+		{
+			"type": "patchouli:text",
+			"text": "Squeezer is a machine that allows you to extract juice from fruits and vegetables. It can also be used to extract oil from seeds and honey from honeycombs. It can be automated with hoppers and pipes.$(br2)Machine uses 1.125⚡/tick or 9E/s."
+		},
+		{
+			"type": "patchouli:crafting",
+			"recipe": "reforested:squeezer"
+		}
+	]
+}
