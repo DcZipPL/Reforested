@@ -33,7 +33,7 @@ public class CarpenterBlockEntity extends MachineBlockEntity {
 	public final PropertyDelegate properties;
 	private final RecipeManager.MatchGetter<Inventory, ? extends CarpenterRecipe> matchGetter;
 
-	public final SimpleEnergyStorage energyStorage = new SimpleEnergyStorage(3200, 256, 0);
+	public final SimpleEnergyStorage energyStorage = new SimpleEnergyStorage(4000, 256, 0);
 
     public CarpenterBlockEntity(BlockPos pos, BlockState state) {
         super(ModMachines.CARPENTER_BLOCK_ENTITY, id("carpenter"), pos, state, INVENTORY_SIZE);
@@ -59,15 +59,19 @@ public class CarpenterBlockEntity extends MachineBlockEntity {
 
 		self.maxProcessTime = 50;
 
-		if (recipe != null) {
+		if (recipe != null && !isRecipeEmpty(self.inventory)) {
 			self.inventory.set(10, recipe.getResult(world.getRegistryManager())[0].copy());
 
-			if (self.processTime < self.maxProcessTime) {
-				self.processTime++;
-			} else {
-				self.processTime = 0;
-				//self.maxProcessTime = 0;
-				craftRecipe(world.getRegistryManager(), recipe, self.inventory, self.getMaxCountPerStack());
+			if (self.energyStorage.amount >= 9){
+				self.energyStorage.amount -= 9;
+
+				if (self.processTime < self.maxProcessTime) {
+					self.processTime++;
+				} else {
+					self.processTime = 0;
+					//self.maxProcessTime = 0;
+					craftRecipe(world.getRegistryManager(), recipe, self.inventory, self.getMaxCountPerStack());
+				}
 			}
 		} else {
 			self.inventory.set(10, ItemStack.EMPTY);

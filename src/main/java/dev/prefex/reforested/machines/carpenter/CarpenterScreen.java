@@ -37,7 +37,6 @@ public class CarpenterScreen extends MachineScreen<CarpenterScreenHandler> {
 	protected void drawBackground(DrawContext context, float delta, int mouseX, int mouseY) {
 		super.drawBackground(context, delta, mouseX, mouseY);
 		Controls.draw(context, id(Controls.background), x - 28, y, Controls.RI_E);
-		//Controls.draw(context, id(Controls.background), x - 22, y + 34, EnergyWidget.ENERGY_BAR_FULL);
 		Controls.draw(context, background, x + 98, y + 52, PROGRESS);
 		// TODO: Move this to the EnergyWidget
 		if (energyWidget.isMouseOver(mouseX, mouseY))

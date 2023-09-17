@@ -46,7 +46,7 @@ public class CarpenterScreenHandler extends MachineScreenHandler {
 	}
 
 	public String getEnergyString() {
-		StringBuilder energy = new StringBuilder(String.valueOf(properties.get(2) / 16.0F));
+		StringBuilder energy = new StringBuilder(String.valueOf(properties.get(2) / 8.0F));
 		// Split the string at the decimal point
 		String[] split = energy.toString().split("\\.");
 		// If the string is less than 3 characters long, add a 0 to the end
@@ -58,7 +58,7 @@ public class CarpenterScreenHandler extends MachineScreenHandler {
 	}
 
 	public String getMaxEnergyString() {
-		StringBuilder energy = new StringBuilder(String.valueOf(properties.get(3) / 16.0F));
+		StringBuilder energy = new StringBuilder(String.valueOf(properties.get(3) / 8.0F));
 		// Split the string at the decimal point
 		String[] split = energy.toString().split("\\.");
 		// If the string is less than 3 characters long, add a 0 to the end

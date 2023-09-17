@@ -6,7 +6,7 @@
 	"pages": [
 		{
 			"type": "patchouli:text",
-			"text": "Reforested uses $(thing)⚡ (Joules / spark)$() as energy value. It is fully compatible with TechReborns $(thing)E$().$(br2)The conversion rate is 1:1 but the $(thing)⚡$() is more powerful than $(thing)E$() by a factor of 16. This means that 16 $(thing)E$() is 1 $(thing)⚡$()."
+			"text": "Reforested uses $(thing)⚡ (Joules / spark)$() as energy value. It is fully compatible with TechReborns $(thing)E$().$(br2)The conversion rate is 1:1 but the $(thing)⚡$() is more powerful than $(thing)E$() by a factor of 8. This means that 8 $(thing)E$() is 1 $(thing)⚡$()."
 		},
 		{
 			"type": "patchouli:crafting",
