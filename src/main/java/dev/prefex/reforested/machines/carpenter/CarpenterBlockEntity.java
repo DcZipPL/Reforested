@@ -69,14 +69,12 @@ public class CarpenterBlockEntity extends MachineBlockEntity {
 					self.processTime++;
 				} else {
 					self.processTime = 0;
-					//self.maxProcessTime = 0;
 					craftRecipe(world.getRegistryManager(), recipe, self.inventory, self.getMaxCountPerStack());
 				}
 			}
 		} else {
 			self.inventory.set(10, ItemStack.EMPTY);
 			self.processTime = 0;
-			//self.maxProcessTime = 0;
 		}
 	}
 

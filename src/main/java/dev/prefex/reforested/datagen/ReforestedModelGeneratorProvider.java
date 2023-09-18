@@ -16,7 +16,7 @@ import net.minecraft.util.Identifier;
 import java.lang.reflect.Field;
 import java.util.Optional;
 
-import static net.minecraft.data.client.BlockStateModelGenerator.createNorthDefaultHorizontalRotationStates;
+import static dev.prefex.reforested.Reforested.id;
 
 public class ReforestedModelGeneratorProvider extends FabricModelProvider {
 
@@ -57,7 +57,7 @@ public class ReforestedModelGeneratorProvider extends FabricModelProvider {
 	@Override
 	public void generateItemModels(ItemModelGenerator itemModelGenerator) {
 		for (var comb : ModItems.HONEYCOMBS) {
-			itemModelGenerator.register(comb, new Model(Optional.of(new Identifier("reforested", "item/honeycomb")), Optional.empty()));
+			itemModelGenerator.register(comb, new Model(Optional.of(id("item/honeycomb")), Optional.empty()));
 		}
 		for (var item : Reforested.GROUP_ITEMS) {
 			if (item.getItem() instanceof HoneycombItem) continue;
