@@ -4,6 +4,7 @@ import dev.prefex.reforested.blocks.ModBlocks;
 import dev.prefex.reforested.machines.carpenter.CarpenterBlockEntity;
 import dev.prefex.reforested.machines.carpenter.CarpenterRecipe;
 import dev.prefex.reforested.machines.carpenter.CarpenterScreenHandler;
+import dev.prefex.reforested.machines.engines.creative.CreativeEngineBlockEntity;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerType;
 import net.minecraft.block.entity.BlockEntityType;
@@ -15,6 +16,8 @@ import static dev.prefex.reforested.Reforested.id;
 
 public class ModMachines {
 	public static final BlockEntityType<CarpenterBlockEntity> CARPENTER_BLOCK_ENTITY;
+	public static final BlockEntityType<CreativeEngineBlockEntity> CREATIVE_ENGINE_BLOCK_ENTITY;
+
 	public static final ExtendedScreenHandlerType<CarpenterScreenHandler> CARPENTER_SCREEN_HANDLER;
 
 
@@ -23,6 +26,11 @@ public class ModMachines {
 				Registries.BLOCK_ENTITY_TYPE,
 				id("carpenter"),
 				FabricBlockEntityTypeBuilder.create(CarpenterBlockEntity::new, ModBlocks.CARPENTER).build()
+		);
+		CREATIVE_ENGINE_BLOCK_ENTITY = Registry.register(
+				Registries.BLOCK_ENTITY_TYPE,
+				id("creative_engine"),
+				FabricBlockEntityTypeBuilder.create(CreativeEngineBlockEntity::new, ModBlocks.CREATIVE_ENGINE).build()
 		);
 
 		CARPENTER_SCREEN_HANDLER = Registry.register(Registries.SCREEN_HANDLER, id("carpenter"), new ExtendedScreenHandlerType<>(CarpenterScreenHandler::new));

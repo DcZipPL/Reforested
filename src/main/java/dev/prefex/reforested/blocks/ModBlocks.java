@@ -2,6 +2,7 @@ package dev.prefex.reforested.blocks;
 
 import dev.prefex.reforested.Reforested;
 import dev.prefex.reforested.machines.carpenter.CarpenterBlock;
+import dev.prefex.reforested.machines.engines.creative.CreativeEngineBlock;
 import dev.prefex.reforested.util.WoodSet;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
@@ -38,7 +39,7 @@ public class ModBlocks {
 	public static final WipBlock REDSTONE_ENGINE = (WipBlock) register("redstone_engine", new WipBlock(AbstractBlock.Settings.copy(Blocks.CRAFTING_TABLE)));
 	public static final WipBlock STIRLING_ENGINE = (WipBlock) register("stirling_engine", new WipBlock(AbstractBlock.Settings.copy(Blocks.COBBLESTONE)));
 	public static final WipBlock COMBUSTION_ENGINE = (WipBlock) register("combustion_engine", new WipBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
-	public static final WipBlock CREATIVE_ENGINE = (WipBlock) register("creative_engine", new WipBlock(AbstractBlock.Settings.copy(Blocks.BEDROCK)));
+	public static final Block CREATIVE_ENGINE = register("creative_engine", new CreativeEngineBlock(AbstractBlock.Settings.copy(Blocks.BEDROCK)));
 
 	public static final WipBlock CLOCKWORK_ENGINE = (WipBlock) register("clockwork_engine", new WipBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
 	public static final WipBlock ELECTRICAL_ENGINE = (WipBlock) register("electrical_engine", new WipBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
