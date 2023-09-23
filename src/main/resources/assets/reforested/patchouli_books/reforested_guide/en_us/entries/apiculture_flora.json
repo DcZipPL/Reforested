@@ -1,0 +1,12 @@
+{
+	"name": "Flowers",
+	"icon": "minecraft:torch_flower",
+	"category": "reforested:apiculture",
+	"sortnum": 0,
+	"pages": [
+		{
+			"type": "patchouli:text",
+			"text": "Flowers, wheat, cactai, agressive flora and hazardous flora."
+		}
+	]
+}
