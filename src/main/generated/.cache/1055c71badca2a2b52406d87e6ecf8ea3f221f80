@@ -1,4 +1,4 @@
-// 1.20.1	2023-10-16T15:56:48.321000374	Reforested/Model Definitions
+// 1.20.1	2023-10-16T23:01:25.748228733	Reforested/Model Definitions
 c9bb9e80cd609d290e5d6b3e4424842eaf293531 assets/reforested/models/item/hawthorn_door.json
 1f5d5bb8d1b0f130195d6846e9609b6ac0b3d467 assets/reforested/models/block/hawthorn_trapdoor_open.json
 d8dae5822ca19da7fb87f4578d579c76b99a1dae assets/reforested/models/block/dair_stripped_log_horizontal.json
@@ -132,8 +132,8 @@ e4f7569dd8262d9608f0ff92e3f60a2805f14304 assets/reforested/models/block/hawthorn
 af6e87a3c6cd1cfe6a9c343ebbec0a10f8b25b87 assets/reforested/models/item/farm_hatch.json
 cddd7dd18918d52802dfaad5acfb270748222bf6 assets/reforested/blockstates/potted_hawthorn_sapling.json
 d2a42c86b9aa0c164589998c03d35757bd0448a2 assets/reforested/models/block/hawthorn_door_bottom_left_open.json
-5a37b289d4932fa120e51f6c4e355e3a99698d36 assets/reforested/models/block/hawthorn_door_bottom_left.json
 f73c9a2fffc9ab356eeda6bb3e81751d46eec930 assets/reforested/blockstates/eucalyptus_trapdoor.json
+5a37b289d4932fa120e51f6c4e355e3a99698d36 assets/reforested/models/block/hawthorn_door_bottom_left.json
 ad15c9d7115dbf812aa26ab0eeae5631aa0e4ad6 assets/reforested/blockstates/num_num_trapdoor.json
 394df448147331a82a8c46e83107c1e5302456d1 assets/reforested/models/block/dair_door_top_left.json
 b3af6b29e6ec85fa9690bd72efca129d53b09e76 assets/reforested/models/block/dair_wood.json
@@ -350,8 +350,8 @@ ab1e59059f698821bc6f4c07c96a2a78c2945a2d assets/reforested/models/item/potted_ha
 a5ae891e69c0bf790abe0836555c977bdb4df5c9 assets/reforested/models/block/eucalyptus_stripped_log.json
 688c9015b9b83f04f1cc41283bf826d70f99d9a4 assets/reforested/models/item/potted_willow_sapling.json
 9cea31d4459d7dc163ce819ddd75de4b224c1b08 assets/reforested/blockstates/dair_log.json
-e6f15240673651b5a4649aec577f8a72634ddb4a assets/reforested/blockstates/willow_planks.json
 7351f8c5a6e1ef10721f04655b429b9d2e6e67a8 assets/reforested/models/block/willow_stripped_log.json
+e6f15240673651b5a4649aec577f8a72634ddb4a assets/reforested/blockstates/willow_planks.json
 e5a4127db4999ff80e91f53e240d14a5c0bdab07 assets/reforested/models/item/camouflage_paneling.json
 dac1fea6bbb906aac8c42596b04dd4e36a122505 assets/reforested/models/block/num_num_trapdoor_bottom.json
 fab2888eac40007df755e34b49a2793b73514bf5 assets/reforested/models/block/num_num_door_top_left.json
