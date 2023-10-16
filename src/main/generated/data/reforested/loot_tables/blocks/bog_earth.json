@@ -1,0 +1,53 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "reforested:bog_earth",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "mature": "false"
+              }
+            }
+          ],
+          "name": "reforested:bog_earth"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "reforested:bog_earth",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "mature": "true"
+              }
+            }
+          ],
+          "name": "reforested:peat"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

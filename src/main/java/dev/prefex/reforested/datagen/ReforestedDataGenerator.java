@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.function.Consumer;
 
 public class ReforestedDataGenerator implements DataGeneratorEntrypoint {
@@ -35,6 +36,23 @@ public class ReforestedDataGenerator implements DataGeneratorEntrypoint {
 				} catch (IllegalAccessException e) {
 					throw new RuntimeException(e);
 				}
+			}
+		}
+	}
+
+	public static void executeRegisterNotSkipped(Consumer<Block> block, ArrayList<Block> skipped) {
+		Class<ModBlocks> blocksClass = ModBlocks.class;
+		Field[] fields = blocksClass.getDeclaredFields();
+		for (Field field : fields) {
+			try {
+				if (field.get(null) instanceof Block) {
+					Block applyBlock = (Block) field.get(null);
+					if (!skipped.contains(applyBlock))
+						block.accept(applyBlock);
+				}
+			} catch (IllegalAccessException e) {
+				LOGGER.error("Couldn't execute function:" + e);
+				//throw new RuntimeException(e);
 			}
 		}
 	}
