@@ -49,6 +49,8 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 	public void generate(Consumer<RecipeJsonProvider> exporter) {
 		generateCraftingRecipes(exporter);
 
+		//ReforestedDataGenerator.executeWoodSet(this::generateWoodRecipes, __ -> {});
+
 		addShapedCriteria(
 				ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.STONE_GEAR)
 						.pattern(" # ")

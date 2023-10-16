@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "reforested:hawthorn_planks",
+    "reforested:dair_planks",
+    "reforested:willow_planks",
+    "reforested:num_num_planks",
+    "reforested:eucalyptus_planks"
+  ]
+}

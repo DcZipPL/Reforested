@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "reforested:eucalyptus_log",
+    "reforested:eucalyptus_wood",
+    "reforested:eucalyptus_stripped_log",
+    "reforested:eucalyptus_stripped_wood"
+  ]
+}

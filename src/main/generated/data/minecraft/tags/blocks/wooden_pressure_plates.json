@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "reforested:hawthorn_pressure_plate",
+    "reforested:dair_pressure_plate",
+    "reforested:willow_pressure_plate",
+    "reforested:num_num_pressure_plate",
+    "reforested:eucalyptus_pressure_plate"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "reforested:hawthorn_slab",
+    "reforested:dair_slab",
+    "reforested:willow_slab",
+    "reforested:num_num_slab",
+    "reforested:eucalyptus_slab"
+  ]
+}

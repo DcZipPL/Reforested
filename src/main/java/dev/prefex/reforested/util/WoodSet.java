@@ -7,6 +7,8 @@ import net.minecraft.block.*;
 import net.minecraft.block.enums.Instrument;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.block.sapling.OakSaplingGenerator;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.sound.BlockSoundGroup;
 
 import static dev.prefex.reforested.Reforested.id;
@@ -32,10 +34,14 @@ public class WoodSet {
 	public final Block slab;
 	public final Block stairs;
 
+	public final TagKey<Block> logTag;
+
 	final BlockSetType blockSetType;
 	final WoodType woodType;
 
 	public WoodSet(String name, MapColor topColor, MapColor sideColor) {
+		logTag = TagKey.of(RegistryKeys.BLOCK, id(name));
+
 		this.blockSetType = BlockSetTypeBuilder.copyOf(BlockSetType.OAK).register(id(name));
 		this.woodType = WoodTypeBuilder.copyOf(WoodType.OAK).register(id(name), blockSetType);
 

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "reforested:hawthorn_log",
+    "reforested:hawthorn_wood",
+    "reforested:hawthorn_stripped_log",
+    "reforested:hawthorn_stripped_wood"
+  ]
+}

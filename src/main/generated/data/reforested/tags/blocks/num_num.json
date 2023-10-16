@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "reforested:num_num_log",
+    "reforested:num_num_wood",
+    "reforested:num_num_stripped_log",
+    "reforested:num_num_stripped_wood"
+  ]
+}

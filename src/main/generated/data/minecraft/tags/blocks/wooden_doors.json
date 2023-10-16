@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "reforested:hawthorn_door",
+    "reforested:dair_door",
+    "reforested:willow_door",
+    "reforested:num_num_door",
+    "reforested:eucalyptus_door"
+  ]
+}

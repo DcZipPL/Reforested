@@ -7,6 +7,8 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 
+import static dev.prefex.reforested.Reforested.id;
+
 public class ModTags {
 
 	private static Identifier common(String s) {
@@ -31,5 +33,5 @@ public class ModTags {
 	public static final TagKey<Item> TIN_INGOTS = TagKey.of(RegistryKeys.ITEM, common("tin_ingots"));
 	public static final TagKey<Item> BRONZE_INGOTS = TagKey.of(RegistryKeys.ITEM, common("bronze_ingots"));
 
-	public static final TagKey<Block> SCOOP_MINEABLE = TagKey.of(RegistryKeys.BLOCK, Reforested.id("scoop_minable"));
+	public static final TagKey<Block> SCOOP_MINEABLE = TagKey.of(RegistryKeys.BLOCK, id("scoop_minable"));
 }

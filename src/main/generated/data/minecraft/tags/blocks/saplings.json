@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "reforested:hawthorn_sapling",
+    "reforested:dair_sapling",
+    "reforested:willow_sapling",
+    "reforested:num_num_sapling",
+    "reforested:eucalyptus_sapling"
+  ]
+}

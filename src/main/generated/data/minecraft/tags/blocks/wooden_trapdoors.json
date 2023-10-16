@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "reforested:hawthorn_trapdoor",
+    "reforested:hawthorn_button",
+    "reforested:dair_trapdoor",
+    "reforested:dair_button",
+    "reforested:willow_trapdoor",
+    "reforested:willow_button",
+    "reforested:num_num_trapdoor",
+    "reforested:num_num_button",
+    "reforested:eucalyptus_trapdoor",
+    "reforested:eucalyptus_button"
+  ]
+}

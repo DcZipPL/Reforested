@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "reforested:hawthorn_fence",
+    "reforested:dair_fence",
+    "reforested:willow_fence",
+    "reforested:num_num_fence",
+    "reforested:eucalyptus_fence"
+  ]
+}

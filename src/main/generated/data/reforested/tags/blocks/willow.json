@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "reforested:willow_log",
+    "reforested:willow_wood",
+    "reforested:willow_stripped_log",
+    "reforested:willow_stripped_wood"
+  ]
+}
