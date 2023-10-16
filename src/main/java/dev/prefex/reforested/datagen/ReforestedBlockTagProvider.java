@@ -34,6 +34,8 @@ public class ReforestedBlockTagProvider extends FabricTagProvider.BlockTagProvid
 
 		scoopMineable.add(Blocks.BEE_NEST);
 
+		ReforestedDataGenerator.executeWoodSet(axeMineable::add, __ -> {});
+
 		Class<ModBlocks> blocksClass = ModBlocks.class;
 		Field[] fields = blocksClass.getDeclaredFields();
 		for (Field field : fields) {

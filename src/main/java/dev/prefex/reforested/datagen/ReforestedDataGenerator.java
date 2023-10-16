@@ -49,9 +49,20 @@ public class ReforestedDataGenerator implements DataGeneratorEntrypoint {
 				if (field.get(null) instanceof Block applyBlock) {
 					if (!skipped.contains(applyBlock))
 						block.accept(applyBlock);
-				} else if (field.get(null) instanceof WoodSet applySet) {
-					// TODO: Move this to other function
-					// No skip needed yet
+				}
+			} catch (IllegalAccessException e) {
+				LOGGER.error("Couldn't execute function:" + e);
+				//throw new RuntimeException(e);
+			}
+		}
+	}
+
+	public static void executeWoodSet(Consumer<Block> block, Consumer<Block> pottedPlant) {
+		Class<ModBlocks> blocksClass = ModBlocks.class;
+		Field[] fields = blocksClass.getDeclaredFields();
+		for (Field field : fields) {
+			try {
+				if (field.get(null) instanceof WoodSet applySet) {
 					block.accept(applySet.wood);
 					block.accept(applySet.door);
 					block.accept(applySet.fence);
@@ -69,11 +80,10 @@ public class ReforestedDataGenerator implements DataGeneratorEntrypoint {
 					block.accept(applySet.trapdoor);
 					block.accept(applySet.hangingSign);
 					block.accept(applySet.button);
-					//block.accept(applySet.potted_sapling);
+					pottedPlant.accept(applySet.potted_sapling);
 				}
 			} catch (IllegalAccessException e) {
-				LOGGER.error("Couldn't execute function:" + e);
-				//throw new RuntimeException(e);
+				throw new RuntimeException(e);
 			}
 		}
 	}

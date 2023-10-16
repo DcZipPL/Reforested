@@ -44,11 +44,7 @@ public class ReforestedBlockLootTables extends FabricBlockLootTableProvider {
 		addDrop(skip(ModBlocks.BOG_EARTH), dropsPeat(ModBlocks.BOG_EARTH, BogEarthBlock.MATURE));
 
 		ReforestedDataGenerator.executeRegisterNotSkipped(this::addDrop, skipped);
-		addPottedPlantDrops(ModBlocks.HAWTHORN.potted_sapling);
-		addPottedPlantDrops(ModBlocks.DAIR.potted_sapling);
-		addPottedPlantDrops(ModBlocks.WILLOW.potted_sapling);
-		addPottedPlantDrops(ModBlocks.NUM_NUM.potted_sapling);
-		addPottedPlantDrops(ModBlocks.EUCALYPTUS.potted_sapling);
+		ReforestedDataGenerator.executeWoodSet(this::addDrop, this::addPottedPlantDrops);
 	}
 
 	public LootTable.Builder dropsPeat(Block drop, BooleanProperty property) {
