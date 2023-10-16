@@ -39,7 +39,7 @@ public class ReforestedBlockTagProvider extends FabricTagProvider.BlockTagProvid
 					getOrCreateTagBuilder(applySet.logTag).add(applySet.wood);
 					getOrCreateTagBuilder(applySet.logTag).add(applySet.strippedLog);
 					getOrCreateTagBuilder(applySet.logTag).add(applySet.strippedWood);
-					getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN).add(applySet.log); // Add set of logs from above
+					getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN).addTag(applySet.logTag); // Add set of logs from above
 
 					getOrCreateTagBuilder(BlockTags.WOODEN_DOORS).add(applySet.door);
 					getOrCreateTagBuilder(BlockTags.WOODEN_FENCES).add(applySet.fence);

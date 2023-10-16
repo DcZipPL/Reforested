@@ -1,10 +1,10 @@
 {
   "replace": false,
   "values": [
-    "reforested:hawthorn_log",
-    "reforested:dair_log",
-    "reforested:willow_log",
-    "reforested:num_num_log",
-    "reforested:eucalyptus_log"
+    "#reforested:hawthorn",
+    "#reforested:dair",
+    "#reforested:willow",
+    "#reforested:num_num",
+    "#reforested:eucalyptus"
   ]
 }
