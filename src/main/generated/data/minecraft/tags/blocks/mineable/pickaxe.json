@@ -1,0 +1,27 @@
+{
+  "replace": false,
+  "values": [
+    "reforested:carpenter",
+    "reforested:squeezer",
+    "reforested:centrifuge",
+    "reforested:still",
+    "reforested:fermenter",
+    "reforested:moistener",
+    "reforested:bottler",
+    "reforested:thermionic_fabricator",
+    "reforested:raintank",
+    "reforested:stirling_engine",
+    "reforested:combustion_engine",
+    "reforested:clockwork_engine",
+    "reforested:electrical_engine",
+    "reforested:biogas_engine",
+    "reforested:peat_engine",
+    "reforested:bio_generator",
+    "reforested:farm_block",
+    "reforested:farm_valve",
+    "reforested:farm_hatch",
+    "reforested:farm_control",
+    "reforested:farm_gearbox",
+    "reforested:apatite_ore"
+  ]
+}

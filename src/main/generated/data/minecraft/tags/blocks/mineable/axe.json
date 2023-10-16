@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "reforested:apiarist_chest",
+    "reforested:worktable",
+    "reforested:redstone_engine",
+    "reforested:bee_house",
+    "reforested:apiary"
+  ]
+}

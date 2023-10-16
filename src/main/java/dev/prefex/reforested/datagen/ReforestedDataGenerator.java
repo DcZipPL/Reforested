@@ -2,6 +2,7 @@ package dev.prefex.reforested.datagen;
 
 import dev.prefex.reforested.blocks.ModBlocks;
 import dev.prefex.reforested.blocks.WipBlock;
+import dev.prefex.reforested.util.WoodSet;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.block.Block;
@@ -45,10 +46,30 @@ public class ReforestedDataGenerator implements DataGeneratorEntrypoint {
 		Field[] fields = blocksClass.getDeclaredFields();
 		for (Field field : fields) {
 			try {
-				if (field.get(null) instanceof Block) {
-					Block applyBlock = (Block) field.get(null);
+				if (field.get(null) instanceof Block applyBlock) {
 					if (!skipped.contains(applyBlock))
 						block.accept(applyBlock);
+				} else if (field.get(null) instanceof WoodSet applySet) {
+					// TODO: Move this to other function
+					// No skip needed yet
+					block.accept(applySet.wood);
+					block.accept(applySet.door);
+					block.accept(applySet.fence);
+					block.accept(applySet.fenceGate);
+					block.accept(applySet.leaves);
+					block.accept(applySet.log);
+					block.accept(applySet.planks);
+					block.accept(applySet.pressurePlate);
+					block.accept(applySet.sapling);
+					block.accept(applySet.sign);
+					block.accept(applySet.slab);
+					block.accept(applySet.stairs);
+					block.accept(applySet.strippedLog);
+					block.accept(applySet.strippedWood);
+					block.accept(applySet.trapdoor);
+					block.accept(applySet.hangingSign);
+					block.accept(applySet.button);
+					//block.accept(applySet.potted_sapling);
 				}
 			} catch (IllegalAccessException e) {
 				LOGGER.error("Couldn't execute function:" + e);
