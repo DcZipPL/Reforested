@@ -1,4 +1,4 @@
-// 1.20.1	2023-10-17T18:38:05.795507466	Reforested/Tags for minecraft:block
+// 1.20.1	2023-10-17T18:53:53.119381278	Reforested/Tags for minecraft:block
 953c6f57b57f96aed526cd1d3299b4ce356e86f2 data/minecraft/tags/blocks/wooden_doors.json
 dac58286b2fed799c78c5dc9e43418c0645fcb27 data/minecraft/tags/blocks/wooden_slabs.json
 92e81d91ae784f90a852848ca3e0771ce628bb00 data/minecraft/tags/blocks/mineable/axe.json
@@ -9,8 +9,8 @@ ce904719c1e4432a2749c068d9218463c604840d data/minecraft/tags/blocks/wooden_trapd
 7de5971c23cf1b9357432cb57371bebb22d45174 data/reforested/tags/blocks/dair.json
 724c0514681a9609cd4200112790b9c381bca2b2 data/minecraft/tags/blocks/wall_signs.json
 2fa03d4a12e8713e783ab40951368d87734a4e97 data/reforested/tags/blocks/num_num.json
-c24ffee7099b04f852a9600c25654c929d15e972 data/minecraft/tags/blocks/planks.json
 724c0514681a9609cd4200112790b9c381bca2b2 data/minecraft/tags/blocks/standing_signs.json
+c24ffee7099b04f852a9600c25654c929d15e972 data/minecraft/tags/blocks/planks.json
 a8c7cb330685926dcb60dc3486bcdb3f31c93c84 data/minecraft/tags/blocks/leaves.json
 7254caab94438c466562de46c9992eb9e080f1e4 data/minecraft/tags/blocks/mineable/shovel.json
 3f62384f077b39652c9e7a4ba75e5367096326f2 data/minecraft/tags/blocks/wooden_fences.json

@@ -26,6 +26,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 
+// TODO: Parsing error loading custom advancement <RECIPE>: Advancement criteria cannot be empty
 public class ShapedCarpenterRecipeJsonBuilder extends RecipeJsonBuilder implements CraftingRecipeJsonBuilder {
 	private String group = "";
 	private final Ingredient frame;
@@ -193,7 +194,7 @@ public class ShapedCarpenterRecipeJsonBuilder extends RecipeJsonBuilder implemen
 
 		@Override
 		public RecipeSerializer<?> getSerializer() {
-			return RecipeSerializer.SHAPED;
+			return CarpenterRecipe.Serializer.INSTANCE;
 		}
 
 		@Override
