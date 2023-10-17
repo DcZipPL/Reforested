@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "reforested:hawthorn_button",
+    "reforested:dair_button",
+    "reforested:willow_button",
+    "reforested:num_num_button",
+    "reforested:eucalyptus_button"
+  ]
+}

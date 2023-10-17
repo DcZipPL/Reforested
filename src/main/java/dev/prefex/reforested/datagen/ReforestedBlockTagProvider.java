@@ -48,12 +48,14 @@ public class ReforestedBlockTagProvider extends FabricTagProvider.BlockTagProvid
 					getOrCreateTagBuilder(BlockTags.PLANKS).add(applySet.planks);
 					getOrCreateTagBuilder(BlockTags.WOODEN_PRESSURE_PLATES).add(applySet.pressurePlate);
 					getOrCreateTagBuilder(BlockTags.SAPLINGS).add(applySet.sapling);
-					//getOrCreateTagBuilder(BlockTags.SIGns).add(applySet.sign);
+					getOrCreateTagBuilder(BlockTags.STANDING_SIGNS).add(applySet.sign);
+					getOrCreateTagBuilder(BlockTags.WALL_SIGNS).add(applySet.sign);
 					getOrCreateTagBuilder(BlockTags.WOODEN_SLABS).add(applySet.slab);
 					getOrCreateTagBuilder(BlockTags.WOODEN_STAIRS).add(applySet.stairs);
 					getOrCreateTagBuilder(BlockTags.WOODEN_TRAPDOORS).add(applySet.trapdoor);
 					//getOrCreateTagBuilder(BlockTags.WOOD).add(applySet.hangingSign);
-					getOrCreateTagBuilder(BlockTags.WOODEN_TRAPDOORS).add(applySet.button);
+					//getOrCreateTagBuilder(BlockTags.WOOD).add(applySet.wallSign);
+					getOrCreateTagBuilder(BlockTags.WOODEN_BUTTONS).add(applySet.button);
 				}
 			} catch (IllegalAccessException e) {
 				throw new RuntimeException(e);

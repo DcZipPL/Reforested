@@ -2,6 +2,7 @@ package dev.prefex.reforested.datagen;
 
 import dev.prefex.reforested.blocks.ModBlocks;
 import dev.prefex.reforested.items.ModItems;
+import dev.prefex.reforested.machines.carpenter.ShapedCarpenterRecipeJsonBuilder;
 import dev.prefex.reforested.util.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
@@ -12,6 +13,7 @@ import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.tag.ItemTags;
@@ -50,6 +52,13 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 		generateCraftingRecipes(exporter);
 
 		//ReforestedDataGenerator.executeWoodSet(this::generateWoodRecipes, __ -> {});
+		ShapedCarpenterRecipeJsonBuilder.create(Ingredient.EMPTY, ModItems.HARDENED_CASING)
+				.pattern("   ")
+				.pattern("#C#")
+				.pattern("   ")
+				.input('C', ModItems.STURDY_CASING)
+				.input('#', Items.DIAMOND)
+				.offerTo(exporter, Registries.ITEM.getId(ModItems.HARDENED_CASING));
 
 		addShapedCriteria(
 				ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.STONE_GEAR)

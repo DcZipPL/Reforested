@@ -1,4 +1,4 @@
-// 1.20.1	2023-10-17T00:24:59.589353361	Reforested/Recipes
+// 1.20.1	2023-10-17T18:38:05.804000906	Reforested/Recipes
 fda175fdeed075ebdcf7299bf69d3665df7d90a1 data/reforested/recipes/can_compat.json
 1be0365c383f11aee18171c52ca530c54bad3222 data/reforested/advancements/recipes/misc/biogas_engine.json
 d854be9a582ed9064252c6f961f91b4df9d761c2 data/reforested/recipes/fermenter.json
@@ -8,10 +8,11 @@ ddffe9dec3ce8c60c84b287e3899bb923c0b5552 data/reforested/recipes/bronze_gear.jso
 9401e2774d8b0582732fdd1294a3217ded56ae0c data/reforested/advancements/recipes/misc/clockwork_engine.json
 6f96ca53f4e273e5a288a5abe80a78920524676e data/reforested/advancements/recipes/misc/centrifuge.json
 82442393c2760a8fe479e48bef59d77c212fb303 data/reforested/recipes/moistener.json
+4b9a643cb8f2009372c2171ce8211c4e91ebad72 data/reforested/recipes/hardened_casing.json
 dd2c2dff9932f531537b079204a12c02e95c3a85 data/reforested/recipes/peat_engine.json
 959398d3efa7bce3a748d2219da18d6d2a8c6bcb data/reforested/advancements/recipes/misc/bronze_gear.json
-1846693b9ab4797e59ea8b96197fa61331eca326 data/reforested/recipes/still.json
 6d1024e37a0fa3f27fb12ae7cde41450de9e0819 data/reforested/advancements/recipes/misc/scoop.json
+1846693b9ab4797e59ea8b96197fa61331eca326 data/reforested/recipes/still.json
 69eb91fab95eb393f63d96ab7ac2838c723c9940 data/reforested/advancements/recipes/misc/sturdy_casing.json
 2fa3adf10cd15204008c1a814b2fabd205e60b25 data/reforested/advancements/recipes/misc/carpenter.json
 4a44bb4c963ca50b3c56266083b56a401f59d1d2 data/reforested/recipes/clockwork_engine.json
@@ -30,6 +31,7 @@ f5061bafae23f7dc3b629cefdc254545af2d1a1b data/reforested/recipes/centrifuge.json
 df0ad6d62d589788afc9ddb75b15e0d39ca47ea0 data/reforested/advancements/recipes/misc/still.json
 cede8d4f39cc64d0bf172c4167c86309e1d92041 data/reforested/advancements/recipes/misc/squeezer.json
 32095479370c58fba7b04d1248bdfbc7bd5a9369 data/reforested/recipes/scoop.json
+8bd4bc3be16ad3829223e5b713a5a80d46f3bf26 data/reforested/advancements/recipes/carpenter/hardened_casing.json
 a8b4962b9db07f2a7fda219298c15ecac829d3d1 data/reforested/advancements/recipes/misc/bronze_ingot_lightestlamps.json
 8eb2662942245726b147eccbbdbb044be284a5df data/reforested/recipes/carpenter.json
 2b4e0eda655a388cae4baed1a5830e6b9ce4d97f data/reforested/advancements/recipes/misc/fermenter.json

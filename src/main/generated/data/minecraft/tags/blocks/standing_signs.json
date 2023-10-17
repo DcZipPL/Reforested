@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "reforested:hawthorn_sign",
+    "reforested:dair_sign",
+    "reforested:willow_sign",
+    "reforested:num_num_sign",
+    "reforested:eucalyptus_sign"
+  ]
+}
