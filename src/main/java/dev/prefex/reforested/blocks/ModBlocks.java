@@ -6,6 +6,7 @@ import dev.prefex.reforested.machines.carpenter.CarpenterBlock;
 import dev.prefex.reforested.machines.engines.creative.CreativeEngineBlock;
 import dev.prefex.reforested.machines.engines.redstone.RedstoneEngineBlock;
 import dev.prefex.reforested.machines.engines.redstone.RedstoneEngineBlockEntity;
+import dev.prefex.reforested.machines.engines.stirling.StirlingEngineBlock;
 import dev.prefex.reforested.util.WoodSet;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
@@ -42,7 +43,7 @@ public class ModBlocks {
 	@Mineable public static final WipBlock RAINTANK = (WipBlock) register("raintank", new WipBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
 
 	@Mineable(type=Type.AXE) public static final Block REDSTONE_ENGINE = register("redstone_engine", new RedstoneEngineBlock(AbstractBlock.Settings.copy(Blocks.CRAFTING_TABLE)));
-	@Mineable public static final WipBlock STIRLING_ENGINE = (WipBlock) register("stirling_engine", new WipBlock(AbstractBlock.Settings.copy(Blocks.COBBLESTONE)));
+	@Mineable public static final Block STIRLING_ENGINE = register("stirling_engine", new StirlingEngineBlock(AbstractBlock.Settings.copy(Blocks.COBBLESTONE)));
 	@Mineable public static final WipBlock COMBUSTION_ENGINE = (WipBlock) register("combustion_engine", new WipBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
 	public static final Block CREATIVE_ENGINE = register("creative_engine", new CreativeEngineBlock(AbstractBlock.Settings.copy(Blocks.BEDROCK)));
 

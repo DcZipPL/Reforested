@@ -1,0 +1,37 @@
+{
+	"name": "Engines",
+	"icon": "reforested:redstone_engine",
+	"category": "reforested:machines",
+	"priority": false,
+	"pages": [
+		{
+			"type": "patchouli:text",
+			"text": "Engines are machines that produce energy from various sources. They can be used to power other machines.$(br2)Engines can be controlled by Redstone signal and can be rotated with Wrench."
+		},
+		{
+			"type": "patchouli:text",
+			"title": "Overheating",
+			"text": "Engines need some time to heat up and produce full amount of energy and they cooldown when not used. Engines have no failsafe and must be monitored to prevent overheating.$(br2)$(#f00)If machine overheats it can explode!$()$(br2)Pro tip: Read overheat conditions to prevent it.$(br2)"
+		},
+		{
+			"type": "patchouli:spotlight",
+			"item": "reforested:redstone_engine",
+			"text": "Redstone Engine produces 0.007⚡/tick or 1.1E/s.$(br)Requires only Redstone signal.$(br2)Used for machines that require tiny amounts of energy to start up. The biggest advantaged of this engine is resource cost.$(br2)Can't explode."
+		},
+		{
+			"type": "patchouli:spotlight",
+			"item": "reforested:stirling_engine",
+			"text": "Stirling Engine produces -⚡/tick or -E/s.$(br)Uses solid fuel.$(br2)Overheats after if cannot withdraw energy from it."
+		},
+		{
+			"type": "patchouli:spotlight",
+			"item": "reforested:stirling_engine",
+			"text": "Combustion Engine produces -⚡/tick or -E/s.$(br)Uses liquid fuel.$(br2)Overheats if lacks water supply. Outputs Redstone signal via comparator before it overheats. Cannot start if too hot."
+		},
+		{
+			"type": "patchouli:crafting",
+			"recipe": "reforested:redstone_engine",
+			"recipe2": "reforested:stirling_engine"
+		}
+	]
+}
