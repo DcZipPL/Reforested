@@ -1,0 +1,21 @@
+{
+  "type": "reforested:carpenter",
+  "category": "misc",
+  "frame": [],
+  "key": {
+    "#": {
+      "item": "minecraft:diamond"
+    },
+    "C": {
+      "item": "reforested:sturdy_casing"
+    }
+  },
+  "pattern": [
+    "   ",
+    "#C#",
+    "   "
+  ],
+  "result": {
+    "item": "reforested:hardened_casing"
+  }
+}
