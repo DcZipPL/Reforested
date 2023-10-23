@@ -1,14 +1,17 @@
 package dev.prefex.reforested;
 
+import dev.prefex.reforested.blocks.ModBlocks;
 import dev.prefex.reforested.entity.ModEntities;
 import dev.prefex.reforested.entity.ReforestedBeeRenderer;
 import dev.prefex.reforested.items.ModItems;
 import dev.prefex.reforested.machines.carpenter.CarpenterScreen;
 import dev.prefex.reforested.machines.ModMachines;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.Item;
 
 public class ReforestedClient implements ClientModInitializer {
@@ -37,6 +40,36 @@ public class ReforestedClient implements ClientModInitializer {
 
 		EntityRendererRegistry.register(ModEntities.FOREST_BEE, ctx -> new ReforestedBeeRenderer(ctx, "forest_bee"));
 		EntityRendererRegistry.register(ModEntities.MEADOW_BEE, ctx -> new ReforestedBeeRenderer(ctx, "meadow_bee"));
+
+		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.DAIR.leaves, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.DAIR.sapling, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.DAIR.potted_sapling, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.DAIR.trapdoor, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.DAIR.door, RenderLayer.getCutout());
+
+		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.HAWTHORN.leaves, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.HAWTHORN.sapling, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.HAWTHORN.potted_sapling, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.HAWTHORN.trapdoor, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.HAWTHORN.door, RenderLayer.getCutout());
+
+		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WILLOW.leaves, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WILLOW.sapling, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WILLOW.potted_sapling, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WILLOW.trapdoor, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WILLOW.door, RenderLayer.getCutout());
+
+		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.EUCALYPTUS.leaves, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.EUCALYPTUS.sapling, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.EUCALYPTUS.potted_sapling, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.EUCALYPTUS.trapdoor, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.EUCALYPTUS.door, RenderLayer.getCutout());
+
+		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.NUM_NUM.leaves, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.NUM_NUM.sapling, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.NUM_NUM.potted_sapling, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.NUM_NUM.trapdoor, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.NUM_NUM.door, RenderLayer.getCutout());
 	}
 
 	public static void registerColor(Item item, int... color) {
