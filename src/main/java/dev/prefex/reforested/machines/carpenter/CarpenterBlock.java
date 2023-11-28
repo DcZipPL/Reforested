@@ -13,7 +13,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class CarpenterBlock extends MachineBlock {
 	public CarpenterBlock(Settings settings) {
-		super(settings);
+		super(settings.nonOpaque());
 	}
 
 	@Nullable

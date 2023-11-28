@@ -30,12 +30,12 @@ public class ModBlocks {
 	// TODO: Add rest of Forestry blocks but with red tooltip "Not implemented yet!"
 
 	@Mineable public static final Block CARPENTER = register("carpenter", new CarpenterBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).sounds(BlockSoundGroup.COPPER)));
-	@Mineable public static final WipBlock SQUEEZER = (WipBlock) register("squeezer", new WipBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
-	@Mineable public static final WipBlock CENTRIFUGE = (WipBlock) register("centrifuge", new WipBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
-	@Mineable public static final WipBlock STILL = (WipBlock) register("still", new WipBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
-	@Mineable public static final WipBlock FERMENTER = (WipBlock) register("fermenter", new WipBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
-	@Mineable public static final WipBlock MOISTENER = (WipBlock) register("moistener", new WipBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
-	@Mineable public static final WipBlock BOTTLER = (WipBlock) register("bottler", new WipBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
+	@Mineable public static final Block SQUEEZER = register("squeezer", new WipBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
+	@Mineable public static final Block CENTRIFUGE = register("centrifuge", new WipBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
+	@Mineable public static final Block STILL = register("still", new WipBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
+	@Mineable public static final Block FERMENTER = register("fermenter", new WipBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
+	@Mineable public static final Block MOISTENER = register("moistener", new WipBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
+	@Mineable public static final Block BOTTLER = register("bottler", new WipBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
 
 	@Mineable(type=Type.AXE) public static final WipBlock APIARIST_CHEST = (WipBlock) register("apiarist_chest", new WipBlock(AbstractBlock.Settings.copy(Blocks.CHEST)));
 	@Mineable(type=Type.AXE) public static final WipBlock WORKTABLE = (WipBlock) register("worktable", new WipBlock(AbstractBlock.Settings.copy(Blocks.CRAFTING_TABLE)));

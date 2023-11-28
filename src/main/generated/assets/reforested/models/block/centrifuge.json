@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "reforested:block/centrifuge"
-  }
+  "parent": "reforested:block/basic_machine"
 }

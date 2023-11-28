@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "reforested:block/squeezer"
-  }
+  "parent": "reforested:block/basic_machine"
 }

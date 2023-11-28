@@ -29,10 +29,16 @@ public class ReforestedModelGeneratorProvider extends FabricModelProvider {
 		ReforestedDataGenerator.executeBeeNestFunction(block -> {
 			blockStateModelGenerator.registerBeehive(block, this::beeNestMap);
 		});
+
+		createMachineModel(ModBlocks.CARPENTER, blockStateModelGenerator);
+		createMachineModel(ModBlocks.SQUEEZER, blockStateModelGenerator);
+		createMachineModel(ModBlocks.CENTRIFUGE, blockStateModelGenerator);
+		createMachineModel(ModBlocks.STILL, blockStateModelGenerator);
+		createMachineModel(ModBlocks.FERMENTER, blockStateModelGenerator);
+		createMachineModel(ModBlocks.MOISTENER, blockStateModelGenerator);
+		createMachineModel(ModBlocks.BOTTLER, blockStateModelGenerator);
+
 		ReforestedDataGenerator.executeWipBlockFunction(blockStateModelGenerator::registerSimpleCubeAll);
-		//ReforestedDataGenerator.executeWipBlockFunction(block -> {
-		//	blockStateModelGenerator.register(new Identifier("reforested", "block/basic_machine"), block);
-		//});
 
 		Class<ModBlocks> blocksClass = ModBlocks.class;
 		Field[] fields = blocksClass.getDeclaredFields();
@@ -52,6 +58,14 @@ public class ReforestedModelGeneratorProvider extends FabricModelProvider {
 				}
 			}
 		}
+	}
+
+	private void createMachineModel(Block block, BlockStateModelGenerator blockStateModelGenerator) {
+		blockStateModelGenerator.registerSingleton(block,
+				TexturedModel.makeFactory((b) -> {
+					return TextureMap.of(TextureKey.of("0"), id("block/carpenter"));
+				}, new Model(Optional.of(id("block/basic_machine")), Optional.empty()))
+		);
 	}
 
 	@Override
