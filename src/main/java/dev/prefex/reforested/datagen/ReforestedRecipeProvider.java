@@ -16,6 +16,7 @@ import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.Registries;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.ItemTags;
 import net.fabricmc.fabric.api.resource.conditions.v1.*;
 import net.minecraft.registry.tag.TagKey;
@@ -260,6 +261,42 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 						.input('#', ModItems.COPPER_GEAR),
 				ModItems.COPPER_GEAR
 		).offerTo(exporter, Registries.BLOCK.getId(ModBlocks.CLOCKWORK_ENGINE));
+
+		addShapedCriteria(
+				ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.CLOCKWORK_ENGINE)
+						.pattern("WWW")
+						.pattern(" G ")
+						.pattern("#P#") // TODO: Add wooden gear
+						.input('W', ItemTags.PLANKS)
+						.input('G', Blocks.GLASS)
+						.input('P', Blocks.PISTON)
+						.input('#', Items.REDSTONE),
+				Blocks.PISTON
+		).offerTo(exporter, Registries.BLOCK.getId(ModBlocks.REDSTONE_ENGINE));
+
+		addShapedCriteria(
+				ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.CLOCKWORK_ENGINE)
+						.pattern("SSS")
+						.pattern(" G ")
+						.pattern("#P#")
+						.input('S', ItemTags.STONE_CRAFTING_MATERIALS)
+						.input('G', Blocks.GLASS)
+						.input('P', Blocks.PISTON)
+						.input('#', ModTags.STONE_GEARS),
+				Blocks.PISTON
+		).offerTo(exporter, Registries.BLOCK.getId(ModBlocks.STIRLING_ENGINE));
+
+		addShapedCriteria(
+				ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.CLOCKWORK_ENGINE)
+						.pattern("III")
+						.pattern(" G ")
+						.pattern("#P#") // TODO: Add iron gear
+						.input('I', Items.IRON_INGOT)
+						.input('G', Blocks.GLASS)
+						.input('P', Blocks.PISTON)
+						.input('#', Items.REDSTONE),
+				Blocks.PISTON
+		).offerTo(exporter, Registries.BLOCK.getId(ModBlocks.COMBUSTION_ENGINE));
 	}
 
 	private void createGearRecipe(Consumer<RecipeJsonProvider> exporter, TagKey<Item> input, ItemConvertible unlock, Item output) {

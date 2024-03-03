@@ -25,13 +25,38 @@
 		},
 		{
 			"type": "patchouli:spotlight",
-			"item": "reforested:stirling_engine",
+			"item": "reforested:combustion_engine",
 			"text": "Combustion Engine produces -⚡/tick or -E/s.$(br)Uses liquid fuel.$(br2)Overheats if lacks water supply. Outputs Redstone signal via comparator before it overheats. Cannot start if too hot."
+		},
+		{
+			"type": "patchouli:spotlight",
+			"item": "reforested:biogas_engine",
+			"text": "Combustion Engine produces -⚡/tick or -E/s.$(br)"
+		},
+		{
+			"type": "patchouli:spotlight",
+			"item": "reforested:clockwork_engine",
+			"text": "Combustion Engine produces -⚡/tick or -E/s.$(br)This engine is winded up by the player. Winding engine up will use $(b)Hunger$().$(br2)Can't explode."
+		},
+		{
+			"type": "patchouli:spotlight",
+			"item": "reforested:peat_engine",
+			"text": "Combustion Engine produces -⚡/tick or -E/s.$(br)Uses peat as fuel.$(br2)Can't explode."
 		},
 		{
 			"type": "patchouli:crafting",
 			"recipe": "reforested:redstone_engine",
 			"recipe2": "reforested:stirling_engine"
+		},
+		{
+			"type": "patchouli:crafting",
+			"recipe": "reforested:combustion_engine",
+			"recipe2": "reforested:biogas_engine"
+		},
+		{
+			"type": "patchouli:crafting",
+			"recipe": "reforested:clockwork_engine",
+			"recipe2": "reforested:peat_engine"
 		}
 	]
 }

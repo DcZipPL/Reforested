@@ -1,4 +1,4 @@
-// 1.20.1	2023-11-28T15:34:51.242694	Reforested/Block Loot Tables
+// 1.20.1	2024-03-04T00:44:58.4407899	Reforested/Block Loot Tables
 e062f689b2d36b9ed9372381230ebddeb1aae8dd data\reforested\loot_tables\blocks\humus.json
 cc56c529f8829fc2552f80ca6291d2d833b18cf6 data\reforested\loot_tables\blocks\willow_sapling.json
 1cc57436a2f42d7753a8411efa0f0eaf13205a62 data\reforested\loot_tables\blocks\fermenter.json
@@ -106,8 +106,8 @@ acacb303a0ae89b227f45c4c41cb9c5d658f25a1 data\reforested\loot_tables\blocks\comb
 cfd10aed4b4a1cbb9308e2ef33bc1ba15c0c99dc data\reforested\loot_tables\blocks\swamp_bee_nest.json
 52d4246bc71717a736832808a5bc27309b92d016 data\reforested\loot_tables\blocks\num_num_trapdoor.json
 46788c040dfe52dce3bf390d6aeabc997fcc2577 data\reforested\loot_tables\blocks\hawthorn_sapling.json
-56ecaea54e43fbf38f1a84744a438dc3e325bb2a data\reforested\loot_tables\blocks\hawthorn_trapdoor.json
 c3042118797bdbecae2f107cb324b0eb2064bb33 data\reforested\loot_tables\blocks\potted_hawthorn_sapling.json
+56ecaea54e43fbf38f1a84744a438dc3e325bb2a data\reforested\loot_tables\blocks\hawthorn_trapdoor.json
 af1cb07e379474465bc98b9418a10a78446e5a07 data\reforested\loot_tables\blocks\dair_trapdoor.json
 807a49a01737928fd05eb41396dfdcb73d2a0d36 data\reforested\loot_tables\blocks\num_num_stairs.json
 c821a6c4636afdc1ce4ef2fca8701836be28883d data\reforested\loot_tables\blocks\bottler.json
