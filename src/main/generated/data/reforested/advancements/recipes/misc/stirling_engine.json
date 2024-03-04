@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_piston": {
+    "has_stone_gear": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:piston"
+              "reforested:stone_gear"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_piston",
+      "has_stone_gear",
       "has_the_recipe"
     ]
   ],

@@ -155,6 +155,7 @@
   "item.reforested.ice_shard": "Ice Shard",
   "item.reforested.impregnated_casing": "Impregnated Casing",
   "item.reforested.impregnated_stick": "Impregnated Stick",
+  "item.reforested.iron_gear": "Iron Gear",
   "item.reforested.mellow_honeycomb": "Mellow Honeycomb",
   "item.reforested.mossy_honeycomb": "Mossy Honeycomb",
   "item.reforested.mouldy_wheat": "Mouldy Wheat",
@@ -190,6 +191,7 @@
   "item.reforested.watery_honeycomb": "Watery Honeycomb",
   "item.reforested.wheaten_honeycomb": "Wheaten Honeycomb",
   "item.reforested.wood_pulp": "Wood Pulp",
+  "item.reforested.wooden_gear": "Wooden Gear",
   "item.reforested.woven_silk": "Woven Silk",
   "tooltip.reforested.machine.energy_stored": "Energy stored"
 }

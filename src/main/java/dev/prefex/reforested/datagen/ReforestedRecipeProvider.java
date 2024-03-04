@@ -263,19 +263,19 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 		).offerTo(exporter, Registries.BLOCK.getId(ModBlocks.CLOCKWORK_ENGINE));
 
 		addShapedCriteria(
-				ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.CLOCKWORK_ENGINE)
+				ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.REDSTONE_ENGINE)
 						.pattern("WWW")
 						.pattern(" G ")
-						.pattern("#P#") // TODO: Add wooden gear
+						.pattern("#P#")
 						.input('W', ItemTags.PLANKS)
 						.input('G', Blocks.GLASS)
 						.input('P', Blocks.PISTON)
-						.input('#', Items.REDSTONE),
-				Blocks.PISTON
+						.input('#', ModTags.WOODEN_GEARS),
+				ModItems.WOODEN_GEAR
 		).offerTo(exporter, Registries.BLOCK.getId(ModBlocks.REDSTONE_ENGINE));
 
 		addShapedCriteria(
-				ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.CLOCKWORK_ENGINE)
+				ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.STIRLING_ENGINE)
 						.pattern("SSS")
 						.pattern(" G ")
 						.pattern("#P#")
@@ -283,19 +283,19 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 						.input('G', Blocks.GLASS)
 						.input('P', Blocks.PISTON)
 						.input('#', ModTags.STONE_GEARS),
-				Blocks.PISTON
+				ModItems.STONE_GEAR
 		).offerTo(exporter, Registries.BLOCK.getId(ModBlocks.STIRLING_ENGINE));
 
 		addShapedCriteria(
-				ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.CLOCKWORK_ENGINE)
+				ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.COMBUSTION_ENGINE)
 						.pattern("III")
 						.pattern(" G ")
-						.pattern("#P#") // TODO: Add iron gear
+						.pattern("#P#")
 						.input('I', Items.IRON_INGOT)
 						.input('G', Blocks.GLASS)
 						.input('P', Blocks.PISTON)
-						.input('#', Items.REDSTONE),
-				Blocks.PISTON
+						.input('#', ModTags.IRON_GEARS),
+				ModItems.IRON_GEAR
 		).offerTo(exporter, Registries.BLOCK.getId(ModBlocks.COMBUSTION_ENGINE));
 	}
 

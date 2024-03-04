@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "#": {
-      "item": "minecraft:redstone"
+      "tag": "c:iron_gears"
     },
     "G": {
       "item": "minecraft:glass"
@@ -21,7 +21,7 @@
     "#P#"
   ],
   "result": {
-    "item": "reforested:clockwork_engine"
+    "item": "reforested:combustion_engine"
   },
   "show_notification": true
 }
