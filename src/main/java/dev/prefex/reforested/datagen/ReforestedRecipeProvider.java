@@ -70,6 +70,16 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 				Items.COBBLESTONE
 		).offerTo(exporter, Registries.ITEM.getId(ModItems.STONE_GEAR));
 
+		addShapedCriteria(
+				ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.WOODEN_GEAR)
+						.pattern(" # ")
+						.pattern("# #")
+						.pattern(" # ") // TODO: Make recipe unique
+						.input('#', Items.STICK),
+				Items.STICK
+		).offerTo(exporter, Registries.ITEM.getId(ModItems.WOODEN_GEAR));
+
+		createGearRecipe(exporter, Items.IRON_INGOT, Items.IRON_INGOT, ModItems.IRON_GEAR);
 		createGearRecipe(exporter, Items.COPPER_INGOT, Items.COPPER_INGOT, ModItems.COPPER_GEAR);
 		createGearRecipe(exporter, ModTags.TIN_INGOTS, ModItems.TIN_INGOT, ModItems.TIN_GEAR);
 		createGearRecipe(exporter, ModTags.BRONZE_INGOTS, ModItems.BRONZE_INGOT, ModItems.BRONZE_GEAR);
