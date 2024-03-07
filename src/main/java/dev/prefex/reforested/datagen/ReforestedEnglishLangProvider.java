@@ -4,7 +4,6 @@ import dev.prefex.reforested.Reforested;
 import dev.prefex.reforested.util.StringExtensions;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
-import net.minecraft.item.Item;
 
 import java.nio.file.Path;
 

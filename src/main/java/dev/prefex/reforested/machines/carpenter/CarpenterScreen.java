@@ -1,9 +1,9 @@
 package dev.prefex.reforested.machines.carpenter;
 
-import dev.prefex.reforested.machines.core.widgets.EnergyWidget;
-import dev.prefex.yokai.machine.MachineScreen;
 import dev.prefex.reforested.machines.core.widgets.ButtonType;
 import dev.prefex.reforested.machines.core.widgets.ButtonWidget;
+import dev.prefex.reforested.machines.core.widgets.EnergyWidget;
+import dev.prefex.yokai.machine.MachineScreen;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.util.math.Rect2i;
 import net.minecraft.entity.player.PlayerInventory;

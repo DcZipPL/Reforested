@@ -5,7 +5,6 @@ import dev.prefex.yokai.fluid.FluidStack;
 import dev.prefex.yokai.fluid.FluidValue;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.fluid.Fluids;
 import net.minecraft.inventory.StackReference;
 import net.minecraft.item.BucketItem;
 import net.minecraft.item.Item;

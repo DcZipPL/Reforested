@@ -7,7 +7,6 @@ import net.minecraft.client.gui.widget.ClickableWidget;
 import net.minecraft.text.Text;
 import org.jetbrains.annotations.NotNull;
 
-import static dev.prefex.reforested.Reforested.LOGGER;
 import static dev.prefex.reforested.Reforested.id;
 
 public class ButtonWidget extends ClickableWidget {

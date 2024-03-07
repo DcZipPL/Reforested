@@ -5,7 +5,6 @@ import dev.prefex.reforested.datagen.Mineable;
 import dev.prefex.reforested.machines.carpenter.CarpenterBlock;
 import dev.prefex.reforested.machines.engines.creative.CreativeEngineBlock;
 import dev.prefex.reforested.machines.engines.redstone.RedstoneEngineBlock;
-import dev.prefex.reforested.machines.engines.redstone.RedstoneEngineBlockEntity;
 import dev.prefex.reforested.machines.engines.stirling.StirlingEngineBlock;
 import dev.prefex.reforested.util.WoodSet;
 import net.minecraft.block.*;
@@ -15,7 +14,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 
-import static dev.prefex.reforested.datagen.Mineable.*;
+import static dev.prefex.reforested.datagen.Mineable.Type;
 
 @SuppressWarnings("unused")
 public class ModBlocks {

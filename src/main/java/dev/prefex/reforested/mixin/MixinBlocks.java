@@ -1,7 +1,9 @@
 package dev.prefex.reforested.mixin;
 
 import dev.prefex.reforested.items.ReforestedBeehiveBlock;
-import net.minecraft.block.*;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.BeehiveBlock;
+import net.minecraft.block.Blocks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;

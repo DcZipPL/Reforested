@@ -1,8 +1,6 @@
 package dev.prefex.reforested.items;
 
-import net.minecraft.block.Block;
 import net.minecraft.item.*;
-import net.minecraft.registry.tag.TagKey;
 
 import static dev.prefex.reforested.util.ModTags.SCOOP_MINEABLE;
 

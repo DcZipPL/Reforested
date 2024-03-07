@@ -2,14 +2,11 @@ package dev.prefex.reforested.machines.core.widgets;
 
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.Drawable;
-import net.minecraft.client.gui.Element;
 import net.minecraft.client.gui.widget.ClickableWidget;
 import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.client.util.math.Rect2i;
-import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
-import java.util.List;
 import java.util.function.Consumer;
 
 public class EnergyWidget implements Drawable, Widget {
