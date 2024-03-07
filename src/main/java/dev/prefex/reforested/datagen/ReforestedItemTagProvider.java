@@ -34,7 +34,6 @@ public class ReforestedItemTagProvider extends FabricTagProvider.ItemTagProvider
 				Items.PINK_STAINED_GLASS, Items.PURPLE_STAINED_GLASS, Items.RED_STAINED_GLASS, Items.WHITE_STAINED_GLASS, Items.YELLOW_STAINED_GLASS);
 
 		addTag(ModTags.CHEST, Items.CHEST);
-		addTag(ModTags.COBBLED, Items.COBBLESTONE, Items.COBBLED_DEEPSLATE);
 	}
 
 	private void addTag(TagKey<Item> tag, Item... items) {

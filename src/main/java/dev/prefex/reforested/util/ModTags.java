@@ -17,7 +17,6 @@ public class ModTags {
 
 	public static final TagKey<Item> GLASS = TagKey.of(RegistryKeys.ITEM, common("glass"));
 	public static final TagKey<Item> CHEST = TagKey.of(RegistryKeys.ITEM, common("chest"));
-	public static final TagKey<Item> COBBLED = TagKey.of(RegistryKeys.ITEM, common("cobbled"));
 
 	public static final TagKey<Item> INGOTS = TagKey.of(RegistryKeys.ITEM, common("ingots"));
 	public static final TagKey<Item> GEARS = TagKey.of(RegistryKeys.ITEM, common("gears"));

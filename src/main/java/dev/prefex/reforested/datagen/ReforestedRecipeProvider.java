@@ -66,7 +66,7 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 						.pattern(" # ")
 						.pattern("# #")
 						.pattern(" # ")
-						.input('#', ModTags.COBBLED),
+						.input('#', ItemTags.STONE_CRAFTING_MATERIALS),
 				Items.COBBLESTONE
 		).offerTo(exporter, Registries.ITEM.getId(ModItems.STONE_GEAR));
 
@@ -289,7 +289,7 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 						.pattern("SSS")
 						.pattern(" G ")
 						.pattern("#P#")
-						.input('S', ItemTags.STONE_CRAFTING_MATERIALS)
+						.input('S', ItemTags.STONE_CRAFTING_MATERIALS) // TODO check ModTags.COBBLED
 						.input('G', Blocks.GLASS)
 						.input('P', Blocks.PISTON)
 						.input('#', ModTags.STONE_GEARS),
