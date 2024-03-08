@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "#": {
-      "tag": "minecraft:stone_crafting_materials"
+      "item": "minecraft:stick"
     }
   },
   "pattern": [
@@ -12,7 +12,7 @@
     " # "
   ],
   "result": {
-    "item": "reforested:stone_gear"
+    "item": "reforested:wooden_gear"
   },
   "show_notification": true
 }
