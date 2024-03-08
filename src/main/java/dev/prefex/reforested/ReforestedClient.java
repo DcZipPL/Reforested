@@ -1,22 +1,26 @@
 package dev.prefex.reforested;
 
+import dev.architectury.registry.client.rendering.BlockEntityRendererRegistry;
 import dev.prefex.reforested.blocks.ModBlocks;
 import dev.prefex.reforested.entity.ModEntities;
 import dev.prefex.reforested.entity.ReforestedBeeRenderer;
 import dev.prefex.reforested.items.ModItems;
 import dev.prefex.reforested.machines.ModMachines;
 import dev.prefex.reforested.machines.carpenter.CarpenterScreen;
+import dev.prefex.reforested.machines.engines.redstone.RedstoneEngineBlockEntityRenderer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
 import net.minecraft.item.Item;
 
 public class ReforestedClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
+		BlockEntityRendererRegistry.register(ModMachines.REDSTONE_ENGINE_BLOCK_ENTITY, (BlockEntityRendererFactory.Context model) -> new RedstoneEngineBlockEntityRenderer());
 
 		HandledScreens.register(ModMachines.CARPENTER_SCREEN_HANDLER, CarpenterScreen::new);
 

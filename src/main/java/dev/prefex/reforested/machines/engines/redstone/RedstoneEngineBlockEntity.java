@@ -6,11 +6,21 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
+import software.bernie.geckolib.animatable.GeoBlockEntity;
+import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.core.animation.AnimatableManager;
+import software.bernie.geckolib.core.animation.AnimationController;
+import software.bernie.geckolib.core.animation.AnimationState;
+import software.bernie.geckolib.core.animation.RawAnimation;
+import software.bernie.geckolib.core.object.PlayState;
+import software.bernie.geckolib.util.GeckoLibUtil;
 import team.reborn.energy.api.EnergyStorage;
 import team.reborn.energy.api.EnergyStorageUtil;
 import team.reborn.energy.api.base.SimpleEnergyStorage;
 
-public class RedstoneEngineBlockEntity extends BlockEntity {
+public class RedstoneEngineBlockEntity extends BlockEntity implements GeoBlockEntity {
+	protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.PowerEngine.cold");
+	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	public final SimpleEnergyStorage energyStorage = new SimpleEnergyStorage(24, 0, 4);
 
 	public int heat = 0;
@@ -51,5 +61,19 @@ public class RedstoneEngineBlockEntity extends BlockEntity {
 					null
 			);
 		}
+	}
+
+	@Override
+	public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
+		controllerRegistrar.add(new AnimationController<>(this, this::deployAnimController));
+	}
+
+	protected <E extends RedstoneEngineBlockEntity> PlayState deployAnimController(final AnimationState<E> state) {
+		return state.setAndContinue(IDLE);
+	}
+
+	@Override
+	public AnimatableInstanceCache getAnimatableInstanceCache() {
+		return this.cache;
 	}
 }

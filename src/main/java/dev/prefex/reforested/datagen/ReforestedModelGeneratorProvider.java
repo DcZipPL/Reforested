@@ -38,8 +38,11 @@ public class ReforestedModelGeneratorProvider extends FabricModelProvider {
 		createMachineModel(ModBlocks.MOISTENER, blockStateModelGenerator);
 		createMachineModel(ModBlocks.BOTTLER, blockStateModelGenerator);
 
+		createEngineBlockModel(ModBlocks.REDSTONE_ENGINE, blockStateModelGenerator);
+
 		ReforestedDataGenerator.executeWipBlockFunction(blockStateModelGenerator::registerSimpleCubeAll);
 
+		// Register all wood set blocks
 		Class<ModBlocks> blocksClass = ModBlocks.class;
 		Field[] fields = blocksClass.getDeclaredFields();
 		for (Field field : fields) {
@@ -58,6 +61,10 @@ public class ReforestedModelGeneratorProvider extends FabricModelProvider {
 				}
 			}
 		}
+	}
+
+	private void createEngineBlockModel(Block block, BlockStateModelGenerator blockStateModelGenerator) {
+		//blockStateModelGenerator.registerRod(block);
 	}
 
 	private void createMachineModel(Block block, BlockStateModelGenerator blockStateModelGenerator) {
