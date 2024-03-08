@@ -1,7 +1,9 @@
 package dev.prefex.reforested.machines.engines.stirling;
 
+import com.mojang.serialization.MapCodec;
 import dev.prefex.yokai.machine.MachineBlock;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.BlockWithEntity;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ItemStack;
@@ -29,5 +31,10 @@ public class StirlingEngineBlock extends MachineBlock {
 	@Override
 	public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
 		return null;
+	}
+
+	@Override
+	protected MapCodec<? extends BlockWithEntity> getCodec() {
+		return createCodec(StirlingEngineBlock::new);
 	}
 }

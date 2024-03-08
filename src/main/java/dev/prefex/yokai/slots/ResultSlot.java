@@ -33,7 +33,7 @@ public class ResultSlot extends Slot {
 
 	protected void onCrafted(ItemStack stack, int amount) {
 		this.amount += amount;
-		stack.onCraft(this.player.getWorld(), this.player, this.amount);
+		stack.onCraftByPlayer(this.player.getWorld(), this.player, this.amount);
 		this.amount = 0;
 	}
 }

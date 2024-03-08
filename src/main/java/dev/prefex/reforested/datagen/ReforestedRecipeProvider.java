@@ -9,7 +9,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.fabricmc.fabric.api.resource.conditions.v1.ConditionJsonProvider;
 import net.fabricmc.fabric.api.resource.conditions.v1.DefaultResourceConditions;
 import net.minecraft.block.Blocks;
-import net.minecraft.data.server.recipe.RecipeJsonProvider;
+import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Item;
@@ -49,7 +49,7 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 	}
 
 	@Override
-	public void generate(Consumer<RecipeJsonProvider> exporter) {
+	public void generate(RecipeExporter exporter) {
 		generateCraftingRecipes(exporter);
 
 		//ReforestedDataGenerator.executeWoodSet(this::generateWoodRecipes, __ -> {});
@@ -84,14 +84,14 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 		createGearRecipe(exporter, ModTags.TIN_INGOTS, ModItems.TIN_INGOT, ModItems.TIN_GEAR);
 		createGearRecipe(exporter, ModTags.BRONZE_INGOTS, ModItems.BRONZE_INGOT, ModItems.BRONZE_GEAR);
 
-		oneModCompat("lightestlamp", "techreborn", "modern_industrialization", "indrev");
+		/*oneModCompat("lightestlamp", "techreborn", "modern_industrialization", "indrev");
 		addShapelessCriteria(
 				ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.BRONZE_INGOT, 4)
 						.input(dev.prefex.lightestlamp.init.ModItems.STICKANDBOWL)
 						.input(Items.COPPER_INGOT,3)
 						.input(ModTags.TIN_INGOTS),
 				ModItems.BRONZE_INGOT
-		).offerTo(withConditions(exporter, conditions), Registries.ITEM.getId(ModItems.BRONZE_INGOT)+"_lightestlamps");
+		).offerTo(withConditions(exporter, conditions), Registries.ITEM.getId(ModItems.BRONZE_INGOT)+"_lightestlamps");*/ // TODO: Re-add when lightestlamp is updated
 
 		withoutCompat("techreborn");
 		addShapedCriteria(
@@ -115,7 +115,7 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 		).offerTo(withConditions(exporter, conditions), Registries.ITEM.getId(ModItems.CAN)+"_compat");
 	}
 
-	private void generateCraftingRecipes(Consumer<RecipeJsonProvider> exporter) {
+	private void generateCraftingRecipes(RecipeExporter exporter) {
 		addShapedCriteria(
 				ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.SCOOP)
 						.pattern("SWS")
@@ -309,7 +309,7 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 		).offerTo(exporter, Registries.BLOCK.getId(ModBlocks.COMBUSTION_ENGINE));
 	}
 
-	private void createGearRecipe(Consumer<RecipeJsonProvider> exporter, TagKey<Item> input, ItemConvertible unlock, Item output) {
+	private void createGearRecipe(RecipeExporter exporter, TagKey<Item> input, ItemConvertible unlock, Item output) {
 		addShapedCriteria(
 				ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, output)
 						.pattern(" # ")
@@ -321,7 +321,7 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 		).offerTo(exporter, Registries.ITEM.getId(output));
 	}
 
-	private void createGearRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible input, ItemConvertible unlock, Item output) {
+	private void createGearRecipe(RecipeExporter exporter, ItemConvertible input, ItemConvertible unlock, Item output) {
 		addShapedCriteria(
 				ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, output)
 						.pattern(" # ")

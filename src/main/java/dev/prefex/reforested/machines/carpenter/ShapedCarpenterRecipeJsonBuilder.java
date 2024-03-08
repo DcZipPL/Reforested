@@ -3,19 +3,15 @@ package dev.prefex.reforested.machines.carpenter;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import net.minecraft.advancement.Advancement;
-import net.minecraft.advancement.criterion.CriterionConditions;
+import net.minecraft.advancement.AdvancementCriterion;
 import net.minecraft.data.server.recipe.CraftingRecipeJsonBuilder;
-import net.minecraft.data.server.recipe.RecipeJsonBuilder;
-import net.minecraft.data.server.recipe.RecipeJsonProvider;
+import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
+import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.Ingredient;
-import net.minecraft.recipe.RecipeSerializer;
-import net.minecraft.recipe.book.CraftingRecipeCategory;
-import net.minecraft.registry.Registries;
+import net.minecraft.recipe.RawShapedRecipe;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.Nullable;
@@ -23,10 +19,8 @@ import org.jetbrains.annotations.Nullable;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 
-// TODO: Parsing error loading custom advancement <RECIPE>: Advancement criteria cannot be empty
-public class ShapedCarpenterRecipeJsonBuilder extends RecipeJsonBuilder implements CraftingRecipeJsonBuilder {
+public class ShapedCarpenterRecipeJsonBuilder implements CraftingRecipeJsonBuilder {
 	private String group = "";
 	private final Ingredient frame;
 	private final Item output;
@@ -77,8 +71,8 @@ public class ShapedCarpenterRecipeJsonBuilder extends RecipeJsonBuilder implemen
 	}
 
 	@Override
-	public ShapedCarpenterRecipeJsonBuilder criterion(String string, CriterionConditions criterionConditions) {
-		this.advancementBuilder.criterion(string, criterionConditions);
+	public CraftingRecipeJsonBuilder criterion(String name, AdvancementCriterion<?> criterion) {
+		this.advancementBuilder.criterion(name, criterion);
 		return this;
 	}
 
@@ -94,18 +88,9 @@ public class ShapedCarpenterRecipeJsonBuilder extends RecipeJsonBuilder implemen
 	}
 
 	@Override
-	public void offerTo(Consumer<RecipeJsonProvider> exporter, Identifier recipeId) {
+	public void offerTo(RecipeExporter exporter, Identifier recipeId) {
 		this.validate(recipeId);
-		exporter.accept(new ShapedCarpenterRecipeJsonBuilder.ShapedCarpenterRecipeJsonProvider(
-				recipeId,
-				this.group,
-				this.frame,
-				this.output,
-				this.count,
-				this.pattern,
-				this.inputs,
-				this.advancementBuilder,
-				recipeId.withPrefixedPath("recipes/carpenter/")));
+		exporter.accept(recipeId, new CarpenterRecipe(RawShapedRecipe.create(inputs, pattern), frame, new ItemStack(output)), advancementBuilder.build(recipeId.withPrefixedPath("recipes/carpenter/")));
 	}
 
 	private void validate(Identifier recipeId) {
@@ -128,89 +113,6 @@ public class ShapedCarpenterRecipeJsonBuilder extends RecipeJsonBuilder implemen
 		}
 		if (this.pattern.size() == 1 && this.pattern.get(0).length() == 1) {
 			throw new IllegalStateException("Shaped recipe " + recipeId + " only takes in a single item - should it be a shapeless recipe instead?");
-		}
-	}
-
-	static class ShapedCarpenterRecipeJsonProvider
-			extends RecipeJsonBuilder.CraftingRecipeJsonProvider {
-		private final Identifier recipeId;
-		private final String group;
-		private final Ingredient frame;
-		private final Item output;
-		private final int resultCount;
-		private final List<String> pattern;
-		private final Map<Character, Ingredient> inputs;
-		private final Advancement.Builder advancementBuilder;
-		private final Identifier advancementId;
-
-		public ShapedCarpenterRecipeJsonProvider(Identifier recipeId, String group, Ingredient frame, Item output, int resultCount, List<String> pattern, Map<Character, Ingredient> inputs, Advancement.Builder advancementBuilder, Identifier advancementId) {
-			super(CraftingRecipeCategory.MISC); // TODO: Remove this
-			this.recipeId = recipeId;
-			this.group = group;
-			this.frame = frame;
-			this.output = output;
-			this.resultCount = resultCount;
-			this.pattern = pattern;
-			this.inputs = inputs;
-			this.advancementBuilder = advancementBuilder;
-			this.advancementId = advancementId;
-		}
-
-		@Override
-		public void serialize(JsonObject json) {
-			super.serialize(json);
-
-			// Group
-			if (!this.group.isEmpty()) {
-				json.addProperty("group", this.group);
-			}
-
-			// Pattern
-			JsonArray patternJson = new JsonArray();
-			for (String string : this.pattern) {
-				patternJson.add(string);
-			}
-			json.add("pattern", patternJson);
-
-			// Inputs
-			JsonObject inputsJson = new JsonObject();
-			for (Map.Entry<Character, Ingredient> entry : this.inputs.entrySet()) {
-				inputsJson.add(String.valueOf(entry.getKey()), entry.getValue().toJson());
-			}
-			json.add("key", inputsJson);
-
-			// Frame !new
-			json.add("frame", this.frame.toJson());
-
-			// Result
-			JsonObject resultJson = new JsonObject();
-			resultJson.addProperty("item", Registries.ITEM.getId(this.output).toString());
-			if (this.resultCount > 1) {
-				resultJson.addProperty("count", this.resultCount);
-			}
-			json.add("result", resultJson);
-		}
-
-		@Override
-		public RecipeSerializer<?> getSerializer() {
-			return CarpenterRecipe.Serializer.INSTANCE;
-		}
-
-		@Override
-		public Identifier getRecipeId() {
-			return this.recipeId;
-		}
-
-		@Override
-		@Nullable
-		public JsonObject toAdvancementJson() {
-			return this.advancementBuilder.toJson();
-		}
-
-		@Override
-		@Nullable
-		public Identifier getAdvancementId() {
-			return this.advancementId;
 		}
 	}
 }

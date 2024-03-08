@@ -1,6 +1,7 @@
 package dev.prefex.yokai.fluid;
 
-import dev.onyxstudios.cca.api.v3.util.NbtSerializable;
+//import dev.onyxstudios.cca.api.v3.util.NbtSerializable;
+import dev.prefex.yokai.NbtSerializable;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.nbt.NbtCompound;
@@ -8,7 +9,6 @@ import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.NotNull;
 
-@SuppressWarnings("UnstableApiUsage")
 public class FluidStack implements NbtSerializable {
 	public static final String FLUID_KEY = "Fluid";
 	public static final String AMOUNT_KEY = "Amount";

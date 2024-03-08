@@ -1,7 +1,9 @@
 package dev.prefex.reforested.machines.engines.creative;
 
+import com.mojang.serialization.MapCodec;
 import dev.prefex.yokai.machine.MachineBlock;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.BlockWithEntity;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.text.Text;
@@ -27,5 +29,10 @@ public class CreativeEngineBlock extends MachineBlock {
 	@Override
 	public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
 		return new CreativeEngineBlockEntity(pos, state);
+	}
+
+	@Override
+	protected MapCodec<? extends BlockWithEntity> getCodec() {
+		return createCodec(CreativeEngineBlock::new);
 	}
 }

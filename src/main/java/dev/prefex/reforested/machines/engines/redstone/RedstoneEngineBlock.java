@@ -1,7 +1,8 @@
 package dev.prefex.reforested.machines.engines.redstone;
 
+import com.mojang.serialization.MapCodec;
 import dev.prefex.reforested.machines.ModMachines;
-import dev.prefex.yokai.machine.MachineBlock;
+import dev.prefex.reforested.machines.engines.stirling.StirlingEngineBlock;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
@@ -69,6 +70,11 @@ public class RedstoneEngineBlock extends BlockWithEntity {
 	@Nullable
 	@Override
 	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-		return checkType(type, ModMachines.REDSTONE_ENGINE_BLOCK_ENTITY, RedstoneEngineBlockEntity::tick);
+		return validateTicker(type, ModMachines.REDSTONE_ENGINE_BLOCK_ENTITY, RedstoneEngineBlockEntity::tick);
+	}
+
+	@Override
+	protected MapCodec<? extends BlockWithEntity> getCodec() {
+		return createCodec(RedstoneEngineBlock::new);
 	}
 }

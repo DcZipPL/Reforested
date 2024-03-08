@@ -9,6 +9,7 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
+import net.minecraft.recipe.RecipeEntry;
 import net.minecraft.recipe.RecipeManager;
 import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.screen.PropertyDelegate;
@@ -20,6 +21,8 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import team.reborn.energy.api.base.SimpleEnergyStorage;
+
+import java.util.Optional;
 
 import static dev.prefex.reforested.Reforested.id;
 
@@ -55,12 +58,13 @@ public class CarpenterBlockEntity extends MachineBlockEntity {
     }
 
 	public static void tick(World world, BlockPos blockPos, BlockState blockState, CarpenterBlockEntity self) {
-		CarpenterRecipe recipe = self.matchGetter.getFirstMatch(self, world).orElse(null);
+		Optional<? extends RecipeEntry<? extends CarpenterRecipe>> recipeEntry = self.matchGetter.getFirstMatch(self, world);
 
 		self.maxProcessTime = 50;
 
-		if (recipe != null && !isRecipeEmpty(self.inventory)) {
-			self.inventory.set(10, recipe.getResult(world.getRegistryManager())[0].copy());
+		if (recipeEntry.isPresent() && !isRecipeEmpty(self.inventory)) {
+			CarpenterRecipe recipe = recipeEntry.get().value();
+			self.inventory.set(10, recipe.getOutput(world.getRegistryManager())[0].copy());
 
 			if (self.energyStorage.amount >= 9){
 				self.energyStorage.amount -= 9;
@@ -89,7 +93,7 @@ public class CarpenterBlockEntity extends MachineBlockEntity {
 	private static boolean craftRecipe(DynamicRegistryManager registryManager, @Nullable CarpenterRecipe recipe, DefaultedList<ItemStack> slots, int maxCount) {
 		if (recipe != null && canAcceptRecipeOutput(registryManager, recipe, slots, maxCount)) {
 			DefaultedList<ItemStack> ingredients = getCraftingSlots(slots);
-			ItemStack result = recipe.getResult(registryManager)[0];
+			ItemStack result = recipe.getOutput(registryManager)[0];
 			ItemStack resultSlot = slots.get(11);
 			if (resultSlot.isEmpty()) {
 				slots.set(11, result.copy());
@@ -106,7 +110,7 @@ public class CarpenterBlockEntity extends MachineBlockEntity {
 
 	private static boolean canAcceptRecipeOutput(DynamicRegistryManager registryManager, @Nullable CarpenterRecipe recipe, DefaultedList<ItemStack> slots, int maxCount) {
 		if (!isRecipeEmpty(slots) && recipe != null) {
-			ItemStack recipeResult = recipe.getResult(registryManager)[0];
+			ItemStack recipeResult = recipe.getOutput(registryManager)[0];
 			if (recipeResult.isEmpty()) {
 				return false;
 			} else {

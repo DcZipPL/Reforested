@@ -17,11 +17,11 @@ public abstract class ExtendedRecipe implements Recipe<Inventory> {
 	}
 
 	@Override
-	public ItemStack getOutput(DynamicRegistryManager registryManager) {
-		return getResult(registryManager)[0];
+	public ItemStack getResult(DynamicRegistryManager registryManager) {
+		return getOutput(registryManager)[0];
 	}
 
-	public abstract ItemStack[] getResult(DynamicRegistryManager registryManager);
+	public abstract ItemStack[] getOutput(DynamicRegistryManager registryManager);
 
 	public abstract ItemStack[] produce(Inventory inventory, DynamicRegistryManager registryManager);
 }

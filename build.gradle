@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '1.2-SNAPSHOT'
+	id 'fabric-loom' version '1.5-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -57,14 +57,14 @@ dependencies {
 	modApi "me.shedaniel:RoughlyEnoughItems-fabric:${rei_version}"
 	modApi "com.terraformersmc:modmenu:${mod_menu}"
 
-	modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-base:${cc_version}"
-	modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-block:${cc_version}"
-	modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-item:${cc_version}"
+	//modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-base:${cc_version}"
+	//modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-block:${cc_version}"
+	//modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-item:${cc_version}"
 
 	// Includes Cardinal Components API as a Jar-in-Jar dependency (optional)
-	include "dev.onyxstudios.cardinal-components-api:cardinal-components-base:${cc_version}"
-	include "dev.onyxstudios.cardinal-components-api:cardinal-components-block:${cc_version}"
-	include "dev.onyxstudios.cardinal-components-api:cardinal-components-item:${cc_version}"
+	//include "dev.onyxstudios.cardinal-components-api:cardinal-components-base:${cc_version}"
+	//include "dev.onyxstudios.cardinal-components-api:cardinal-components-block:${cc_version}"
+	//include "dev.onyxstudios.cardinal-components-api:cardinal-components-item:${cc_version}"
 
 	modImplementation "vazkii.patchouli:Patchouli:${patchouli_version}"
 
@@ -76,12 +76,12 @@ dependencies {
 
 	// Visit https://www.curseforge.com/minecraft/mc-mods/jade/files
 	// to get the latest version's jade_id
-	modImplementation "curse.maven:jade-324717:4710614"
+	modImplementation "curse.maven:jade-324717:5111964"
 
 	modImplementation ("TechReborn:TechReborn-1.20:${techreborn_version}") {
 		exclude(group: "net.fabricmc.fabric-api")
 	}
-	modImplementation "maven.modrinth:lightest-lamps:4.1.1"
+	//modImplementation "maven.modrinth:lightest-lamps:4.1.1"
 }
 
 base {

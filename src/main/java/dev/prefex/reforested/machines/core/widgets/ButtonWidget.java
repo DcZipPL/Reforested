@@ -26,7 +26,7 @@ public class ButtonWidget extends ClickableWidget {
 	}
 
 	@Override
-	protected void renderButton(DrawContext context, int mouseX, int mouseY, float delta) {
+	protected void renderWidget(DrawContext context, int mouseX, int mouseY, float delta) {
 		context.drawTexture(id("textures/gui/buttons.png"), this.getX(), this.getY(),
 				getTextureU(),
 				getTextureV(),
