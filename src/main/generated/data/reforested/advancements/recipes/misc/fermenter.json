@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_sturdy_casing",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_sturdy_casing"
     ]
   ],
   "rewards": {
     "recipes": [
       "reforested:fermenter"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

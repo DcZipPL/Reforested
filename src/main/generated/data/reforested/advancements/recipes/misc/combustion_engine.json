@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_iron_gear",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_iron_gear"
     ]
   ],
   "rewards": {
     "recipes": [
       "reforested:combustion_engine"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

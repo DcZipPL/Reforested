@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_wooden_gear",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_wooden_gear"
     ]
   ],
   "rewards": {
     "recipes": [
       "reforested:redstone_engine"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

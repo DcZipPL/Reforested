@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_stone_gear",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_stone_gear"
     ]
   ],
   "rewards": {
     "recipes": [
       "reforested:stirling_engine"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -1,6 +1,5 @@
 {
 	"type": "reforested:carpenter",
-	"frame": [],
 	"key": {
 		"M": {
 			"item": "reforested:mulch"
@@ -17,6 +16,7 @@
 		"SMS",
 		"DSD"
 	],
+	"frame": [],
 	"result": {
 		"item": "reforested:bog_earth",
 		"count": 8

@@ -30,14 +30,13 @@
   },
   "requirements": [
     [
-      "has_bronze_ingot",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_bronze_ingot"
     ]
   ],
   "rewards": {
     "recipes": [
       "reforested:can_compat"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

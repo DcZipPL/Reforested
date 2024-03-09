@@ -1,7 +1,5 @@
 {
   "type": "reforested:carpenter",
-  "category": "misc",
-  "frame": [],
   "key": {
     "#": {
       "item": "minecraft:diamond"
@@ -15,7 +13,9 @@
     "#C#",
     "   "
   ],
+  "frame": [],
   "result": {
-    "item": "reforested:hardened_casing"
+    "item": "reforested:hardened_casing",
+    "count": 1
   }
 }
