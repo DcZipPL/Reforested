@@ -25,15 +25,15 @@ public class CarpenterRecipe extends ExtendedRecipe {
 	private final int GRID_HEIGHT = 3;
 
 	//final FluidStack fluid;
-	final RawShapedRecipe input;
+	final RawShapedRecipe raw;
 	final Ingredient frame;
-	final ItemStack output;
+	final ItemStack result;
 
-	public CarpenterRecipe(/*FluidStack fluid, */RawShapedRecipe input, Ingredient frame, ItemStack output) {
+	public CarpenterRecipe(/*FluidStack fluid, */RawShapedRecipe raw, Ingredient frame, ItemStack result) {
 		/*this.fluid = fluid;*/
-		this.input = input;
+		this.raw = raw;
 		this.frame = frame;
-		this.output = output;
+		this.result = result;
 	}
 
 	public FluidStack getFluid() {
@@ -42,7 +42,7 @@ public class CarpenterRecipe extends ExtendedRecipe {
 	}
 
 	public DefaultedList<Ingredient> getInput() {
-		return input.ingredients();
+		return raw.ingredients();
 	}
 
 	public Ingredient getFrame() {
@@ -51,18 +51,18 @@ public class CarpenterRecipe extends ExtendedRecipe {
 
 	@Override
 	public ItemStack[] getOutput(DynamicRegistryManager registryManager) {
-		return new ItemStack[] { output };
+		return new ItemStack[] { result };
 	}
 
 	@Override
 	public ItemStack[] produce(Inventory inventory, DynamicRegistryManager registryManager) {
-		return new ItemStack[] { output };
+		return new ItemStack[] { result };
 	}
 
 	@Override
 	public boolean matches(Inventory recipeInputInventory, World world) {
-		for(int i = 0; i <= GRID_WIDTH - this.input.width(); ++i) {
-			for(int j = 0; j <= GRID_HEIGHT - this.input.height(); ++j) {
+		for(int i = 0; i <= GRID_WIDTH - this.raw.width(); ++i) {
+			for(int j = 0; j <= GRID_HEIGHT - this.raw.height(); ++j) {
 				if (this.matchesPattern(recipeInputInventory, i, j, true)) {
 					return true;
 				}
@@ -77,17 +77,17 @@ public class CarpenterRecipe extends ExtendedRecipe {
 	}
 
 	private boolean matchesPattern(Inventory inv, int offsetX, int offsetY, boolean flipped) {
-		DefaultedList<Ingredient> ingredients = this.input.ingredients();
+		DefaultedList<Ingredient> ingredients = this.raw.ingredients();
 		for(int i = 0; i < GRID_WIDTH; ++i) {
 			for(int j = 0; j < GRID_HEIGHT; ++j) {
 				int k = i - offsetX;
 				int l = j - offsetY;
 				Ingredient ingredient = Ingredient.EMPTY;
-				if (k >= 0 && l >= 0 && k < this.input.width() && l < this.input.height()) {
+				if (k >= 0 && l >= 0 && k < this.raw.width() && l < this.raw.height()) {
 					if (flipped) {
-						ingredient = ingredients.get(this.input.width() - k - 1 + l * this.input.width());
+						ingredient = ingredients.get(this.raw.width() - k - 1 + l * this.raw.width());
 					} else {
-						ingredient = ingredients.get(k + l * this.input.width());
+						ingredient = ingredients.get(k + l * this.raw.width());
 					}
 				}
 
@@ -102,7 +102,7 @@ public class CarpenterRecipe extends ExtendedRecipe {
 
 	// This is only used for crafting table like containers
 	public boolean fits(int width, int height) {
-		return width >= this.input.width() && height >= this.input.height();
+		return width >= this.raw.width() && height >= this.raw.height();
 	}
 
 	@Override
@@ -114,9 +114,9 @@ public class CarpenterRecipe extends ExtendedRecipe {
 		public static final Codec<CarpenterRecipe> CODEC = RecordCodecBuilder.create((instance) ->
 			instance.group(
 				//FluidStack.CODEC.fieldOf("fluid").forGetter(CarpenterRecipe::getFluid), // TODO: implement fluid stack
-				RawShapedRecipe.CODEC.forGetter((recipe) -> recipe.input),
-				Ingredient.ALLOW_EMPTY_CODEC.fieldOf("frame").forGetter(CarpenterRecipe::getFrame),
-				ItemStack.CODEC.fieldOf("output").forGetter((recipe) -> recipe.output)
+				RawShapedRecipe.CODEC.forGetter((recipe) -> recipe.raw),
+				Ingredient.ALLOW_EMPTY_CODEC.fieldOf("frame").forGetter((recipe) -> recipe.frame),
+				ItemStack.RECIPE_RESULT_CODEC.fieldOf("result").forGetter((recipe) -> recipe.result)
 		).apply(instance, CarpenterRecipe::new));
 
 		@Override
@@ -139,10 +139,10 @@ public class CarpenterRecipe extends ExtendedRecipe {
 		public void write(PacketByteBuf packetByteBuf, CarpenterRecipe shapedRecipe) {
 			// TODO: implement fluid stack
 
-			shapedRecipe.input.writeToBuf(packetByteBuf);
+			shapedRecipe.raw.writeToBuf(packetByteBuf);
 			shapedRecipe.frame.write(packetByteBuf);
 
-			packetByteBuf.writeItemStack(shapedRecipe.output);
+			packetByteBuf.writeItemStack(shapedRecipe.result);
 		}
 
 		public static final CarpenterRecipe.Serializer INSTANCE = new CarpenterRecipe.Serializer();
