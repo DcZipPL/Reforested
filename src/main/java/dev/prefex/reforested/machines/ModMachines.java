@@ -4,6 +4,7 @@ import dev.prefex.reforested.blocks.ModBlocks;
 import dev.prefex.reforested.machines.carpenter.CarpenterBlockEntity;
 import dev.prefex.reforested.machines.carpenter.CarpenterRecipe;
 import dev.prefex.reforested.machines.carpenter.CarpenterScreenHandler;
+import dev.prefex.reforested.machines.engines.combustion.CombustionEngineBlockEntity;
 import dev.prefex.reforested.machines.engines.creative.CreativeEngineBlockEntity;
 import dev.prefex.reforested.machines.engines.redstone.RedstoneEngineBlockEntity;
 import dev.prefex.reforested.machines.engines.stirling.StirlingEngineBlockEntity;
@@ -20,6 +21,7 @@ public class ModMachines {
 	public static final BlockEntityType<CarpenterBlockEntity> CARPENTER_BLOCK_ENTITY;
 	public static final BlockEntityType<RedstoneEngineBlockEntity> REDSTONE_ENGINE_BLOCK_ENTITY;
 	public static final BlockEntityType<StirlingEngineBlockEntity> STIRLING_ENGINE_BLOCK_ENTITY;
+	public static final BlockEntityType<CombustionEngineBlockEntity> COMBUSTION_ENGINE_BLOCK_ENTITY;
 	public static final BlockEntityType<CreativeEngineBlockEntity> CREATIVE_ENGINE_BLOCK_ENTITY;
 
 	public static final ExtendedScreenHandlerType<CarpenterScreenHandler> CARPENTER_SCREEN_HANDLER;
@@ -40,6 +42,11 @@ public class ModMachines {
 				Registries.BLOCK_ENTITY_TYPE,
 				id("stirling_engine"),
 				FabricBlockEntityTypeBuilder.create(StirlingEngineBlockEntity::new, ModBlocks.STIRLING_ENGINE).build()
+		);
+		COMBUSTION_ENGINE_BLOCK_ENTITY = Registry.register(
+				Registries.BLOCK_ENTITY_TYPE,
+				id("combustion_engine"),
+				FabricBlockEntityTypeBuilder.create(CombustionEngineBlockEntity::new, ModBlocks.COMBUSTION_ENGINE).build()
 		);
 		CREATIVE_ENGINE_BLOCK_ENTITY = Registry.register(
 				Registries.BLOCK_ENTITY_TYPE,
