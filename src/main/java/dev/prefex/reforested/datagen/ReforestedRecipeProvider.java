@@ -53,13 +53,13 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 		generateCraftingRecipes(exporter);
 
 		//ReforestedDataGenerator.executeWoodSet(this::generateWoodRecipes, __ -> {});
-		ShapedCarpenterRecipeJsonBuilder.create(Ingredient.EMPTY, ModItems.HARDENED_CASING)
+		/*ShapedCarpenterRecipeJsonBuilder.create(Ingredient.EMPTY, ModItems.HARDENED_CASING)
 				.pattern("   ")
 				.pattern("#C#")
 				.pattern("   ")
 				.input('C', ModItems.STURDY_CASING)
 				.input('#', Items.DIAMOND)
-				.offerTo(exporter, Registries.ITEM.getId(ModItems.HARDENED_CASING));
+				.offerTo(exporter, Registries.ITEM.getId(ModItems.HARDENED_CASING));*/
 
 		addShapedCriteria(
 				ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.STONE_GEAR)

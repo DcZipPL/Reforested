@@ -23,24 +23,24 @@ import java.util.Map;
 public class ShapedCarpenterRecipeJsonBuilder implements CraftingRecipeJsonBuilder {
 	private String group = "";
 	private final Ingredient frame;
-	private final Item output;
+	private final Item result;
 	private final int count;
 	private final List<String> pattern = Lists.newArrayList();
 	private final Map<Character, Ingredient> inputs = Maps.newLinkedHashMap();
 	private final Advancement.Builder advancementBuilder = Advancement.Builder.createUntelemetered();
 
-	public ShapedCarpenterRecipeJsonBuilder(Ingredient frame, ItemConvertible output, int count) {
+	public ShapedCarpenterRecipeJsonBuilder(Ingredient frame, ItemConvertible result, int count) {
 		this.frame = frame;
-		this.output = output.asItem();
+		this.result = result.asItem();
 		this.count = count;
 	}
 
-	public static ShapedCarpenterRecipeJsonBuilder create(Ingredient frame, ItemConvertible output) {
-		return ShapedCarpenterRecipeJsonBuilder.create(frame, output, 1);
+	public static ShapedCarpenterRecipeJsonBuilder create(Ingredient frame, ItemConvertible result) {
+		return ShapedCarpenterRecipeJsonBuilder.create(frame, result, 1);
 	}
 
-	public static ShapedCarpenterRecipeJsonBuilder create(Ingredient frame, ItemConvertible output, int count) {
-		return new ShapedCarpenterRecipeJsonBuilder(frame, output, count);
+	public static ShapedCarpenterRecipeJsonBuilder create(Ingredient frame, ItemConvertible result, int count) {
+		return new ShapedCarpenterRecipeJsonBuilder(frame, result, count);
 	}
 
 	public ShapedCarpenterRecipeJsonBuilder input(Character c, TagKey<Item> tag) {
@@ -84,13 +84,19 @@ public class ShapedCarpenterRecipeJsonBuilder implements CraftingRecipeJsonBuild
 
 	@Override
 	public Item getOutputItem() {
-		return this.output;
+		return this.result;
 	}
 
 	@Override
 	public void offerTo(RecipeExporter exporter, Identifier recipeId) {
 		this.validate(recipeId);
-		exporter.accept(recipeId, new CarpenterRecipe(RawShapedRecipe.create(inputs, pattern), frame, new ItemStack(output)), advancementBuilder.build(recipeId.withPrefixedPath("recipes/carpenter/")));
+		RawShapedRecipe rawShapedRecipe = RawShapedRecipe.create(inputs, pattern);
+		CarpenterRecipe shapedRecipe = new CarpenterRecipe(
+				rawShapedRecipe,
+				frame,
+				new ItemStack(this.result, this.count)
+		);
+		exporter.accept(recipeId, shapedRecipe, advancementBuilder.build(recipeId.withPrefixedPath("recipes/carpenter/")));
 	}
 
 	private void validate(Identifier recipeId) {

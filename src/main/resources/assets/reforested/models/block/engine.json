@@ -1,10 +1,6 @@
 {
 	"credit": "Made with Blockbench",
 	"parent": "minecraft:block/cube_all",
-	"textures": {
-		"0": "reforested:block/redstone_engine",
-		"particle": "reforested:block/redstone_engine"
-	},
 	"elements": [
 		{
 			"name": "top",

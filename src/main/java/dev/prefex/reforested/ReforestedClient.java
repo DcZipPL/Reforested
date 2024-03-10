@@ -8,6 +8,7 @@ import dev.prefex.reforested.items.ModItems;
 import dev.prefex.reforested.machines.ModMachines;
 import dev.prefex.reforested.machines.carpenter.CarpenterScreen;
 import dev.prefex.reforested.machines.engines.redstone.RedstoneEngineBlockEntityRenderer;
+import dev.prefex.reforested.machines.engines.stirling.StirlingEngineBlockEntityRenderer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
@@ -21,6 +22,7 @@ public class ReforestedClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
 		BlockEntityRendererRegistry.register(ModMachines.REDSTONE_ENGINE_BLOCK_ENTITY, (BlockEntityRendererFactory.Context model) -> new RedstoneEngineBlockEntityRenderer());
+		BlockEntityRendererRegistry.register(ModMachines.STIRLING_ENGINE_BLOCK_ENTITY, (BlockEntityRendererFactory.Context model) -> new StirlingEngineBlockEntityRenderer());
 
 		HandledScreens.register(ModMachines.CARPENTER_SCREEN_HANDLER, CarpenterScreen::new);
 

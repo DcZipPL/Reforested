@@ -1,4 +1,4 @@
-package dev.prefex.reforested.machines.engines.redstone;
+package dev.prefex.reforested.machines.engines.stirling;
 
 import dev.prefex.yokai.client.FixRenderer;
 import net.minecraft.client.util.math.MatrixStack;
@@ -7,21 +7,21 @@ import net.minecraft.util.math.Direction;
 import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.renderer.GeoBlockRenderer;
 
-public class RedstoneEngineBlockEntityRenderer extends GeoBlockRenderer<RedstoneEngineBlockEntity> {
-	public RedstoneEngineBlockEntityRenderer() {
-		super(new GeoModel<RedstoneEngineBlockEntity>() {
+public class StirlingEngineBlockEntityRenderer extends GeoBlockRenderer<StirlingEngineBlockEntity> {
+	public StirlingEngineBlockEntityRenderer() {
+		super(new GeoModel<StirlingEngineBlockEntity>() {
 			@Override
-			public Identifier getModelResource(RedstoneEngineBlockEntity animatable) {
+			public Identifier getModelResource(StirlingEngineBlockEntity animatable) {
 				return new Identifier("reforested", "geo/engine.geo.json");
 			}
 
 			@Override
-			public Identifier getTextureResource(RedstoneEngineBlockEntity animatable) {
-				return new Identifier("reforested", "textures/block/redstone_engine.png");
+			public Identifier getTextureResource(StirlingEngineBlockEntity animatable) {
+				return new Identifier("reforested", "textures/block/stirling_engine.png");
 			}
 
 			@Override
-			public Identifier getAnimationResource(RedstoneEngineBlockEntity animatable) {
+			public Identifier getAnimationResource(StirlingEngineBlockEntity animatable) {
 				return new Identifier("reforested", "animations/engine.animation.json");
 			}
 		});
