@@ -1,0 +1,7 @@
+{
+	"parent": "reforested:block/engine",
+	"textures": {
+		"0": "reforested:block/clockwork_engine",
+		"particle": "reforested:block/clockwork_engine"
+	}
+}
