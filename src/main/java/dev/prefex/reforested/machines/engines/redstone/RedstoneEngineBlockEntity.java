@@ -16,6 +16,7 @@ import team.reborn.energy.api.EnergyStorageUtil;
 import team.reborn.energy.api.base.SimpleEnergyStorage;
 
 public class RedstoneEngineBlockEntity extends BlockEntity implements GeoEngine<RedstoneEngineBlockEntity> {
+	public static final int MAX_HEAT = 2000;
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	public final SimpleEnergyStorage energyStorage = new SimpleEnergyStorage(24, 0, 4);
 
@@ -36,17 +37,17 @@ public class RedstoneEngineBlockEntity extends BlockEntity implements GeoEngine<
 
 	@SuppressWarnings("UnstableApiUsage")
 	public static void tick(World world, BlockPos pos, BlockState state, RedstoneEngineBlockEntity self) {
-		if (world == null || world.isClient) {
-			return;
+		if (self.heat <= MAX_HEAT) {
+			self.heat += 1;
 		}
+
+		// Server code
+		if (world == null || world.isClient) return;
+
 		if (self.energyStorage.capacity > self.energyStorage.amount) {
 			if (world.getTime() % (int)self.getFrequency() == 0) {
 				self.energyStorage.amount += 1;
 			}
-		}
-
-		if (self.heat < 1000) {
-			self.heat += 1;
 		}
 
 		for (Direction side : Direction.values()) {
@@ -66,6 +67,15 @@ public class RedstoneEngineBlockEntity extends BlockEntity implements GeoEngine<
 
 	@Override
 	public PlayState animController(AnimationState<GeoEngine<RedstoneEngineBlockEntity>> state) {
-		return state.setAndContinue(COLD);
+		if (this.heat < (RedstoneEngineBlockEntity.MAX_HEAT / 10f) * 2.5)
+			return state.setAndContinue(COLD);
+		else if (this.heat < (RedstoneEngineBlockEntity.MAX_HEAT / 10f) * 5)
+			return state.setAndContinue(TEMPERATE);
+		else if (this.heat < (RedstoneEngineBlockEntity.MAX_HEAT / 10f) * 7.5)
+			return state.setAndContinue(WARM);
+		else if (this.heat <= RedstoneEngineBlockEntity.MAX_HEAT)
+			return state.setAndContinue(HOT);
+		else
+			return state.setAndContinue(MAX);
 	}
 }
