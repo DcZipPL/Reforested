@@ -1,7 +1,7 @@
 {
 	"parent": "reforested:block/engine",
 	"textures": {
-		"0": "reforested:block/stirling_engine",
-		"particle": "reforested:block/stirling_engine"
+		"0": "reforested:block/engine/stirling/cold",
+		"particle": "reforested:block/engine/stirling/particle"
 	}
 }

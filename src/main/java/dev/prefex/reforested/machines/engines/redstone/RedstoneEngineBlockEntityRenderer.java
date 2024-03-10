@@ -17,7 +17,16 @@ public class RedstoneEngineBlockEntityRenderer extends GeoBlockRenderer<Redstone
 
 			@Override
 			public Identifier getTextureResource(RedstoneEngineBlockEntity animatable) {
-				return new Identifier("reforested", "textures/block/redstone_engine.png");
+				if (animatable.heat < (RedstoneEngineBlockEntity.MAX_HEAT / 10f) * 2.5)
+					return new Identifier("reforested", "textures/block/engine/redstone/cold.png");
+				else if (animatable.heat < (RedstoneEngineBlockEntity.MAX_HEAT / 10f) * 5)
+					return new Identifier("reforested", "textures/block/engine/redstone/temperate.png");
+				else if (animatable.heat < (RedstoneEngineBlockEntity.MAX_HEAT / 10f) * 7.5)
+					return new Identifier("reforested", "textures/block/engine/redstone/warm.png");
+				else if (animatable.heat <= RedstoneEngineBlockEntity.MAX_HEAT)
+					return new Identifier("reforested", "textures/block/engine/redstone/hot.png");
+				else
+					return new Identifier("reforested", "textures/block/engine/redstone/max.png");
 			}
 
 			@Override

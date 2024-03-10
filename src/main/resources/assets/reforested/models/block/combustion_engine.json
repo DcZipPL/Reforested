@@ -1,7 +1,7 @@
 {
 	"parent": "reforested:block/engine",
 	"textures": {
-		"0": "reforested:block/combustion_engine",
-		"particle": "reforested:block/combustion_engine"
+		"0": "reforested:block/engine/combustion/cold",
+		"particle": "reforested:block/engine/combustion/particle"
 	}
 }

@@ -1,7 +1,7 @@
 {
 	"parent": "reforested:block/engine",
 	"textures": {
-		"0": "reforested:block/peat_engine",
-		"particle": "reforested:block/peat_engine"
+		"0": "reforested:block/engine/peat/cold",
+		"particle": "reforested:block/engine/peat/particle"
 	}
 }

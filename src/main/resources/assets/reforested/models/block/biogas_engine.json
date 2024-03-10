@@ -1,7 +1,7 @@
 {
 	"parent": "reforested:block/engine",
 	"textures": {
-		"0": "reforested:block/biogas_engine",
-		"particle": "reforested:block/biogas_engine"
+		"0": "reforested:block/engine/biogas/cold",
+		"particle": "reforested:block/engine/biogas/particle"
 	}
 }

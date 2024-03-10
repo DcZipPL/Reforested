@@ -1,7 +1,7 @@
 {
 	"parent": "reforested:block/engine",
 	"textures": {
-		"0": "reforested:block/redstone_engine",
-		"particle": "reforested:block/redstone_engine"
+		"0": "reforested:block/engine/redstone/cold",
+		"particle": "reforested:block/engine/redstone/particle"
 	}
 }
