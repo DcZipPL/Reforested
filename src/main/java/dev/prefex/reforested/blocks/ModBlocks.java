@@ -3,6 +3,7 @@ package dev.prefex.reforested.blocks;
 import dev.prefex.reforested.Reforested;
 import dev.prefex.reforested.datagen.Mineable;
 import dev.prefex.reforested.machines.carpenter.CarpenterBlock;
+import dev.prefex.reforested.machines.engines.combustion.CombustionEngineBlock;
 import dev.prefex.reforested.machines.engines.creative.CreativeEngineBlock;
 import dev.prefex.reforested.machines.engines.redstone.RedstoneEngineBlock;
 import dev.prefex.reforested.machines.engines.stirling.StirlingEngineBlock;
@@ -43,7 +44,7 @@ public class ModBlocks {
 
 	@Mineable(type=Type.AXE) public static final Block REDSTONE_ENGINE = register("redstone_engine", new RedstoneEngineBlock(AbstractBlock.Settings.copy(Blocks.CRAFTING_TABLE)));
 	@Mineable public static final Block STIRLING_ENGINE = register("stirling_engine", new StirlingEngineBlock(AbstractBlock.Settings.copy(Blocks.COBBLESTONE)));
-	@Mineable public static final WipBlock COMBUSTION_ENGINE = (WipBlock) register("combustion_engine", new WipBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
+	@Mineable public static final Block COMBUSTION_ENGINE = register("combustion_engine", new CombustionEngineBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
 	public static final Block CREATIVE_ENGINE = register("creative_engine", new CreativeEngineBlock(AbstractBlock.Settings.copy(Blocks.BEDROCK)));
 
 	@Mineable public static final WipBlock CLOCKWORK_ENGINE = (WipBlock) register("clockwork_engine", new WipBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
