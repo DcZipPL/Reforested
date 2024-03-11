@@ -47,8 +47,8 @@ public class CanItem extends Item {
 
 	private boolean addFluid(ItemStack stack, FluidStack otherFluid) {
 		NbtCompound nbtCompound = stack.getOrCreateNbt();
+		FluidStack fluid = FluidStack.EMPTY;
 		if (nbtCompound.contains("fluid")) {
-			FluidStack fluid = FluidStack.EMPTY;
 			fluid.fromTag(nbtCompound.getCompound("fluid"));
 			if (!fluid.isEmpty()) {
 				if (fluid.getAmount().equalOrMoreThan(FluidValue.BUCKET))
@@ -58,8 +58,12 @@ public class CanItem extends Item {
 			}
 		}
 
-		otherFluid.setAmount(otherFluid.getAmount().fraction(stack.getCount()));
-		nbtCompound.put("fluid", otherFluid.toTag(new NbtCompound()));
+		if (fluid.isEmpty())
+			fluid = new FluidStack(otherFluid.getFluid());
+
+		FluidValue addedAmount = otherFluid.getAmount().fraction(stack.getCount());
+		fluid.addAmount(addedAmount);
+		nbtCompound.put("fluid", fluid.toTag(new NbtCompound()));
 		return true;
 	}
 
