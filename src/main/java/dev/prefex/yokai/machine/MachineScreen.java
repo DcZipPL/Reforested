@@ -1,6 +1,7 @@
 package dev.prefex.yokai.machine;
 
 import com.mojang.blaze3d.systems.RenderSystem;
+import dev.prefex.yokai.client.widgets.EnergyWidget;
 import dev.prefex.yokai.slots.GhostSlot;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
@@ -8,8 +9,15 @@ import net.minecraft.client.util.math.Rect2i;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
+import net.minecraft.text.Style;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
+
+import java.awt.*;
+import java.util.List;
+
+import static dev.prefex.yokai.helpers.ColorBlender.blend;
 
 public abstract class MachineScreen<T extends ScreenHandler> extends HandledScreen<T> {
 	protected final Identifier background;
@@ -26,7 +34,6 @@ public abstract class MachineScreen<T extends ScreenHandler> extends HandledScre
 
 	@Override
 	public void render(DrawContext context, int mouseX, int mouseY, float delta) {
-		this.renderBackground(context, mouseX, mouseY, delta);
 		super.render(context, mouseX, mouseY, delta);
 		this.drawMouseoverTooltip(context, mouseX, mouseY);
 		for (Slot slot : handler.slots) {
@@ -38,6 +45,30 @@ public abstract class MachineScreen<T extends ScreenHandler> extends HandledScre
 			}
 		}
 	}
+
+	@Override
+	protected void drawForeground(DrawContext context, int mouseX, int mouseY) {
+		super.drawForeground(context, mouseX, mouseY);
+		if (getEnergyWidget().isMouseOver(mouseX, mouseY))
+			drawEnergyTooltip(context, mouseX, mouseY);
+	}
+
+	private void drawEnergyTooltip(DrawContext context, int mouseX, int mouseY) {
+		context.drawTooltip(textRenderer, List.of(
+				(Text) Text.translatable("tooltip.reforested.machine.energy_stored"),
+				(Text) Text.literal(getEnergyString()+"/"+getMaxEnergyString()+" ⚡").setStyle(Style.EMPTY.withColor(Formatting.GRAY)),
+				(Text) Text.literal(Math.round(getPowerPercentage()*10000)/100+"%")
+						.setStyle(Style.EMPTY.withColor(getPowerPercentage() < 0.5f ?
+								blend(new Color(0xff0000),new Color(0xffff00),getPowerPercentage()*2f).getRGB()
+								: blend(new Color(0xffff00),new Color(0x00ff00),getPowerPercentage()*2f-1f).getRGB()
+						))
+		),mouseX + 4 - x,mouseY + 4 - y);
+	}
+
+	protected abstract String getEnergyString();
+	protected abstract String getMaxEnergyString();
+	protected abstract float getPowerPercentage();
+	protected abstract EnergyWidget getEnergyWidget();
 
 	protected static class Controls {
 		public static void draw(DrawContext context, Identifier id, int x, int y, Rect2i controlRect) {

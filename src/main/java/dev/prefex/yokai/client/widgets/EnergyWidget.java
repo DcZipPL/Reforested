@@ -1,4 +1,4 @@
-package dev.prefex.reforested.machines.core.widgets;
+package dev.prefex.yokai.client.widgets;
 
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.Drawable;
