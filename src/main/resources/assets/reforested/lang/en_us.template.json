@@ -1,4 +1,5 @@
 {
 	"container.reforested.carpenter": "Carpenter",
-	"tooltip.reforested.machine.energy_stored": "Energy stored"
+	"tooltip.reforested.machine.energy_stored": "Energy stored",
+	"tooltip.reforested.machine.energy_change": "Energy change"
 }

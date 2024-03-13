@@ -47,10 +47,10 @@ public class ModBlocks {
 	@Mineable public static final Block COMBUSTION_ENGINE = register("combustion_engine", new CombustionEngineBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
 	public static final Block CREATIVE_ENGINE = register("creative_engine", new CreativeEngineBlock(AbstractBlock.Settings.copy(Blocks.BEDROCK)));
 
-	@Mineable public static final WipBlock CLOCKWORK_ENGINE = (WipBlock) register("clockwork_engine", new WipBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
-	@Mineable public static final WipBlock ELECTRICAL_ENGINE = (WipBlock) register("electrical_engine", new WipBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
-	@Mineable public static final WipBlock BIOGAS_ENGINE = (WipBlock) register("biogas_engine", new WipBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
-	@Mineable public static final WipBlock PEAT_ENGINE = (WipBlock) register("peat_engine", new WipBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
+	@Mineable public static final Block CLOCKWORK_ENGINE = register("clockwork_engine", new WipBlock(AbstractBlock.Settings.copy(Blocks.GOLD_BLOCK)));
+	@Mineable public static final Block ELECTRICAL_ENGINE = register("electrical_engine", new WipBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
+	@Mineable public static final Block BIOGAS_ENGINE = register("biogas_engine", new WipBlock(AbstractBlock.Settings.copy(Blocks.COPPER_BLOCK)));
+	@Mineable public static final Block PEAT_ENGINE = register("peat_engine", new WipBlock(AbstractBlock.Settings.copy(Blocks.COPPER_BLOCK)));
 
 	@Mineable public static final WipBlock BIO_GENERATOR = (WipBlock) register("bio_generator", new WipBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
 
@@ -78,10 +78,15 @@ public class ModBlocks {
 	}
 
 	public static Block register(String name, Block block) {
+		return register(name, block, true);
+	}
+
+	public static Block register(String name, Block block, boolean hasItem) {
 		Block self = Registry.register(Registries.BLOCK, Reforested.id(name), block);
-		Reforested.GROUP_ITEMS.add(new ItemStack(
-				Registry.register(Registries.ITEM, Reforested.id(name), new BlockItem(self, new BlockItem.Settings()))
-		));
+		if (hasItem)
+			Reforested.GROUP_ITEMS.add(new ItemStack(
+					Registry.register(Registries.ITEM, Reforested.id(name), new BlockItem(self, new BlockItem.Settings()))
+			));
 		return self;
 	}
 

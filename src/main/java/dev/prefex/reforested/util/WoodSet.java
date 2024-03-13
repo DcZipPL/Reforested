@@ -51,7 +51,7 @@ public class WoodSet {
 		this.planks = ModBlocks.register(name + "_planks", new Block(AbstractBlock.Settings.create().mapColor(topColor).instrument(Instrument.BASS).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).burnable()));
 		this.leaves = ModBlocks.register(name + "_leaves", Blocks.createLeavesBlock(BlockSoundGroup.GRASS));
 		this.sapling = ModBlocks.register(name + "_sapling", new SaplingBlock(SaplingGenerator.OAK, AbstractBlock.Settings.create().mapColor(MapColor.DARK_GREEN).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY))); // TODO: Use custom SaplingGenerator
-		this.potted_sapling = ModBlocks.register("potted_" + name + "_sapling", Blocks.createFlowerPotBlock(this.sapling));
+		this.potted_sapling = ModBlocks.register("potted_" + name + "_sapling", Blocks.createFlowerPotBlock(this.sapling), false);
 		this.door = ModBlocks.register(name + "_door", new DoorBlock(blockSetType, AbstractBlock.Settings.create().mapColor(topColor).instrument(Instrument.BASS).strength(3.0F).nonOpaque().burnable().pistonBehavior(PistonBehavior.DESTROY)));
 		this.trapdoor = ModBlocks.register(name + "_trapdoor", new TrapdoorBlock(blockSetType, AbstractBlock.Settings.create().mapColor(this.planks.getDefaultMapColor()).instrument(Instrument.BASS).strength(3.0F).nonOpaque().sounds(BlockSoundGroup.WOOD).burnable().pistonBehavior(PistonBehavior.DESTROY)));
 		this.fence = ModBlocks.register(name + "_fence", new FenceBlock(AbstractBlock.Settings.create().mapColor(topColor).instrument(Instrument.BASS).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).burnable()));

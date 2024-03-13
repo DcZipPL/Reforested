@@ -4,11 +4,14 @@
   "key": {
     "#": {
       "tag": "minecraft:stone_crafting_materials"
+    },
+    "W": {
+      "tag": "c:wooden_gears"
     }
   },
   "pattern": [
     " # ",
-    "# #",
+    "#W#",
     " # "
   ],
   "result": {

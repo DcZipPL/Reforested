@@ -64,9 +64,10 @@ public class ReforestedRecipeProvider extends FabricRecipeProvider {
 		addShapedCriteria(
 				ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.STONE_GEAR)
 						.pattern(" # ")
-						.pattern("# #")
+						.pattern("#W#")
 						.pattern(" # ")
-						.input('#', ItemTags.STONE_CRAFTING_MATERIALS),
+						.input('#', ItemTags.STONE_CRAFTING_MATERIALS)
+						.input('W', ModTags.WOODEN_GEARS),
 				Items.COBBLESTONE
 		).offerTo(exporter, Registries.ITEM.getId(ModItems.STONE_GEAR));
 

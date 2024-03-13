@@ -94,11 +94,6 @@
   "block.reforested.num_num_trapdoor": "Num Num Trapdoor",
   "block.reforested.num_num_wood": "Num Num Wood",
   "block.reforested.peat_engine": "Peat Engine",
-  "block.reforested.potted_dair_sapling": "Potted Dair Sapling",
-  "block.reforested.potted_eucalyptus_sapling": "Potted Eucalyptus Sapling",
-  "block.reforested.potted_hawthorn_sapling": "Potted Hawthorn Sapling",
-  "block.reforested.potted_num_num_sapling": "Potted Num Num Sapling",
-  "block.reforested.potted_willow_sapling": "Potted Willow Sapling",
   "block.reforested.raintank": "Raintank",
   "block.reforested.redstone_engine": "Redstone Engine",
   "block.reforested.snow_bee_nest": "Snow Bee Nest",
@@ -193,5 +188,6 @@
   "item.reforested.wood_pulp": "Wood Pulp",
   "item.reforested.wooden_gear": "Wooden Gear",
   "item.reforested.woven_silk": "Woven Silk",
+  "tooltip.reforested.machine.energy_change": "Energy change",
   "tooltip.reforested.machine.energy_stored": "Energy stored"
 }

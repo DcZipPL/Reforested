@@ -24,8 +24,10 @@ public class ReforestedItemTagProvider extends FabricTagProvider.ItemTagProvider
 		addTag(ModTags.TIN_GEARS, ModItems.TIN_GEAR);
 		addTag(ModTags.BRONZE_GEARS, ModItems.BRONZE_GEAR);
 		addTag(ModTags.STONE_GEARS, ModItems.STONE_GEAR);
+		addTag(ModTags.IRON_GEARS, ModItems.IRON_GEAR);
+		addTag(ModTags.WOODEN_GEARS, ModItems.WOODEN_GEAR);
 
-		addTag(ModTags.GEARS, ModItems.COPPER_GEAR, ModItems.TIN_GEAR, ModItems.BRONZE_GEAR, ModItems.STONE_GEAR);
+		addTag(ModTags.GEARS, ModItems.COPPER_GEAR, ModItems.TIN_GEAR, ModItems.BRONZE_GEAR, ModItems.STONE_GEAR, ModItems.IRON_GEAR, ModItems.WOODEN_GEAR);
 		addTag(ModTags.INGOTS, ModItems.TIN_INGOT, ModItems.BRONZE_INGOT);
 
 		addTag(ModTags.GLASS, Items.GLASS, Items.TINTED_GLASS, // TODO: Move ModBlocks.GLOWING_GLASS_BLOCK.asItem() to Lightest lamps

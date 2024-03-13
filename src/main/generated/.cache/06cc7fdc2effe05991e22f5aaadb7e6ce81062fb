@@ -1,4 +1,4 @@
-// 1.20.4	2024-03-09T23:56:11.8425108	Reforested/Recipes
+// 1.20.4	2024-03-13T21:15:47.479328	Reforested/Recipes
 74def68991168d6f46578308f1658d315b60596b data\reforested\recipes\scoop.json
 56b3ce42011af0e428a4966ebcb1dae984ead06e data\reforested\recipes\peat_engine.json
 a36a1343a4521c080a1aca1257c6513612ac3d73 data\reforested\advancements\recipes\misc\can_compat.json
@@ -44,7 +44,7 @@ df0acc6135413753b4490bba31c4c81cbd6c4c44 data\reforested\advancements\recipes\mi
 074d39b1e84c8eed94675543df14df1278fba3a2 data\reforested\advancements\recipes\misc\wooden_gear.json
 a44921bde97179028de920197e000ea193921774 data\reforested\recipes\thermionic_fabricator.json
 05df9391cc6ab2f0c4c420e33ee756a1b1813796 data\reforested\recipes\combustion_engine.json
-43642831fb6772316712041d9ce1d743a3287a36 data\reforested\recipes\stone_gear.json
+9567bcd8dd8a8687153dcf83bf68bd5af34aaba1 data\reforested\recipes\stone_gear.json
 b4ba6627f8d27ff21dae7013c53617a493eaadb2 data\reforested\advancements\recipes\misc\stirling_engine.json
 5cd4751d081c61c04a8f61fe3274badb680678fb data\reforested\recipes\sturdy_casing.json
 730670322ac1f1ead5a0f817ec416589fd5b310d data\reforested\advancements\recipes\misc\can.json
